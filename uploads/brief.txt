@@ -1,0 +1,99 @@
+Case Study Page
+Design Brief for Claude Design
+Document type
+Reusable page template — one per project
+Aesthetic
+Polished, editorial, cinematic — consistent with Stripe / Notion reference
+Visual approach
+Full-width imagery as the primary storytelling device
+Text highlights
+Mixed formats: pull-quotes, stat blocks, annotation-style — chosen per moment
+1. Purpose
+Each case study page is a standalone narrative that takes the visitor from context to conclusion. It should feel like reading a well-edited article, not scanning a design portfolio template. The page must balance visual impact with just enough text to communicate thinking, decisions, and outcomes — never overwhelming, never too sparse.
+2. Page Structure
+Every case study follows a standard skeleton, with a flexible highlight section that adapts to what&apos;s most interesting about that specific project.
+2.1 Standard Sections (in order)
+① Hero
+Full-width cover image: one hero mockup placed on a deep, project-specific brand background color — cinematic, edge-to-edge, high resolution
+The brand background is the only place project colors enter the page chrome — everything else stays in the portfolio&apos;s base palette
+Project title, one-line description, and 3–4 metadata tags (e.g. B2B SaaS · 2023 · Product Design · Design System)
+Estimated read time shown as a small muted tag (e.g. &apos;4 min read&apos;) — auto-calculated from word count
+Optional: a single bold opening statement (1 sentence) that sets the scene
+① Hero — scroll reveal: detail cards
+Immediately below the hero, as the visitor scrolls, 3–4 smaller detail cards appear in a row
+Each card shows a specific UI moment from the project: a key screen, a component, an interaction state
+Cards sit on a light neutral background — contrast to the dark hero above creates a satisfying visual shift
+No captions on the cards at this level — they are purely visual, creating curiosity before the narrative begins
+② Context
+2–3 sentences: what the company/product does, who it serves
+My role and the team setup (e.g. &apos;Sole designer, working with 2 engineers and a PM&apos;)
+Project duration
+③ Problem
+What was broken, missing, or unclear before this project
+Who was affected and how — written from the user&apos;s perspective
+Keep it tight: 3–5 sentences max. No lengthy background.
+④ Process (lightweight)
+Since process documentation is limited, this section is intentionally short. Focus on the key design decisions made, not every step taken.
+2–3 decisions that shaped the outcome
+Can be presented as a short numbered list or a highlight block (see section 3)
+If any wireframes or sketches exist, one image here adds credibility — otherwise skip
+⑤ Solution
+The main body of the page — where most visuals live
+Full-width images of final UI, one after another, with short contextual captions
+Highlight blocks interspersed to break up imagery and add meaning (see section 3)
+Aim for 3–6 images total per case study
+⑥ Outcome
+What changed as a result of the work
+Business or user impact — quantified where possible, qualitative where not
+1 stat block or pull-quote here works well to anchor the section
+⑦ Navigation Footer
+&apos;← Previous project&apos; and &apos;Next project →&apos; links
+Optional: &apos;Back to Work&apos; link
+CTA: &apos;Like what you see? Let&apos;s talk&apos;
+3. Highlight Block Formats
+Highlight blocks are small, visually distinct text areas placed between or beneath images. They break the scroll, add depth, and signal that this designer thinks — not just executes. Use whichever format fits the moment. Never force all three into every case study.
+Format A — Pull-Quote
+A large, styled sentence that captures a key insight, design principle, or turning point. No attribution needed — this is the designer&apos;s voice.
+Example: &quot;The real problem wasn&apos;t the interface — it was that users didn&apos;t understand what they were being asked to decide.&quot;
+Format B — Stat / Metric Block
+1–3 numbers that show measurable impact. Displayed large and bold, with a short label beneath each. Use only when the numbers are real and meaningful.
+Example: 40% faster onboarding  ·  3 legacy tools replaced  ·  0 support tickets in first month
+Format C — Annotation / Decision Note
+A small callout tied to a specific part of the UI. Explains why a particular design decision was made — not what it looks like, but why it exists. Can appear as a side note next to a zoomed-in screenshot.
+Example: &quot;We used a stepper instead of a long form here because users were dropping off after scrolling — breaking it into steps increased completion by 28%.&quot;
+4. Visual Direction
+Image Treatment
+Hero: full-width mockup on a deep brand-colored canvas — the one moment project colors are used in the page chrome
+Detail cards (below hero): light neutral background, 3–4 cards in a row, no borders or drop shadows on the images themselves
+Body images (in Solution section): full-width, bleed edge-to-edge, neutral or transparent background behind UI
+Device frames (browser chrome, phone frame) optional — use only if they add context, not decoration
+GIF support: the template must support .gif files in place of static images — useful for showing interactions, micro-animations, or flow transitions. GIFs autoplay, no controls needed. Plan to add in a later phase.
+Images and GIFs should feel like art direction, not screenshots: proper padding, consistent scale, intentional composition
+Typography &amp; Spacing
+Section labels (Context, Problem, etc.) small and muted — they guide, not dominate
+Body text narrow column (max ~65 characters wide) for readability
+Generous vertical rhythm between sections — let the page breathe
+Highlight blocks sit full-width or inset, clearly distinct from body copy
+Color
+Stick to the portfolio&apos;s base palette (off-white, near-black, one accent)
+Stat blocks and pull-quotes can use the accent color sparingly
+Never introduce project brand colors into the page chrome — they can appear inside mockup images only
+5. Responsive Behaviour
+Desktop: full-width images at natural aspect ratio; text columns max ~720px centered
+Tablet: same layout, images scale down proportionally
+Mobile: images full-width; stat blocks stack vertically; annotation notes move below the image
+6. Content Writing Guidelines
+These apply to all text written for case studies — now or in future.
+Write in first person: &apos;I decided...&apos;, &apos;We discovered...&apos;, not &apos;The designer...&apos;
+Lead with insight, not process: say what you learned, not just what you did
+Keep sentences short. One idea per sentence.
+Avoid jargon: &apos;navigation&apos; not &apos;wayfinding system&apos;, &apos;users&apos; not &apos;end-users&apos;
+Never pad: if a section has nothing interesting to say, cut it
+Quantify impact wherever honest — avoid inflated or vague metrics
+7. Resolved Decisions
+All open questions from the initial brief have been answered. No blockers to start building.
+Hero image treatment: full-width mockup on a deep brand-colored background (Option A + C hybrid) — cinematic hero, followed by a row of detail cards as the visitor scrolls
+GIF support: not in v1, but the template must be built to support .gif files in place of static images — no structural changes needed when added later
+NDA projects: none currently — all projects are live and fully showable. No password protection needed for v1.
+Read time: visible in the hero as a small muted meta tag (e.g. &apos;4 min read&apos;), auto-calculated from word count. Target 3–5 min per case study.
+Video / prototype embeds: not in v1. Images and GIFs only.
