@@ -34,72 +34,38 @@
   <section class="proj-hero">
     <div>
       <span class="section-label" style="margin-bottom: 28px; display: inline-flex;">N° 01 / 05 — Case study</span>
-      <h1>Dialogue — a calmer inbox for <em>customer teams.</em></h1>
+      <h1>FIT FLEET: Fewer Steps, <em>Faster Bookings.</em></h1>
     </div>
     <p class="sub">
-      A redesign of the support inbox used by ten thousand customer-facing
-      teammates every day. Less noise, fewer modals, more confidence to
-      hit reply.
+      A redesign of the appointment flow for FIT FLEET's management platform — simplifying every step until clients said it just made sense.
     </p>
   </section>
 
   <dl class="meta-grid">
-    <div><dt>Client</dt><dd>Confidential · Series C SaaS</dd></div>
-    <div><dt>Year</dt><dd>2025 — 2026</dd></div>
-    <div><dt>Role</dt><dd>Lead product designer</dd></div>
-    <div><dt>Team</dt><dd>1 PM · 4 engineers · me</dd></div>
-    <div><dt>Discipline</dt><dd>Interaction · IA · Visual</dd></div>
-    <div><dt>Surfaces</dt><dd>Web app · Email digest</dd></div>
-    <div><dt>Status</dt><dd>Shipped, July 2026</dd></div>
-    <div><dt>Tools</dt><dd>Figma · Linear · Loom</dd></div>
+    <div><dt>Client</dt><dd>FIT FLEET</dd></div>
+    <div><dt>Year</dt><dd>2025</dd></div>
+    <div><dt>Role</dt><dd>UX/UI Designer</dd></div>
+    <div><dt>Team</dt><dd>1 PM · 3–4 engineers · 2 designers</dd></div>
+    <div><dt>Discipline</dt><dd>Interaction · Flow design · Visual</dd></div>
+    <div><dt>Surfaces</dt><dd>Web app · Mobile</dd></div>
+    <div><dt>Status</dt><dd>Shipped</dd></div>
+    <div><dt>Tools</dt><dd>Figma · Miro</dd></div>
   </dl>
 
-  <!-- Hero image -->
-  <div class="proj-hero-image">
-    <div class="scene scene-dialogue">
-      <div class="panel">
-        <div class="sidebar">
-          <div class="head"><span class="av"></span><span class="nm">Inbox · 248</span></div>
-          <div class="row act"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-          <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-          <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-          <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-          <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-        </div>
-        <div class="conv">
-          <div class="top">
-            <span class="name">Maya Okafor · Stripe</span>
-            <span class="pill">Resolved</span>
-          </div>
-          <div class="msg">Hey — can we reuse the segments from last week's launch for the new cohort?</div>
-          <div class="msg me">Yes. I pulled them into the shared workspace and added a filter for verified merchants.</div>
-          <div class="msg">Perfect, thanks. Shipping tomorrow.</div>
-          <div class="composer"><span>Reply to Maya</span><span class="send"></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<!-- Hero image -->
+<div class="proj-hero-image">
+  <img src="dialogue-hero.jpg" alt="Dialogue inbox redesign" style="width:100%; border-radius:12px;">
+</div>
   <!-- Sections -->
   <section class="proj-section">
     <h2>The problem</h2>
     <div class="body">
       <p>
-        The product had grown by adding panels. Every new feature got
-        its own pop-out, its own modal, its own keyboard shortcut.
-        Frontline teammates were spending the first ninety seconds of
-        every shift just laying out their workspace.
+        Car park owners were managing fleets through a process that made every service appointment feel harder than it needed to be. The booking flow — used daily to schedule vehicles for authorized FIT SERVICE stations — was slow, unclear, and easy to get wrong.
       </p>
       <p>
-        Internal NPS for the inbox had fallen four years in a row.
-        Account reviews kept surfacing the same word — <em>chaotic.</em>
-        Leadership wanted "a quieter inbox" and didn't know how to
-        ask for it.
+        Users had to move through too many steps without a clear sense of progress. The interface front-loaded information, offered little feedback, and gave no confidence that the booking had been set up correctly.
       </p>
-      <div class="pull">
-        "I love what your product does, I just don't love using it."
-        <br>— Customer support lead, 2,000-seat customer.
-      </div>
     </div>
   </section>
 
@@ -107,16 +73,11 @@
     <h2>Approach</h2>
     <div class="body">
       <p>
-        We started by counting things. Every modal, every popover,
-        every place a teammate could be interrupted. Fifty-three
-        surfaces in the first audit. We cut to twelve, and then
-        argued for a month about which twelve.
+        We started by walking through the existing flow end to end — every screen, every decision point, every place a user could get stuck or confused. The goal wasn't to redesign everything. It was to find where the friction actually lived.
       </p>
       <p>
-        The redesign settled on three commitments — one calm canvas,
-        progressive disclosure for everything else, and a keyboard model
-        that worked the same in every view. We held those three
-        principles up against every screen for the next six months.
+       Working in Miro, we mapped the full journey and identified the steps that caused the most hesitation. From there, I restructured the flow around three principles: show only what the user needs right now, make progress visible at every step, and reduce the number of decisions required to complete a booking.
+       The redesign was built and tested as an interactive prototype in Figma before any development began.
       </p>
 
       <div class="shots three">
@@ -182,13 +143,11 @@
   </section>
 
   <section class="proj-section">
-    <h2>One canvas</h2>
+    <h2>The flow</h2>
     <div class="body">
       <p>
-        The new inbox is a single resizable canvas with three regions —
-        list, conversation, context. Everything that used to pop out now
-        lives in the right rail, where it can be dismissed but always
-        comes back the way you left it.
+        The new booking experience breaks the process into focused, sequential steps — one clear task per screen. Instead of presenting all fields upfront, the flow guides users through vehicle selection, station choice, date and time, and confirmation as distinct moments.
+        A persistent progress indicator keeps users oriented throughout. Each step is reversible, and the final confirmation screen summarizes everything before submission — so users can catch errors without starting over.
       </p>
 
       <div class="shots">
@@ -237,13 +196,11 @@
   </section>
 
   <section class="proj-section">
-    <h2>Keyboard model</h2>
+    <h2>Design decicion</h2>
     <div class="body">
       <p>
-        We rebuilt every shortcut around a single principle — a teammate
-        should be able to triage an entire shift without ever touching
-        the mouse. We documented forty-two shortcuts and then cut to
-        eleven. Power users complained for a week, then stopped.
+        The biggest change wasn't visual — it was structural. The original flow asked users to make too many decisions at once. By separating each stage, we reduced cognitive load without removing any functionality.
+        Visually, the redesign followed a clean, minimal direction: clear typographic hierarchy, generous spacing, and consistent input patterns. Nothing that distracted from the task. The result was an interface that felt like it was on the user's side.
       </p>
 
       <div class="shots three" style="grid-template-columns: 1fr;">
@@ -271,10 +228,8 @@
     <h2>Outcome</h2>
     <div class="body">
       <p>
-        Ten weeks after rollout, internal NPS for the inbox crossed
-        forty for the first time in the product's history. Time-to-first-reply
-        on priority conversations fell almost in half. Two of the
-        company's largest customers renewed citing the new inbox.
+        Client feedback during interactive prototype testing was immediate and positive. Users found the new flow noticeably easier to navigate and responded strongly to the cleaner interface — both in usability and visual clarity.
+        The redesign was completed and delivered within a 4-week timeline, covering research, flow restructuring, visual design, and prototype testing.
       </p>
 
       <div class="outcome">
@@ -293,9 +248,7 @@
       </div>
 
       <p>
-        What I'm proud of, more than the numbers, is that nobody on
-        the team made a single new modal in the six months after
-        launch — there wasn't a place to put one.
+        What this project reinforced: in a multi-step B2B workflow, the biggest UX wins come from removing friction at the structure level — before a single pixel is moved.
       </p>
     </div>
   </section>
