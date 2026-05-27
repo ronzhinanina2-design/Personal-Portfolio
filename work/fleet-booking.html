@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dialogue — Nina Hayden</title>
+<title>FIT FLEET — Nina Hayden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../scenes.css">
 </head>
-<body data-screen-label="Case · Dialogue">
+<body data-screen-label="Case · FIT FLEET">
 
 <header class="topbar">
   <div class="brand">
@@ -42,13 +42,9 @@
   </section>
 
   <dl class="meta-grid">
-    <div><dt>Client</dt><dd>FIT FLEET</dd></div>
     <div><dt>Year</dt><dd>2025</dd></div>
-    <div><dt>Role</dt><dd>UX/UI Designer</dd></div>
     <div><dt>Team</dt><dd>1 PM · 3–4 engineers · 2 designers</dd></div>
-    <div><dt>Discipline</dt><dd>Interaction · Flow design · Visual</dd></div>
     <div><dt>Surfaces</dt><dd>Web app · Mobile</dd></div>
-    <div><dt>Status</dt><dd>Shipped</dd></div>
     <div><dt>Tools</dt><dd>Figma · Miro</dd></div>
   </dl>
 
@@ -56,15 +52,19 @@
 <div class="proj-hero-image">
   <img src="dialogue-hero.jpg" alt="Dialogue inbox redesign" style="width:100%; border-radius:12px;">
 </div>
+
+<!-- Pre-problem image -->
+<div style="padding: 0 var(--page-pad, 40px); margin-bottom: 0;">
+  <div style="width:100%; aspect-ratio:16/7; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center;">
+    <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — overview / key screen</span>
+  </div>
+</div>
   <!-- Sections -->
   <section class="proj-section">
     <h2>The problem</h2>
     <div class="body">
       <p>
-        Car park owners were managing fleets through a process that made every service appointment feel harder than it needed to be. The booking flow — used daily to schedule vehicles for authorized FIT SERVICE stations — was slow, unclear, and easy to get wrong.
-      </p>
-      <p>
-        Users had to move through too many steps without a clear sense of progress. The interface front-loaded information, offered little feedback, and gave no confidence that the booking had been set up correctly.
+        Scheduling a car for service should take a minute. For FIT FLEET's clients, it took much longer — the booking flow was cluttered, front-loaded, and gave users no real sense of where they were or what came next.
       </p>
     </div>
   </section>
@@ -73,11 +73,7 @@
     <h2>Approach</h2>
     <div class="body">
       <p>
-        We started by walking through the existing flow end to end — every screen, every decision point, every place a user could get stuck or confused. The goal wasn't to redesign everything. It was to find where the friction actually lived.
-      </p>
-      <p>
-       Working in Miro, we mapped the full journey and identified the steps that caused the most hesitation. From there, I restructured the flow around three principles: show only what the user needs right now, make progress visible at every step, and reduce the number of decisions required to complete a booking.
-       The redesign was built and tested as an interactive prototype in Figma before any development began.
+        We walked the existing flow end to end and mapped every friction point in Miro. Then I restructured it around one idea: show only what the user needs right now, and make progress impossible to miss. We tested the redesign as an interactive Figma prototype before a single line of code was written.
       </p>
 
       <div class="shots three">
@@ -110,7 +106,7 @@
         <div class="shot"><div class="inner-shot shot-bg-1" style="padding: 6%;">
           <div style="width: 100%; display: flex; flex-direction: column; gap: 8px; font-family: ui-sans-serif, system-ui;">
             <div style="font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em; color: #8a8275;">Workshop · principles</div>
-            <div style="font-family: 'Newsreader', serif; font-size: 16px; line-height: 1.2; color: #14110d;">One <em style="font-style: italic;">calm canvas.</em> Progressive disclosure. One keyboard model.</div>
+            <div style="font-family: 'Newsreader', serif; font-size: 16px; line-height: 1.2; color: #14110d;">One <em style="font-style: italic;">step at a time.</em> Progress always visible. No decisions upfront.</div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
               <span style="font-size: 7px; padding: 3px 7px; background: #14110d; color: #f8f5ed; border-radius: 999px; font-family: var(--mono);">01</span>
               <span style="font-size: 7px; padding: 3px 7px; background: #14110d; color: #f8f5ed; border-radius: 999px; font-family: var(--mono);">02</span>
@@ -196,28 +192,21 @@
   </section>
 
   <section class="proj-section">
-    <h2>Design decicion</h2>
+    <h2>Design decisions</h2>
     <div class="body">
       <p>
-        The biggest change wasn't visual — it was structural. The original flow asked users to make too many decisions at once. By separating each stage, we reduced cognitive load without removing any functionality.
-        Visually, the redesign followed a clean, minimal direction: clear typographic hierarchy, generous spacing, and consistent input patterns. Nothing that distracted from the task. The result was an interface that felt like it was on the user's side.
+        The biggest change wasn't visual — it was structural. Separating each stage meant users could focus on one decision at a time. Clean hierarchy and consistent inputs did the rest.
       </p>
 
       <div class="shots three" style="grid-template-columns: 1fr;">
         <div class="shot" style="aspect-ratio: 16/5; background: #14110d; padding: 0;">
-          <div style="width: 100%; height: 100%; padding: 20px 28px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 8px; align-items: center; color: #f8f5ed;">
-            <div style="grid-column: span 11; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6;">The eleven shortcuts</div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">J</kbd><span style="font-size: 9px; opacity: 0.6;">Next</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">K</kbd><span style="font-size: 9px; opacity: 0.6;">Prev</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">R</kbd><span style="font-size: 9px; opacity: 0.6;">Reply</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">E</kbd><span style="font-size: 9px; opacity: 0.6;">Done</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">S</kbd><span style="font-size: 9px; opacity: 0.6;">Snooze</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">A</kbd><span style="font-size: 9px; opacity: 0.6;">Assign</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">L</kbd><span style="font-size: 9px; opacity: 0.6;">Label</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">M</kbd><span style="font-size: 9px; opacity: 0.6;">Merge</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">G</kbd><span style="font-size: 9px; opacity: 0.6;">Go to</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">/</kbd><span style="font-size: 9px; opacity: 0.6;">Search</span></div>
-            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 8px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 12px; min-width: 28px; text-align: center;">?</kbd><span style="font-size: 9px; opacity: 0.6;">Help</span></div>
+          <div style="width: 100%; height: 100%; padding: 20px 28px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; align-items: center; color: #f8f5ed;">
+            <div style="grid-column: span 5; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6;">The booking flow · 5 steps</div>
+            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 10px; min-width: 28px; text-align: center;">01</kbd><span style="font-size: 9px; opacity: 0.6; text-align: center;">Select vehicle</span></div>
+            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 10px; min-width: 28px; text-align: center;">02</kbd><span style="font-size: 9px; opacity: 0.6; text-align: center;">Choose station</span></div>
+            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 10px; min-width: 28px; text-align: center;">03</kbd><span style="font-size: 9px; opacity: 0.6; text-align: center;">Pick date & time</span></div>
+            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 10px; min-width: 28px; text-align: center;">04</kbd><span style="font-size: 9px; opacity: 0.6; text-align: center;">Review details</span></div>
+            <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;"><kbd style="padding: 6px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: var(--mono); font-size: 10px; min-width: 28px; text-align: center;">05</kbd><span style="font-size: 9px; opacity: 0.6; text-align: center;">Confirm booking</span></div>
           </div>
         </div>
       </div>
@@ -228,27 +217,30 @@
     <h2>Outcome</h2>
     <div class="body">
       <p>
-        Client feedback during interactive prototype testing was immediate and positive. Users found the new flow noticeably easier to navigate and responded strongly to the cleaner interface — both in usability and visual clarity.
-        The redesign was completed and delivered within a 4-week timeline, covering research, flow restructuring, visual design, and prototype testing.
+        Clients noticed immediately during prototype testing — the flow felt faster, cleaner, and easier to trust. That reaction, before a single line of code, was the clearest signal we got.
       </p>
+
+      <div class="proj-img-placeholder" style="width:100%; aspect-ratio:16/7; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center; margin: 8px 0;">
+        <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — outcome / final screens</span>
+      </div>
 
       <div class="outcome">
         <div class="stat">
-          <div class="num"><em>+38</em></div>
-          <div class="lbl">Internal NPS, six weeks post-launch</div>
+          <div class="num"><em>4</em> wks</div>
+          <div class="lbl">From brief to tested prototype</div>
         </div>
         <div class="stat">
-          <div class="num">−44<em>%</em></div>
-          <div class="lbl">First-reply time on priority threads</div>
+          <div class="num">−<em>steps</em></div>
+          <div class="lbl">Multi-step flow simplified end to end</div>
         </div>
         <div class="stat">
-          <div class="num">−<em>77%</em></div>
-          <div class="lbl">Distinct surfaces in the inbox</div>
+          <div class="num"><em>✓</em></div>
+          <div class="lbl">Positive client feedback during prototype testing</div>
         </div>
       </div>
 
       <p>
-        What this project reinforced: in a multi-step B2B workflow, the biggest UX wins come from removing friction at the structure level — before a single pixel is moved.
+        In a multi-step B2B flow, the real work is structural. Move the right things out of the way, and the interface takes care of itself.
       </p>
     </div>
   </section>
