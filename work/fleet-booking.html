@@ -30,13 +30,17 @@
 
 <main class="page">
 
-  <!-- Hero -->
-  <section class="proj-hero">
+  <!-- Hero image first -->
+  <div class="proj-hero-image" style="padding-top: 80px;">
+    <img src="Fleet-booking-hero.png" alt="FitFleet booking redesign" style="width:100%; border-radius:12px;">
+  </div>
+
+  <!-- Hero text below image -->
+  <section class="proj-hero" style="padding-top: 32px;">
     <div>
-      <span class="section-label" style="margin-bottom: 28px; display: inline-flex;">N° 01 / 05 — Case study</span>
-      <h1>FIT FLEET: Fewer Steps, <em>Faster Bookings.</em></h1>
+      <h1 style="font-size: 64px; line-height: 1.05;">FIT FLEET: Fewer Steps, <em>Faster Bookings.</em></h1>
     </div>
-    <p class="sub">
+    <p class="sub" style="font-size: 18px; margin-top: 16px;">
       A redesign of the appointment flow for FIT FLEET's management platform — simplifying every step until clients said it just made sense.
     </p>
   </section>
@@ -48,22 +52,18 @@
     <div><dt>Tools</dt><dd>Figma · Miro</dd></div>
   </dl>
 
-<!-- Hero image -->
-<div class="proj-hero-image">
-  <img src="Fleet-booking-hero.png" alt="FitFleet booking redesign" style="width:100%; border-radius:12px;">
-</div>
-
-<!-- Pre-problem image -->
-<div style="padding: 0 var(--page-pad, 40px); margin-bottom: 0;">
-  <div style="width:100%; aspect-ratio:16/7; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center;">
-    <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — overview / key screen</span>
+  <!-- Overview image placeholder — no divider -->
+  <div style="padding: 0 var(--page-pad, 40px); margin-bottom: 48px;">
+    <div style="width:100%; aspect-ratio:16/7; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center;">
+      <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — overview / key screen</span>
+    </div>
   </div>
-</div>
+
   <!-- Sections -->
   <section class="proj-section">
     <h2>The problem</h2>
     <div class="body">
-      <p>
+      <p style="font-size: 18px; line-height: 1.6;">
         Scheduling a car for service should take a minute. For FIT FLEET's clients, it took much longer — the booking flow was cluttered, front-loaded, and gave users no real sense of where they were or what came next.
       </p>
     </div>
@@ -72,7 +72,7 @@
   <section class="proj-section">
     <h2>Approach</h2>
     <div class="body">
-      <p>
+      <p style="font-size: 18px; line-height: 1.6;">
         We walked the existing flow end to end and mapped every friction point in Miro. Then I restructured it around one idea: show only what the user needs right now, and make progress impossible to miss. We tested the redesign as an interactive Figma prototype before a single line of code was written.
       </p>
 
@@ -141,51 +141,18 @@
   <section class="proj-section">
     <h2>The flow</h2>
     <div class="body">
-      <p>
+      <p style="font-size: 18px; line-height: 1.6;">
         The new booking experience breaks the process into focused, sequential steps — one clear task per screen. Instead of presenting all fields upfront, the flow guides users through vehicle selection, station choice, date and time, and confirmation as distinct moments.
         A persistent progress indicator keeps users oriented throughout. Each step is reversible, and the final confirmation screen summarizes everything before submission — so users can catch errors without starting over.
       </p>
 
-      <div class="shots">
-        <div class="shot" style="aspect-ratio: 16/10; background: #0e231e;">
-          <div class="scene scene-dialogue" style="position: relative;">
-            <div class="panel">
-              <div class="sidebar">
-                <div class="head"><span class="av"></span><span class="nm">Inbox · 248</span></div>
-                <div class="row act"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-                <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-                <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-                <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
-              </div>
-              <div class="conv">
-                <div class="top"><span class="name">Adesina Williams</span><span class="pill">Priority</span></div>
-                <div class="msg">The webhook keeps firing twice — same event, same payload. We're seeing duplicate charges.</div>
-                <div class="msg me">Reproduced. Pushing a fix for idempotency keys this afternoon, you'll see it as v2.4.1.</div>
-                <div class="composer"><span>Reply to Adesina</span><span class="send"></span></div>
-              </div>
-            </div>
-          </div>
+      <!-- Two square image placeholders for mobile screens -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">
+        <div style="aspect-ratio: 1/1; background: #0e231e; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em; color:#fff;">Mobile screen</span>
         </div>
-        <div class="shot" style="aspect-ratio: 16/10; background: var(--paper-2); padding: 0;">
-          <div style="width: 100%; height: 100%; background: #f7f3ea; padding: 14px 18px; display: flex; flex-direction: column; gap: 8px; font-family: ui-sans-serif, system-ui;">
-            <div style="font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.1em; color: #8a8275;">Context · right rail</div>
-            <div style="font-family: 'Newsreader', serif; font-size: 14px; color: #14110d; letter-spacing: -0.01em;">Adesina Williams</div>
-            <div style="font-size: 8px; color: #8a8275;">Engineer at Vesta · Customer since 2023</div>
-            <div style="height: 1px; background: rgba(0,0,0,0.08); margin: 4px 0;"></div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-              <div><div style="font-family: var(--mono); font-size: 7px; text-transform: uppercase; color: #8a8275; letter-spacing: 0.1em;">Plan</div><div style="font-size: 9px; color: #14110d; margin-top: 2px;">Scale · $2,400/mo</div></div>
-              <div><div style="font-family: var(--mono); font-size: 7px; text-transform: uppercase; color: #8a8275; letter-spacing: 0.1em;">Tickets</div><div style="font-size: 9px; color: #14110d; margin-top: 2px;">12 open · 3 priority</div></div>
-              <div><div style="font-family: var(--mono); font-size: 7px; text-transform: uppercase; color: #8a8275; letter-spacing: 0.1em;">Sentiment</div><div style="font-size: 9px; color: #1f7a4d; margin-top: 2px;">↑ +24 this quarter</div></div>
-              <div><div style="font-family: var(--mono); font-size: 7px; text-transform: uppercase; color: #8a8275; letter-spacing: 0.1em;">CSM</div><div style="font-size: 9px; color: #14110d; margin-top: 2px;">Priya R.</div></div>
-            </div>
-            <div style="height: 1px; background: rgba(0,0,0,0.08); margin: 4px 0;"></div>
-            <div style="font-family: var(--mono); font-size: 7px; text-transform: uppercase; color: #8a8275; letter-spacing: 0.1em;">Recent</div>
-            <div style="display: flex; flex-direction: column; gap: 4px; font-size: 9px;">
-              <div style="display: flex; justify-content: space-between;"><span>Webhook duplicates</span><span style="color: #8a8275;">Today</span></div>
-              <div style="display: flex; justify-content: space-between;"><span>2FA seat seats</span><span style="color: #8a8275;">May 12</span></div>
-              <div style="display: flex; justify-content: space-between;"><span>API quota raised</span><span style="color: #8a8275;">May 04</span></div>
-            </div>
-          </div>
+        <div style="aspect-ratio: 1/1; background: #0e231e; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em; color:#fff;">Mobile screen</span>
         </div>
       </div>
     </div>
@@ -194,7 +161,7 @@
   <section class="proj-section">
     <h2>Design decisions</h2>
     <div class="body">
-      <p>
+      <p style="font-size: 18px; line-height: 1.6;">
         The biggest change wasn't visual — it was structural. Separating each stage meant users could focus on one decision at a time. Clean hierarchy and consistent inputs did the rest.
       </p>
 
@@ -216,12 +183,18 @@
   <section class="proj-section">
     <h2>Outcome</h2>
     <div class="body">
-      <p>
+      <p style="font-size: 18px; line-height: 1.6;">
         Clients noticed immediately during prototype testing — the flow felt faster, cleaner, and easier to trust. That reaction, before a single line of code, was the clearest signal we got.
       </p>
 
-      <div class="proj-img-placeholder" style="width:100%; aspect-ratio:16/7; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center; margin: 8px 0;">
-        <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — outcome / final screens</span>
+      <!-- Two 16:9 image placeholders -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;">
+        <div style="aspect-ratio: 16/9; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — final screen</span>
+        </div>
+        <div style="aspect-ratio: 16/9; background:#e8e4dc; border-radius:12px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-family:var(--mono); font-size:11px; opacity:0.4; text-transform:uppercase; letter-spacing:0.1em;">Image — final screen</span>
+        </div>
       </div>
 
       <div class="outcome">
@@ -239,35 +212,69 @@
         </div>
       </div>
 
-      <p>
+      <p style="font-size: 18px; line-height: 1.6;">
         In a multi-step B2B flow, the real work is structural. Move the right things out of the way, and the interface takes care of itself.
       </p>
     </div>
   </section>
 
-  <!-- Next -->
-  <section class="proj-next">
-    <div>
-      <span class="eyebrow">Next case</span>
-      <a href="anchor.html"><h3>Anchor —<br>banking that thinks<br>like the <em>founder.</em> ↗</h3></a>
+  <!-- Contact section (from home page) -->
+  <section class="contact" id="contact">
+    <div class="contact-head reveal">
+      <h2>Let's work together</h2>
+      <p class="sub">Available for select freelance projects and full-time roles.</p>
     </div>
-    <p class="text-muted" style="max-width: 32ch; padding-bottom: 16px;">
-      A mobile banking app for small businesses. 2024.
-    </p>
+    <div class="channels reveal-stagger">
+      <a class="row" href="mailto:ronzhina.ni@gmail.com" data-open-modal="contact" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 L12 13 L20.5 6.5"/></svg>
+        </span>
+        <div class="meta">
+          <span class="lbl">For the careful</span>
+          <span class="ttl">Email</span>
+        </div>
+      </a>
+      <a class="row" href="https://t.me/NinaRonzhina" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M21 4 L2 11 L9 14 L12 21 L15 14 Z"/><path d="M9 14 L17 7"/></svg>
+        </span>
+        <div class="meta">
+          <span class="lbl">For the quick</span>
+          <span class="ttl">Telegram</span>
+        </div>
+      </a>
+      <a class="row" href="https://wa.me/79531724433" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M4 20 L5.5 15.5 A8 8 0 1 1 8.5 18.5 Z"/></svg>
+        </span>
+        <div class="meta">
+          <span class="lbl">For the everywhere</span>
+          <span class="ttl">WhatsApp</span>
+        </div>
+      </a>
+      <a class="row" href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10 V17 M8 7 V7.01 M12 17 V13 a2 2 0 0 1 4 0 V17 M12 10 V17"/></svg>
+        </span>
+        <div class="meta">
+          <span class="lbl">For the formal</span>
+          <span class="ttl">LinkedIn</span>
+        </div>
+      </a>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div>
       <div class="brand-name" style="font-size: 28px; letter-spacing: -0.02em;">Nina <em>Hayden</em></div>
-      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Senior product designer, Brooklyn.</p>
+      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Senior product designer.</p>
     </div>
     <div>
       <h4>Site</h4>
       <ul>
         <li><a href="../index.html">Work</a></li>
         <li><a href="../index.html#about">About</a></li>
-        
         <li><a href="../index.html#contact">Contact</a></li>
       </ul>
     </div>
@@ -277,14 +284,13 @@
         <li><a href="mailto:ronzhina.ni@gmail.com">Email</a></li>
         <li><a href="https://t.me/NinaRonzhina" target="_blank" rel="noopener">Telegram</a></li>
         <li><a href="https://wa.me/79531724433" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>
     <div>
       <h4>Folio</h4>
       <ul>
         <li><a href="#">Download CV</a></li>
-        
       </ul>
     </div>
     <div class="footer-credits">
