@@ -159,6 +159,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: non
 .topbar-cta .arrow { font-size: 13px; transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
 .topbar-cta:hover .arrow { transform: translate(3px, -3px); }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+}
+.lang-switch strong {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.lang-divider { margin: 0 1px; }
+.lang-ru { color: var(--muted); }
+.lang-ru:hover { color: var(--ink-2); }
+
 @media (max-width: 1024px) {
   .topbar { grid-template-columns: auto 1fr auto; gap: 16px; }
   .topbar .avail { display: none; }
