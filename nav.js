@@ -30,7 +30,11 @@
     ${navLinks}
   </nav>
   <div class="meta-right">
+    <!-- LANGUAGE SWITCHER — hidden until RU version is ready -->
+    <!-- Uncomment when /ru/ folder is set up -->
+    <!--
     <span class="lang-switch"><strong>EN</strong><span class="lang-divider"> / </span><span class="lang-ru">RU</span></span>
+    -->
     <a href="${ctaHref}" class="topbar-cta" data-cursor="cta" data-cursor-label="Say hello">Let's talk</a>
   </div>
 </header>`;

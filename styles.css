@@ -13,7 +13,7 @@
   --accent-soft: #d8e6dd;
   --accent-ink: #0e3a25;
 
-  --serif: "Newsreader", "Times New Roman", Times, serif;
+  --serif: 'Plus Jakarta Sans', sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --gutter: clamp(20px, 4vw, 56px);
@@ -368,9 +368,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: non
 .work-head h2 em { font-style: italic; }
 
 .work-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 700px) {
+  .work-list { grid-template-columns: 1fr; }
 }
 .work-card {
   position: relative;
@@ -383,7 +386,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: non
 }
 .work-card:hover { transform: translateY(-4px); }
 .work-card .visual {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   display: block;
   position: relative;
   overflow: hidden;
@@ -405,8 +408,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: non
 .work-card .meta .left { display: flex; flex-direction: column; gap: 6px; }
 .work-card .meta .title {
   font-family: var(--serif);
-  font-size: clamp(28px, 3.4vw, 48px);
-  line-height: 1.05;
+  font-size: clamp(20px, 2vw, 32px);
+  line-height: 1.1;
   letter-spacing: -0.02em;
   text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 2px 18px rgba(0,0,0,0.25);
 }
