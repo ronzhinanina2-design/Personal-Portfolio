@@ -247,12 +247,31 @@
     </div>
     <div><h4>Site</h4><ul><li><a href="../index.html">Work</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#contact">Contact</a></li></ul></div>
     <div><h4>Elsewhere</h4><ul><li><a href="mailto:ronzhina.ni@gmail.com">Email</a></li><li><a href="https://t.me/NinaRonzhina" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://wa.me/79531724433" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
-    <div><h4>Folio</h4><ul><li><a href="#">Download CV</a></li></ul></div>
+    <div><h4>Folio</h4><ul><li class="cv-dropdown"><button class="cv-toggle" aria-expanded="false">Download CV <span class="cv-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><ul class="cv-menu"><li><a href="../assets/nina-hayden-cv-en.pdf" download>English</a></li><li><a href="../assets/nina-hayden-cv-ru.pdf" download>Russian</a></li></ul></li></ul></div>
     <div class="footer-credits"><span>© 2026 Nina Hayden</span></div>
   </footer>
 
 </main>
 
 <script src="../cursor.js"></script>
+<style>
+.cv-dropdown { position: relative; }
+.cv-toggle { background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+.cv-toggle:hover { text-decoration: underline; }
+.cv-chevron { font-style: normal; transition: transform 0.2s; display: inline-block; }
+.cv-toggle[aria-expanded="true"] .cv-chevron { transform: rotate(180deg); }
+.cv-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border-radius: 6px; padding: 4px; margin-top: 10px; min-width: 190px; list-style: none; }
+.cv-menu.open { display: block; }
+.cv-menu li a { display: block; padding: 12px 16px; border-radius: 4px; text-decoration: none; color: var(--ink, #14110d); font-family: var(--serif, 'Newsreader', serif); font-size: 17px; font-weight: 400; letter-spacing: 0; text-transform: none; transition: background 0.15s; }
+.cv-menu li a:hover { background: rgba(210,220,235,0.45); }
+</style>
+<script>
+  const cvToggle = document.querySelector('.cv-toggle');
+  const cvMenu = document.querySelector('.cv-menu');
+  if (cvToggle && cvMenu) {
+    cvToggle.addEventListener('click', e => { e.stopPropagation(); const open = cvMenu.classList.toggle('open'); cvToggle.setAttribute('aria-expanded', open); });
+    document.addEventListener('click', () => { cvMenu.classList.remove('open'); cvToggle.setAttribute('aria-expanded', false); });
+  }
+</script>
 </body>
 </html>
