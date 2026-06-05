@@ -120,14 +120,14 @@
     <span class="eyebrow">Contact</span>
     <h2 class="reveal">Let's <em style="color: rgb(31, 122, 77)">talk.</em></h2>
     <p class="sub reveal">Reach out if you're building something and want a senior pair of eyes on it. I read everything that comes in.</p>
-    <button type="button" class="btn" data-open-modal="contact" data-cursor="cta" data-cursor-label="Say hello">
+    <button type="button" class="btn" data-open-modal="contact">
       Send a note
     </button>
 
     <div class="channels-wrap">
       <span class="section-label channels-label">Or, directly</span>
       <div class="channels">
-        <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Compose" style="background-color: rgb(251, 250, 247)">
+        <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
             <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 L12 13 L20.5 6.5"/></svg>
           </span>
@@ -136,7 +136,7 @@
             <span class="ttl">Email</span>
           </div>
         </a>
-        <a class="row" href="https://t.me/NinaRonzhina" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <a class="row" href="https://t.me/NinaRonzhina" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
             <svg viewBox="0 0 24 24"><path d="M21 4 L2 11 L9 14 L12 21 L15 14 Z"/><path d="M9 14 L17 7"/></svg>
           </span>
@@ -145,7 +145,7 @@
             <span class="ttl">Telegram</span>
           </div>
         </a>
-        <a class="row" href="https://wa.me/79531724433" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <a class="row" href="https://wa.me/79531724433" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
             <svg viewBox="0 0 24 24"><path d="M4 20 L5.5 15.5 A8 8 0 1 1 8.5 18.5 Z"/></svg>
           </span>
@@ -154,7 +154,7 @@
             <span class="ttl">WhatsApp</span>
           </div>
         </a>
-        <a class="row" href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+        <a class="row" href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10 V17 M8 7 V7.01 M12 17 V13 a2 2 0 0 1 4 0 V17 M12 10 V17"/></svg>
           </span>
@@ -201,7 +201,7 @@
           <label for="msg">A few sentences</label>
           <textarea id="msg" name="msg" placeholder="What you're working on, your timeline, and anything else I should know." rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn submit" data-cursor="cta" data-cursor-label="Send">
+        <button type="submit" class="btn submit">
           Send note
         </button>
         <div class="success" id="success">
@@ -254,7 +254,6 @@
 </main>
 
 <script src="../nav.js"></script>
-<script src="../cursor.js"></script>
 <script>
   function openModal(id) {
     const m = document.getElementById('modal-' + id);

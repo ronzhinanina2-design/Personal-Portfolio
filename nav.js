@@ -35,7 +35,7 @@
     <!--
     <span class="lang-switch"><strong>EN</strong><span class="lang-divider"> / </span><span class="lang-ru">RU</span></span>
     -->
-    <a href="${ctaHref}" class="topbar-cta" data-cursor="cta" data-cursor-label="Say hello">Let's talk</a>
+    <a href="${ctaHref}" class="topbar-cta">Let's talk</a>
   </div>
 </header>`;
 
