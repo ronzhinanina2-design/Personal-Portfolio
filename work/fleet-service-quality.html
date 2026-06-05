@@ -1,470 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fleet Service Quality — Nina Hayden</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #F2F3F5;
-      --text: #1A1A1A;
-      --text-secondary: #6B6B6B;
-      --accent: #1DB67E;
-      --card-bg: #FFFFFF;
-      --border: #E0E0E0;
-      --tag-bg: #EAEAEA;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      cursor: none;
-    }
-
-    /* NAV */
-    #site-nav { position: relative; z-index: 100; }
-
-    /* HERO */
-    .proj-hero-image {
-      padding-top: 12px;
-      overflow: visible;
-    }
-    .proj-hero-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    .proj-hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 48px 40px 0;
-    }
-
-    .proj-hero h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-
-    .proj-hero h1 em {
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .proj-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 32px;
-    }
-
-    .proj-tag {
-      background: var(--tag-bg);
-      color: var(--text-secondary);
-      font-size: 0.78rem;
-      font-weight: 500;
-      padding: 6px 14px;
-      border-radius: 100px;
-      letter-spacing: 0.01em;
-    }
-
-    .proj-intro {
-      max-width: 680px;
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-
-    .proj-highlight {
-      font-size: 1rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 48px;
-    }
-
-    /* META GRID */
-    .meta-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 40px 64px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .meta-item label {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-
-    .meta-item span {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    /* SECTIONS */
-    .proj-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 64px 40px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .proj-section:last-of-type {
-      border-bottom: none;
-    }
-
-    .section-label {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .proj-section h2 {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-    }
-
-    .proj-section h2 em {
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .proj-section p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      max-width: 680px;
-      margin-bottom: 16px;
-    }
-
-    .proj-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* TWO-COL LAYOUT */
-    .proj-two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    /* IMAGE */
-    .proj-img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-
-    .proj-img-wide {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-
-    /* HIGHLIGHT BLOCK */
-    .proj-callout {
-      background: var(--card-bg);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 12px 12px 0;
-      padding: 24px 28px;
-      margin-top: 32px;
-      max-width: 640px;
-    }
-
-    .proj-callout p {
-      font-size: 1rem;
-      color: var(--text);
-      font-weight: 500;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* CONTACT */
-    .contact {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 40px;
-    }
-
-    .contact-head {
-      margin-bottom: 48px;
-    }
-
-    .contact-head h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-
-    .contact-head h2 em {
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--text);
-      color: #fff;
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 100px;
-      border: none;
-      cursor: none;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .btn-primary:hover { opacity: 0.8; }
-
-    .contact-divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 32px 0;
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .contact-divider::before,
-    .contact-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .channels {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .channel-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 24px;
-      text-decoration: none;
-      color: var(--text);
-      transition: transform 0.2s;
-    }
-
-    .channel-card:hover { transform: translateY(-2px); }
-
-    .channel-card .ch-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-
-    .channel-card .ch-value {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    /* MODAL */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-overlay.open { display: flex; }
-
-    .modal {
-      background: var(--card-bg);
-      border-radius: 24px;
-      padding: 40px;
-      width: 100%;
-      max-width: 480px;
-      margin: 20px;
-    }
-
-    .modal h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .modal p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-    }
-
-    .modal input,
-    .modal textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--bg);
-      color: var(--text);
-      margin-bottom: 12px;
-      outline: none;
-    }
-
-    .modal textarea { height: 120px; resize: vertical; }
-
-    .modal-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: flex-end;
-    }
-
-    .btn-ghost {
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-family: inherit;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 100px;
-      cursor: none;
-    }
-
-    /* FOOTER */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-    }
-
-    /* CURSOR */
-    .cursor-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--text);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-    }
-
-    .cursor-ring {
-      width: 32px;
-      height: 32px;
-      border: 1.5px solid var(--text);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.12s ease, width 0.25s ease, height 0.25s ease, opacity 0.2s;
-    }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .meta-grid { grid-template-columns: repeat(2, 1fr); }
-      .channels { grid-template-columns: repeat(2, 1fr); }
-      .proj-two-col { grid-template-columns: 1fr; gap: 24px; }
-    }
-
-    @media (max-width: 600px) {
-      .proj-hero, .proj-section, .meta-grid, .contact, .site-footer {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      .meta-grid { grid-template-columns: 1fr 1fr; }
-      .channels { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet Service Quality — Nina Hayden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../scenes.css">
 </head>
-<body>
+<body data-screen-label="Case · Fleet Service Quality">
 
-  <!-- Cursor -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+<div id="site-nav"></div>
+<div class="back-nav">
+  <a href="../index.html" class="back-link" aria-label="Back to home">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M5 12L12 19M5 12L12 5"/>
+    </svg>
+  </a>
+</div>
 
-  <!-- Nav -->
-  <div id="site-nav"></div>
-  <div class="back-nav">
-    <a href="../index.html" class="back-link" aria-label="Back to home">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M19 12H5M5 12L12 19M5 12L12 5"/>
-      </svg>
-    </a>
+<main class="page">
+
+  <!-- Hero image first -->
+  <div class="proj-hero-image" style="padding-top: 12px; overflow: visible;">
+    <img src="fleet-service-quality-hero.png" alt="Fleet Service Quality Platform" style="display: block; width: 100%; height: auto; border-radius: 12px;">
   </div>
 
-  <!-- Hero image -->
-  <div class="proj-hero-image">
-    <img src="fleet-service-quality-hero.png" alt="Fleet Service Quality Platform" />
-  </div>
-
-  <!-- Hero text -->
-  <section class="proj-hero reveal">
+  <!-- Hero text below image -->
+  <section class="proj-hero" style="padding-top: 48px;">
     <div class="proj-tags">
       <span class="proj-tag">Research</span>
       <span class="proj-tag">User Stories</span>
@@ -472,146 +37,291 @@
       <span class="proj-tag">Product Logic</span>
       <span class="proj-tag">Desktop &amp; Mobile</span>
     </div>
-    <h1>FIT FLEET: <em>Service quality platform</em></h1>
-    <p class="proj-intro">Most post-service feedback goes unfilled. We designed a structured assessment flow that corporate fleet clients would actually complete — yes/no questions by category, optional detail for those who want it, and nothing more.</p>
-    <p class="proj-highlight">The platform rolled out to several thousand corporate clients across desktop and mobile.</p>
+    <div>
+      <h1 style="font-size: 64px; line-height: 1.05;">FIT FLEET: <em>Service quality platform</em></h1>
+    </div>
+    <p class="sub" style="font-size: 18px; margin-top: 16px;">
+      Most post-service feedback goes unfilled. We designed a structured assessment flow that corporate fleet clients would actually complete — yes/no questions by category, optional detail for those who want it, and nothing more.
+    </p>
+    <p style="font-size: 1rem; color: var(--accent, #1f7a4d); font-weight: 500; margin-top: 12px;">
+      The platform rolled out to several thousand corporate clients across desktop and mobile.
+    </p>
   </section>
 
-  <!-- Meta -->
-  <div class="meta-grid reveal">
-    <div class="meta-item">
-      <label>Role</label>
-      <span>UX/UI Designer</span>
-    </div>
-    <div class="meta-item">
-      <label>Team</label>
-      <span>2–3 designers · PM · Engineers</span>
-    </div>
-    <div class="meta-item">
-      <label>Year</label>
-      <span>2025</span>
-    </div>
-    <div class="meta-item">
-      <label>Surfaces</label>
-      <span>Web · Mobile</span>
-    </div>
+  <dl class="meta-grid">
+    <div><dt>Role</dt><dd>UX/UI Designer</dd></div>
+    <div><dt>Team</dt><dd>2–3 designers · PM · Engineers</dd></div>
+    <div><dt>Year</dt><dd>2025</dd></div>
+    <div><dt>Surfaces</dt><dd>Web · Mobile</dd></div>
+  </dl>
+
+  <!-- Overview image -->
+  <div style="padding: 0 var(--page-pad, 40px); margin-bottom: 48px;">
+    <img src="fleet-service-quality-01.png" alt="Fleet Service Quality — overview" style="width:100%; border-radius:12px; display:block;">
   </div>
 
-  <!-- The problem -->
-  <section class="proj-section reveal">
-    <span class="section-label">The problem</span>
-    <p>Fleet service clients had no structured way to share feedback after repairs. No consistent data, no quality signal, no way to act on what clients actually experienced.</p>
-    <p>Post-service surveys get abandoned. The form had to feel effortless — or it wouldn't get filled.</p>
-    <img class="proj-img-wide" src="fleet-service-quality-01.png" alt="Problem context" />
+  <!-- Sections -->
+  <section class="proj-section">
+    <h2>The problem</h2>
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        Fleet service clients had no structured way to share feedback after repairs. No consistent data, no quality signal, no way to act on what clients actually experienced.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6; margin-top: 16px;">
+        Post-service surveys get abandoned. The form had to feel effortless — or it wouldn't get filled.
+      </p>
+    </div>
   </section>
 
-  <!-- Approach -->
-  <section class="proj-section reveal">
-    <span class="section-label">Approach</span>
-    <p>We mapped the service journey and identified where feedback was expected but never given. User stories helped define what clients needed — and what would make them drop off.</p>
-    <p>One principle guided the work: ask only what you can act on. Every question needed a clear owner on the business side, or it got cut.</p>
-    <img class="proj-img-wide" src="fleet-service-quality-02.png" alt="Research and approach" />
+  <section class="proj-section">
+    <h2>Approach</h2>
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        We mapped the service journey and identified where feedback was expected but never given. User stories helped define what clients needed — and what would make them drop off.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6; margin-top: 16px;">
+        One principle guided the work: ask only what you can act on. Every question needed a clear owner on the business side, or it got cut.
+      </p>
+    </div>
+    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+      <img src="fleet-service-quality-02.png" alt="Research and approach" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
   </section>
 
-  <!-- The work -->
-  <section class="proj-section reveal">
-    <span class="section-label">The work</span>
-    <p>The assessment fits into two modal screens, with questions grouped by category — budget, speed, cost justification on the first; communication and repair quality on the second.</p>
-    <p>A separate optional step offers a free-text field. Clients who want to say more can. Everyone else just taps through.</p>
-    <img class="proj-img-wide" src="fleet-service-quality-03.png" alt="Assessment flow screens" />
+  <section class="proj-section">
+    <h2>The work</h2>
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        The assessment fits into two modal screens, with questions grouped by category — budget, speed, cost justification on the first; communication and repair quality on the second.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6; margin-top: 16px;">
+        A separate optional step offers a free-text field. Clients who want to say more can. Everyone else just taps through.
+      </p>
+    </div>
+    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+      <img src="fleet-service-quality-03.png" alt="Assessment flow screens" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
   </section>
 
-  <!-- Design decisions -->
-  <section class="proj-section reveal">
-    <span class="section-label">Design decisions</span>
-    <div class="proj-two-col">
-      <div>
-        <p>Two screens — not one question per screen — gives users a sense of scope upfront. Category headers (Budget, Speed, Quality, Communication) break up the form and keep it from feeling like a wall of questions.</p>
-        <p>Every answer is binary. Yes or no. The free-form step is fully separate, so it never blocks clients who just want to submit.</p>
+  <section class="proj-section">
+    <h2>Design decisions</h2>
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        Two screens — not one question per screen — gives users a sense of scope upfront. Category headers (Budget, Speed, Quality, Communication) break up the form and keep it from feeling like a wall of questions.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6; margin-top: 16px;">
+        Every answer is binary. Yes or no. The free-form step is fully separate, so it never blocks clients who just want to submit.
+      </p>
+    </div>
+    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+      <img src="fleet-service-quality-04.png" alt="Design decision detail" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
+  </section>
 
+  <section class="proj-section">
+    <h2>Outcome</h2>
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        The platform launched as part of the FIT FLEET ecosystem and was implemented for several thousand corporate fleet clients — giving the business its first structured quality signal at scale.
+      </p>
+    </div>
+    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+      <img src="fleet-service-quality-05.png" alt="Outcome" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section class="contact-section" id="contact">
+    <span class="eyebrow">Contact</span>
+    <h2 class="reveal">Let's <em style="color: rgb(31, 122, 77)">talk.</em></h2>
+    <p class="sub reveal">Reach out if you're building something and want a senior pair of eyes on it. I read everything that comes in.</p>
+    <button type="button" class="btn" data-open-modal="contact" data-cursor="cta" data-cursor-label="Say hello">
+      Send a note
+    </button>
+
+    <div class="channels-wrap">
+      <span class="section-label channels-label">Or, directly</span>
+      <div class="channels">
+        <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Compose" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 L12 13 L20.5 6.5"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the careful</span>
+            <span class="ttl">Email</span>
+          </div>
+        </a>
+        <a class="row" href="https://t.me/NinaRonzhina" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M21 4 L2 11 L9 14 L12 21 L15 14 Z"/><path d="M9 14 L17 7"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the quick</span>
+            <span class="ttl">Telegram</span>
+          </div>
+        </a>
+        <a class="row" href="https://wa.me/79531724433" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M4 20 L5.5 15.5 A8 8 0 1 1 8.5 18.5 Z"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the everywhere</span>
+            <span class="ttl">WhatsApp</span>
+          </div>
+        </a>
+        <a class="row" href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener" data-cursor="card" data-cursor-label="Open" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10 V17 M8 7 V7.01 M12 17 V13 a2 2 0 0 1 4 0 V17 M12 10 V17"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the formal</span>
+            <span class="ttl">LinkedIn</span>
+          </div>
+        </a>
       </div>
-      <div>
-        <img class="proj-img" src="fleet-service-quality-04.png" alt="Design decision detail" style="margin-top: 0;" />
+    </div>
+  </section>
+
+  <!-- Send a note modal -->
+  <div class="modal" id="modal-contact" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <span class="section-label" id="modal-title">Send a note</span>
+        <button class="modal-close" type="button" data-close-modal aria-label="Close">✕</button>
       </div>
-    </div>
-  </section>
-
-  <!-- Outcome -->
-  <section class="proj-section reveal">
-    <span class="section-label">Outcome</span>
-    <p>The platform launched as part of the FIT FLEET ecosystem and was implemented for several thousand corporate fleet clients — giving the business its first structured quality signal at scale.</p>
-    <img class="proj-img-wide" src="fleet-service-quality-05.png" alt="Outcome" />
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="contact-head reveal">
-      <span class="section-label">Contact</span>
-      <h2>Let's <em>talk.</em></h2>
-      <button class="btn-primary" onclick="document.getElementById('contactModal').classList.add('open')">
-        Send a note
-      </button>
-    </div>
-
-    <div class="contact-divider">OR, DIRECTLY</div>
-
-    <div class="channels">
-      <a href="mailto:nina@ninahayden.design" class="channel-card reveal">
-        <div class="ch-label">Email</div>
-        <div class="ch-value">nina@ninahayden.design</div>
-      </a>
-      <a href="https://t.me/ninahayden" class="channel-card reveal" target="_blank" rel="noopener">
-        <div class="ch-label">Telegram</div>
-        <div class="ch-value">@ninahayden</div>
-      </a>
-      <a href="https://wa.me/message/ninahayden" class="channel-card reveal" target="_blank" rel="noopener">
-        <div class="ch-label">WhatsApp</div>
-        <div class="ch-value">Write me</div>
-      </a>
-      <a href="https://linkedin.com/in/nina-ronzhina" class="channel-card reveal" target="_blank" rel="noopener">
-        <div class="ch-label">LinkedIn</div>
-        <div class="ch-value">nina-ronzhina</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact modal -->
-  <div class="modal-overlay" id="contactModal">
-    <div class="modal">
-      <h3>Send a note</h3>
-      <p>I'll get back to you within a day.</p>
-      <form action="https://formspree.io/f/xqejwlyj" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="What's on your mind?"></textarea>
-        <div class="modal-actions">
-          <button type="button" class="btn-ghost" onclick="document.getElementById('contactModal').classList.remove('open')">Cancel</button>
-          <button type="submit" class="btn-primary">Send</button>
+      <form class="form" id="contact-form">
+        <div class="label-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+        </div>
+        <div class="label-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="label-row">
+          <label>What are you reaching out about?</label>
+          <div class="pillpick">
+            <input type="radio" id="t1" name="topic" value="freelance" checked>
+            <label for="t1">Freelance project</label>
+            <input type="radio" id="t2" name="topic" value="full-time">
+            <label for="t2">Full-time role</label>
+            <input type="radio" id="t3" name="topic" value="advice">
+            <label for="t3">Advice / chat</label>
+            <input type="radio" id="t4" name="topic" value="other">
+            <label for="t4">Something else</label>
+          </div>
+        </div>
+        <div class="label-row">
+          <label for="msg">A few sentences</label>
+          <textarea id="msg" name="msg" placeholder="What you're working on, your timeline, and anything else I should know." rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn submit" data-cursor="cta" data-cursor-label="Send">
+          Send note
+        </button>
+        <div class="success" id="success">
+          Thanks — your note is in. I'll reply within two business days, usually faster.
         </div>
       </form>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <span>© 2025 Nina Hayden</span>
-    <span>Product Designer</span>
+  <footer class="footer">
+    <div>
+      <div class="brand-name" style="font-size: 28px; letter-spacing: -0.02em;">Nina <em>Hayden</em></div>
+      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Product designer.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="../index.html">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <ul>
+        <li><a href="mailto:ronzhina.ni@gmail.com">Email</a></li>
+        <li><a href="https://t.me/NinaRonzhina" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="https://wa.me/79531724433" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Folio</h4>
+      <ul>
+        <li class="cv-dropdown">
+          <button class="cv-toggle" aria-expanded="false">Download CV <span class="cv-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <ul class="cv-menu">
+            <li><a href="../assets/nina-hayden-cv-en.pdf" download>English</a></li>
+            <li><a href="../assets/nina-hayden-cv-ru.pdf" download>Russian</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-credits">
+      <span>© 2026 Nina Hayden</span>
+    </div>
   </footer>
 
-  <script src="../nav.js"></script>
-  <script src="../cursor.js"></script>
-  <script>
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
+</main>
 
-    // Close modal on overlay click
-    document.getElementById('contactModal').addEventListener('click', function(e) {
-      if (e.target === this) this.classList.remove('open');
-    });
-  </script>
+<script src="../nav.js"></script>
+<script src="../cursor.js"></script>
+<script>
+  // Modal
+  function openModal(id) {
+    const m = document.getElementById('modal-' + id);
+    if (!m) return;
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => m.querySelector('input, textarea')?.focus(), 200);
+  }
+  function closeAllModals() {
+    document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m => m.setAttribute('aria-hidden', 'true'));
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-open-modal]').forEach(b => {
+    b.addEventListener('click', e => { e.preventDefault(); openModal(b.dataset.openModal); });
+  });
+  document.querySelectorAll('[data-close-modal]').forEach(b => {
+    b.addEventListener('click', closeAllModals);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAllModals(); });
+  document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/xqejwlyj', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        document.getElementById('success').classList.add('show');
+        setTimeout(() => { this.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(el => el.value = ''); }, 100);
+        setTimeout(closeAllModals, 2200);
+      }
+    } catch(err) { console.error('Form error', err); }
+  });
+
+  // CV dropdown
+  const cvToggle = document.querySelector('.cv-toggle');
+  const cvMenu = document.querySelector('.cv-menu');
+  if (cvToggle && cvMenu) {
+    cvToggle.addEventListener('click', e => { e.stopPropagation(); const open = cvMenu.classList.toggle('open'); cvToggle.setAttribute('aria-expanded', open); });
+    document.addEventListener('click', () => { cvMenu.classList.remove('open'); cvToggle.setAttribute('aria-expanded', false); });
+  }
+</script>
+
+<style>
+.cv-dropdown { position: relative; }
+.cv-toggle { background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+.cv-toggle:hover { text-decoration: underline; }
+.cv-chevron { font-style: normal; transition: transform 0.2s; display: inline-block; }
+.cv-toggle[aria-expanded="true"] .cv-chevron { transform: rotate(180deg); }
+.cv-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border-radius: 6px; padding: 4px; margin-top: 10px; min-width: 190px; list-style: none; }
+.cv-menu.open { display: block; }
+.cv-menu li a { display: block; padding: 12px 16px; border-radius: 4px; text-decoration: none; color: var(--ink, #14110d); font-family: var(--serif, 'Plus Jakarta Sans', sans-serif); font-size: 17px; font-weight: 400; letter-spacing: 0; text-transform: none; transition: background 0.15s; }
+.cv-menu li a:hover { background: rgba(210,220,235,0.45); }
+</style>
 </body>
 </html>
