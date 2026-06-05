@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleet Service Quality — Nina Hayden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F2F3F5;
+      --text: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --accent: #1DB67E;
+      --card-bg: #FFFFFF;
+      --border: #E0E0E0;
+      --tag-bg: #EAEAEA;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      cursor: none;
+    }
+
+    /* NAV */
+    #site-nav { position: relative; z-index: 100; }
+
+    /* HERO */
+    .proj-hero-image {
+      padding-top: 12px;
+      overflow: visible;
+    }
+    .proj-hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .proj-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 40px 0;
+    }
+
+    .proj-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .proj-hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .proj-tag {
+      background: var(--tag-bg);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      letter-spacing: 0.01em;
+    }
+
+    .proj-intro {
+      max-width: 680px;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .proj-highlight {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 48px;
+    }
+
+    /* META GRID */
+    .meta-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 64px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-item label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .meta-item span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    .proj-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .proj-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .proj-section h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .proj-section h2 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .proj-section p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
+
+    .proj-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* TWO-COL LAYOUT */
+    .proj-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* IMAGE */
+    .proj-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    .proj-img-wide {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    /* HIGHLIGHT BLOCK */
+    .proj-callout {
+      background: var(--card-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin-top: 32px;
+      max-width: 640px;
+    }
+
+    .proj-callout p {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* CONTACT */
+    .contact {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
+
+    .contact-head {
+      margin-bottom: 48px;
+    }
+
+    .contact-head h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .contact-head h2 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 100px;
+      border: none;
+      cursor: none;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.8; }
+
+    .contact-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 32px 0;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .channels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .channel-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s;
+    }
+
+    .channel-card:hover { transform: translateY(-2px); }
+
+    .channel-card .ch-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .channel-card .ch-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      margin: 20px;
+    }
+
+    .modal h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .modal p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .modal input,
+    .modal textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+      margin-bottom: 12px;
+      outline: none;
+    }
+
+    .modal textarea { height: 120px; resize: vertical; }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .btn-ghost {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 100px;
+      cursor: none;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+    }
+
+    /* CURSOR */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+    }
+
+    .cursor-ring {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid var(--text);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s ease, width 0.25s ease, height 0.25s ease, opacity 0.2s;
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .channels { grid-template-columns: repeat(2, 1fr); }
+      .proj-two-col { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .proj-hero, .proj-section, .meta-grid, .contact, .site-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .meta-grid { grid-template-columns: 1fr 1fr; }
+      .channels { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Nav -->
+  <div id="site-nav"></div>
+  <div class="back-nav">
+    <a href="../index.html" class="back-link" aria-label="Back to home">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M5 12L12 19M5 12L12 5"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Hero image -->
+  <div class="proj-hero-image">
+    <img src="fleet-service-quality-hero.png" alt="Fleet Service Quality Platform" />
+  </div>
+
+  <!-- Hero text -->
+  <section class="proj-hero reveal">
+    <div class="proj-tags">
+      <span class="proj-tag">Research</span>
+      <span class="proj-tag">User Stories</span>
+      <span class="proj-tag">UX/UI</span>
+      <span class="proj-tag">Product Logic</span>
+      <span class="proj-tag">Desktop &amp; Mobile</span>
+    </div>
+    <h1>FIT FLEET: <em>Service quality platform</em></h1>
+    <p class="proj-intro">Most post-service feedback goes unfilled. We designed a structured assessment flow that corporate fleet clients would actually complete — yes/no questions by category, optional detail for those who want it, and nothing more.</p>
+    <p class="proj-highlight">The platform rolled out to several thousand corporate clients across desktop and mobile.</p>
+  </section>
+
+  <!-- Meta -->
+  <div class="meta-grid reveal">
+    <div class="meta-item">
+      <label>Role</label>
+      <span>UX/UI Designer</span>
+    </div>
+    <div class="meta-item">
+      <label>Team</label>
+      <span>2–3 designers · PM · Engineers</span>
+    </div>
+    <div class="meta-item">
+      <label>Year</label>
+      <span>2025</span>
+    </div>
+    <div class="meta-item">
+      <label>Surfaces</label>
+      <span>Web · Mobile</span>
+    </div>
+  </div>
+
+  <!-- The problem -->
+  <section class="proj-section reveal">
+    <span class="section-label">The problem</span>
+    <p>Fleet service clients had no structured way to share feedback after repairs. No consistent data, no quality signal, no way to act on what clients actually experienced.</p>
+    <p>Post-service surveys get abandoned. The form had to feel effortless — or it wouldn't get filled.</p>
+    <img class="proj-img-wide" src="fleet-service-quality-01.png" alt="Problem context" />
+  </section>
+
+  <!-- Approach -->
+  <section class="proj-section reveal">
+    <span class="section-label">Approach</span>
+    <p>We mapped the service journey and identified where feedback was expected but never given. User stories helped define what clients needed — and what would make them drop off.</p>
+    <p>One principle guided the work: ask only what you can act on. Every question needed a clear owner on the business side, or it got cut.</p>
+    <img class="proj-img-wide" src="fleet-service-quality-02.png" alt="Research and approach" />
+  </section>
+
+  <!-- The work -->
+  <section class="proj-section reveal">
+    <span class="section-label">The work</span>
+    <p>The assessment fits into two modal screens, with questions grouped by category — budget, speed, cost justification on the first; communication and repair quality on the second.</p>
+    <p>A separate optional step offers a free-text field. Clients who want to say more can. Everyone else just taps through.</p>
+    <img class="proj-img-wide" src="fleet-service-quality-03.png" alt="Assessment flow screens" />
+  </section>
+
+  <!-- Design decisions -->
+  <section class="proj-section reveal">
+    <span class="section-label">Design decisions</span>
+    <div class="proj-two-col">
+      <div>
+        <p>Two screens — not one question per screen — gives users a sense of scope upfront. Category headers (Budget, Speed, Quality, Communication) break up the form and keep it from feeling like a wall of questions.</p>
+        <p>Every answer is binary. Yes or no. The free-form step is fully separate, so it never blocks clients who just want to submit.</p>
+
+      </div>
+      <div>
+        <img class="proj-img" src="fleet-service-quality-04.png" alt="Design decision detail" style="margin-top: 0;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="proj-section reveal">
+    <span class="section-label">Outcome</span>
+    <p>The platform launched as part of the FIT FLEET ecosystem and was implemented for several thousand corporate fleet clients — giving the business its first structured quality signal at scale.</p>
+    <img class="proj-img-wide" src="fleet-service-quality-05.png" alt="Outcome" />
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-head reveal">
+      <span class="section-label">Contact</span>
+      <h2>Let's <em>talk.</em></h2>
+      <button class="btn-primary" onclick="document.getElementById('contactModal').classList.add('open')">
+        Send a note
+      </button>
+    </div>
+
+    <div class="contact-divider">OR, DIRECTLY</div>
+
+    <div class="channels">
+      <a href="mailto:nina@ninahayden.design" class="channel-card reveal">
+        <div class="ch-label">Email</div>
+        <div class="ch-value">nina@ninahayden.design</div>
+      </a>
+      <a href="https://t.me/ninahayden" class="channel-card reveal" target="_blank" rel="noopener">
+        <div class="ch-label">Telegram</div>
+        <div class="ch-value">@ninahayden</div>
+      </a>
+      <a href="https://wa.me/message/ninahayden" class="channel-card reveal" target="_blank" rel="noopener">
+        <div class="ch-label">WhatsApp</div>
+        <div class="ch-value">Write me</div>
+      </a>
+      <a href="https://linkedin.com/in/nina-ronzhina" class="channel-card reveal" target="_blank" rel="noopener">
+        <div class="ch-label">LinkedIn</div>
+        <div class="ch-value">nina-ronzhina</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact modal -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal">
+      <h3>Send a note</h3>
+      <p>I'll get back to you within a day.</p>
+      <form action="https://formspree.io/f/xqejwlyj" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="What's on your mind?"></textarea>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" onclick="document.getElementById('contactModal').classList.remove('open')">Cancel</button>
+          <button type="submit" class="btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span>© 2025 Nina Hayden</span>
+    <span>Product Designer</span>
+  </footer>
+
+  <script src="../nav.js"></script>
+  <script src="../cursor.js"></script>
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Close modal on overlay click
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
