@@ -41,4 +41,11 @@
 
   const root = document.getElementById('site-nav');
   if (root) root.outerHTML = html;
+
+  // Add favicon
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/png';
+  favicon.href = '/favicon.png';
+  document.head.appendChild(favicon);
 })();
