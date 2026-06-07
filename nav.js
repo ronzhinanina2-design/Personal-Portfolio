@@ -1,7 +1,6 @@
 (function () {
   const isWork = /\/work\//.test(window.location.pathname);
   const base = isWork ? '../' : '';
-  const ctaHref = isWork ? '../index.html#contact' : '#contact';
 
   const links = isWork
     ? [
@@ -35,12 +34,20 @@
     <!--
     <span class="lang-switch"><strong>EN</strong><span class="lang-divider"> / </span><span class="lang-ru">RU</span></span>
     -->
-    <a href="${ctaHref}" class="topbar-cta">Let's talk</a>
+    <a href="#contact" class="topbar-cta">Let's talk</a>
   </div>
 </header>`;
 
   const root = document.getElementById('site-nav');
   if (root) root.outerHTML = html;
+
+  // Wire "Let's talk" to open contact modal
+  document.querySelector('.topbar-cta')?.addEventListener('click', e => {
+    e.preventDefault();
+    const modal = document.getElementById('modal-contact');
+    if (modal) { modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+    else { window.location.href = '/#contact'; }
+  });
 
   // Add favicon
   const favicon = document.createElement('link');
