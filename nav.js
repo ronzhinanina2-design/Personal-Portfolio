@@ -34,7 +34,7 @@
     <!--
     <span class="lang-switch"><strong>EN</strong><span class="lang-divider"> / </span><span class="lang-ru">RU</span></span>
     -->
-    <a href="#contact" class="topbar-cta">Let's talk</a>
+    <a href="javascript:void(0)" class="topbar-cta">Let's talk</a>
   </div>
 </header>`;
 

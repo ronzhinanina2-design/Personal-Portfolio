@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "/usr/bin/python3",
-      "runtimeArgs": ["/Users/ronzinanina/Documents/Portfolio Site/Personal Portfolio/.claude/serve.py"],
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8765"],
       "port": 8765
     }
   ]

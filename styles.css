@@ -287,7 +287,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-top: 24px;
 }
 @media (max-width: 800px) {
-  .footer { grid-template-columns: 1fr 1fr; }
+  .footer { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .footer > div:first-child { grid-column: 1 / -1; }
 }
 
 /* ─── Back nav ─────────────────────────────────────────────────── */
@@ -1000,98 +1001,153 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ─── Mobile overrides (≤768px) ────────────────────────────────── */
 @media (max-width: 768px) {
-  /* 4. Fix horizontal scroll on header */
-  body, .page, .topbar {
-    max-width: 100%;
+  /* Prevent horizontal scroll */
+  html, body {
     overflow-x: hidden;
+    max-width: 100%;
   }
+
+  /* Topbar */
   .topbar {
-    padding: 12px 16px;
+    padding: 12px 16px !important;
   }
 
-  /* 5. H1 size on main page */
-  .hero h1, .hero-title {
-    font-size: clamp(32px, 8vw, 48px);
-    line-height: 1.1;
+  /* Page padding */
+  .page {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
-  /* 6. Global mobile padding */
-  .page, main {
-    padding-left: 16px;
-    padding-right: 16px;
+  /* Hero H1 — override inline font-size and width */
+  .hero h1, .display {
+    font-size: clamp(28px, 8vw, 44px) !important;
+    width: auto !important;
+    max-width: 100% !important;
+    line-height: 1.1 !important;
   }
 
-  /* 7. Reduce section spacing */
-  section, .proj-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+  /* Section spacing */
+  .hero {
+    height: auto !important;
+    padding: 32px 0 !important;
+  }
+  .hero-grid {
+    height: auto !important;
+    gap: 16px !important;
+  }
+  section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
   .divider, hr {
-    margin: 32px 0;
+    margin: 24px 0 !important;
   }
 
-  /* 8. Fix gap between About and Contact */
+  /* About + Contact gap */
   .about, #about {
-    padding-bottom: 40px;
+    padding-bottom: 40px !important;
+    margin-top: 48px !important;
+    padding-top: 48px !important;
   }
   .contact-section, #contact {
-    padding-top: 40px;
+    padding-top: 40px !important;
+    padding-bottom: 80px !important;
+    margin-top: 0 !important;
   }
 
-  /* 9. Contact channel cards — 2×2 grid */
-  .channels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  /* Footer: brand full-width on top, Site + Folio side by side below */
+  .footer {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 24px !important;
   }
-  .channels .row {
-    aspect-ratio: 1 / 1;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 16px;
-  }
-
-  /* 10. Tighter spacing: back arrow → hero → H1 */
-  .back-nav {
-    padding: 8px 16px 0;
-  }
-  .proj-hero-image {
-    padding-top: 8px;
-  }
-  .proj-hero {
-    padding-top: 16px;
-  }
-
-  /* 11. Smaller H1 on case study pages */
-  .proj-hero h1 {
-    font-size: clamp(28px, 7vw, 40px);
-    line-height: 1.1;
-  }
-
-  /* 12. Overview image full width with side padding */
-  .proj-hero-image img,
-  .proj-section img,
-  [style*="proj-hero-image"] img {
-    width: calc(100% + 32px);
-    margin-left: -16px;
-    border-radius: 8px;
-  }
-
-  /* 13. Section labels always left-aligned */
-  .proj-section h2,
-  [class*="proj-section"] > h2 {
-    text-align: left;
-    width: 100%;
+  .footer > div:first-child {
     grid-column: 1 / -1;
   }
 
-  /* 14. All images in case studies full width */
+  /* Contact channel cards — 2×2 grid */
+  .channels {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+  .channels .row {
+    aspect-ratio: 1 / 1 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    padding: 16px !important;
+  }
+
+  /* ── Case study pages ── */
+
+  /* Back arrow */
+  .back-nav {
+    padding: 8px 16px 0 !important;
+  }
+
+  /* Hero image — keep page padding (16px each side), no overflow */
+  .proj-hero-image {
+    margin: 0 !important;
+    padding: 16px 0 8px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    aspect-ratio: unset !important;
+  }
+  .proj-hero-image img {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+
+  /* Hero text */
+  .proj-hero {
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .proj-hero h1 {
+    font-size: clamp(28px, 7vw, 40px) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Sections: stack h2 above body */
+  .proj-section {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 32px 0 !important;
+  }
+  .proj-section h2 {
+    position: static !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+  .proj-section .body {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    max-width: 100% !important;
+  }
+
+  /* All images in sections: full width, respect 16px page padding, no bleed */
   .proj-section img,
+  .proj-section [style*="grid-column"] img,
   .body img {
-    width: calc(100% + 32px);
-    margin-left: -16px;
-    border-radius: 8px;
-    display: block;
+    width: 100% !important;
+    margin: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+  /* Reset the inline grid-column and negative margin wrappers */
+  .proj-section > [style*="grid-column"] {
+    grid-column: 1 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Overview image (styled inline with padding wrapper) */
+  [style*="page-pad"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
