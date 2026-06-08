@@ -278,6 +278,12 @@
 .cv-menu li a:focus,
 .cv-menu li a:focus-visible { outline: none; box-shadow: none; }
 </style>
+<script>
+  if (!window.location.pathname.startsWith('/en/') &&
+      !window.location.pathname.startsWith('/ru/')) {
+    window.location.replace('/en/');
+  }
+</script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="nav.js"></script><script>
   // Modal open / close
   function openModal(id) {
