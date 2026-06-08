@@ -1,13 +1,25 @@
 (function () {
-  const isWork = /\/work\//.test(window.location.pathname);
-  const base = isWork ? '../' : '';
+  const path = window.location.pathname;
+  const isWork = /\/work\//.test(path);
+  const isRu = path.startsWith('/ru/');
+  const isEn = path.startsWith('/en/');
+  const lang = isRu ? 'ru' : 'en';
+
+  // Build equivalent page URL in the other language
+  function switchLangHref(targetLang) {
+    if (path.startsWith('/en/')) return path.replace('/en/', '/' + targetLang + '/');
+    if (path.startsWith('/ru/')) return path.replace('/ru/', '/' + targetLang + '/');
+    return '/' + targetLang + '/';
+  }
+
+  const indexHref = isRu ? '/ru/index.html' : '/en/index.html';
 
   const links = isWork
     ? [
-        { href: '../index.html',         label: 'Home' },
-        { href: '../index.html#work',    label: 'Work', active: true },
-        { href: '../index.html#about',   label: 'About' },
-        { href: '../index.html#contact', label: 'Contact' },
+        { href: indexHref,           label: 'Home' },
+        { href: indexHref + '#work', label: 'Work', active: true },
+        { href: indexHref + '#about',   label: 'About' },
+        { href: indexHref + '#contact', label: 'Contact' },
       ]
     : [
         { href: '#top',     label: 'Home', active: true },
@@ -20,20 +32,25 @@
     .map(l => `<a href="${l.href}"${l.active ? ' class="is-active"' : ''}>${l.label}</a>`)
     .join('\n    ');
 
+  const enHref = switchLangHref('en');
+  const ruHref = switchLangHref('ru');
+
+  const langSwitch = `<span class="lang-switch">
+      <a href="${enHref}" class="${lang === 'en' ? 'active' : ''}">EN</a>
+      <span class="divider">/</span>
+      <a href="${ruHref}" class="${lang === 'ru' ? 'active' : ''}">RU</a>
+    </span>`;
+
   const html = `<header class="topbar">
   <div class="brand">
-    <a href="${base}index.html" class="brand-name">Nina <em>Hayden</em></a>
+    <a href="${indexHref}" class="brand-name">Nina <em>Hayden</em></a>
     <span class="avail" title="Available for select projects"><span class="dot"></span>AVAILABLE NOW</span>
   </div>
   <nav class="nav">
     ${navLinks}
   </nav>
   <div class="meta-right">
-    <!-- LANGUAGE SWITCHER — hidden until RU version is ready -->
-    <!-- Uncomment when /ru/ folder is set up -->
-    <!--
-    <span class="lang-switch"><strong>EN</strong><span class="lang-divider"> / </span><span class="lang-ru">RU</span></span>
-    -->
+    ${langSwitch}
     <a href="javascript:void(0)" class="topbar-cta">Let's talk</a>
   </div>
 </header>`;
@@ -46,7 +63,7 @@
     e.preventDefault();
     const modal = document.getElementById('modal-contact');
     if (modal) { modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-    else { window.location.href = '/#contact'; }
+    else { window.location.href = indexHref + '#contact'; }
   });
 
   // Add favicon

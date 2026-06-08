@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ─── PER-PROJECT EDITS ────────────────────────────────────────
+     Page title           — set <title> below
+     Hero brand color     — set `--cs-brand` on .cs-hero (e.g. #0e2823, #1a2240)
+     Hero ink color       — set `--cs-brand-ink` if you want a non-cream foreground
+     Read time            — auto-calc by counting words / 220, then round
+     Prev / Next links    — bottom of file
+     ────────────────────────────────────────────────────────────── -->
+<title>Project Title — Nina Hayden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../scenes.css">
+
+<style>
+/* ─── Case study template ─────────────────────────────────────── */
+
+/* Brand-colored hero — the one place project colors enter the page chrome */
+.cs-hero {
+  --cs-brand: #0e2823;
+  --cs-brand-ink: #f3efe3;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 56px var(--gutter) 0;
+  background: var(--cs-brand);
+  color: var(--cs-brand-ink);
+  position: relative;
+  overflow: hidden;
+}
+.cs-hero::after {
+  /* subtle film grain to keep large flat color cinematic, not flat */
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 0%, color-mix(in srgb, var(--cs-brand-ink) 6%, transparent), transparent 60%);
+  pointer-events: none;
+}
+.cs-hero .inner { position: relative; z-index: 1; }
+
+.cs-hero .eyebrow-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-bottom: 80px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--cs-brand-ink) 60%, transparent);
+}
+.cs-hero .eyebrow-row .read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--cs-brand-ink) 20%, transparent);
+  border-radius: 999px;
+}
+.cs-hero .eyebrow-row .read-time::before {
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: color-mix(in srgb, var(--cs-brand-ink) 70%, transparent);
+}
+
+.cs-hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 7.4vw, 116px);
+  line-height: 0.96;
+  letter-spacing: -0.028em;
+  margin: 0 0 28px;
+  text-wrap: balance;
+  max-width: 24ch;
+}
+.cs-hero h1 em { font-style: italic; }
+
+.cs-hero .lead {
+  font-family: var(--serif);
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.42;
+  color: color-mix(in srgb, var(--cs-brand-ink) 80%, transparent);
+  max-width: 64ch;
+  margin: 0 0 40px;
+  text-wrap: balance;
+}
+
+.cs-hero .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 80px;
+}
+.cs-hero .tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cs-brand-ink) 8%, transparent);
+  color: color-mix(in srgb, var(--cs-brand-ink) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cs-brand-ink) 14%, transparent);
+}
+
+/* Hero mockup — overlaps bottom edge to bleed into the next (paper) section */
+.cs-hero-image {
+  margin: 0 -2% -8%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 -1px 0 color-mix(in srgb, var(--cs-brand-ink) 8%, transparent),
+              0 60px 120px rgba(0,0,0,0.45);
+}
+
+/* Detail cards row — light neutral background, no captions */
+.cs-details {
+  padding: 140px 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.cs-details .card {
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--paper-2);
+  position: relative;
+}
+
+/* Sidebar-label section (Context, Problem, Process, Outcome) */
+.cs-section {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 40px;
+  padding: 64px 0;
+}
+.cs-section .label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.cs-section .label .num {
+  font-feature-settings: "tnum";
+  color: var(--ink-2);
+}
+
+.cs-section .body {
+  max-width: 65ch;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.cs-section .body p {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.55;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.cs-section .body p.lead {
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1.28;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  max-width: 40ch;
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+.cs-section .body p em { font-style: italic; }
+
+/* Solution body breaks out of the 65ch column to allow full-bleed figures + highlights */
+.cs-section.solution .body { max-width: none; }
+.cs-section.solution .body p { max-width: 65ch; }
+
+/* Process — numbered decision list */
+.cs-decisions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.cs-decisions .item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--hairline);
+  align-items: start;
+}
+.cs-decisions .item:last-child { border-bottom: 1px solid var(--hairline); }
+.cs-decisions .item .n {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-top: 8px;
+}
+.cs-decisions .item h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  margin: 0 0 8px;
+}
+.cs-decisions .item h4 em { font-style: italic; }
+.cs-decisions .item p {
+  margin: 0;
+  font-size: 17px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* Full-bleed interstitial image between sections — no borders, just breathing room */
+.cs-interstitial {
+  margin: 32px 0;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background: var(--paper-2);
+  aspect-ratio: 16 / 9;
+}
+.cs-interstitial.wide { aspect-ratio: 21 / 9; }
+.cs-interstitial.tall { aspect-ratio: 3 / 2; }
+.cs-interstitial.dark { background: var(--ink); }
+.cs-interstitial .caption {
+  position: absolute;
+  bottom: 16px; left: 20px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(248, 245, 237, 0.86);
+  background: rgba(20, 17, 13, 0.55);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 6px 11px;
+  border-radius: 999px;
+}
+
+/* Full-bleed figures (Solution section) */
+.cs-figure {
+  margin: 12px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: var(--paper-2);
+  aspect-ratio: 16 / 9;
+}
+.cs-figure.wide { aspect-ratio: 21 / 9; }
+.cs-figure.tall { aspect-ratio: 4 / 5; }
+.cs-figure.dark { background: var(--ink); }
+.cs-figure .caption {
+  position: absolute;
+  bottom: 14px; left: 16px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(248, 245, 237, 0.86);
+  background: rgba(20, 17, 13, 0.55);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 6px 11px;
+  border-radius: 999px;
+}
+.cs-figure .caption.light {
+  color: var(--ink-2);
+  background: color-mix(in srgb, var(--paper) 80%, transparent);
+}
+
+.cs-figure-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0;
+}
+.cs-figure-row .cs-figure { margin: 0; aspect-ratio: 4/3; }
+
+/* ─── Highlight blocks ─────────────────────────────────────────── */
+
+/* A — Pull-quote */
+.cs-pull {
+  margin: 24px 0;
+  padding: 36px 40px 36px 44px;
+  background: var(--paper-2);
+  border-radius: 18px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1.28;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  text-wrap: balance;
+  position: relative;
+  max-width: 36ch;
+}
+.cs-pull::before {
+  content: "“";
+  position: absolute;
+  top: 4px; left: 22px;
+  font-family: var(--serif);
+  font-size: 92px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.32;
+  pointer-events: none;
+}
+.cs-pull em { font-style: italic; color: var(--accent); }
+.cs-pull .attr {
+  display: block;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+/* B — Stat / metric block */
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin: 24px 0;
+}
+.cs-stats.two { grid-template-columns: repeat(2, 1fr); }
+.cs-stats.one { grid-template-columns: 1fr; }
+.cs-stats .stat {
+  padding: 40px 24px 36px 0;
+  border-right: 1px solid var(--hairline);
+}
+.cs-stats .stat:last-child { border-right: 0; }
+.cs-stats .num {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 5.6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.cs-stats .num em { font-style: italic; color: var(--accent); }
+.cs-stats .lbl {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 14px;
+  max-width: 28ch;
+}
+
+/* C — Annotation / decision note */
+.cs-annotation {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  margin: 24px 0;
+  align-items: stretch;
+}
+.cs-annotation .figure {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--paper-2);
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+.cs-annotation .note {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  padding: 8px 0;
+}
+.cs-annotation .note .tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-annotation .note .tag::before {
+  content: "";
+  display: inline-block;
+  width: 22px; height: 1px;
+  background: currentColor;
+}
+.cs-annotation .note p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.cs-annotation .note p em { font-style: italic; }
+.cs-annotation.right { grid-template-columns: 1fr 1.5fr; }
+.cs-annotation.right .figure { order: 2; }
+.cs-annotation.right .note { order: 1; align-items: flex-start; }
+
+/* ─── Navigation footer ────────────────────────────────────────── */
+.cs-nav {
+  margin-top: 96px;
+  padding: 48px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.cs-nav a { display: flex; flex-direction: column; gap: 8px; transition: transform .4s cubic-bezier(.2,.8,.2,1), color .25s; }
+.cs-nav a:hover { transform: translateY(-2px); }
+.cs-nav .prev { align-items: flex-start; text-align: left; }
+.cs-nav .next { align-items: flex-end; text-align: right; }
+.cs-nav .back { align-items: center; text-align: center; }
+.cs-nav .ey {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.cs-nav .ttl {
+  font-family: var(--serif);
+  font-size: clamp(20px, 1.9vw, 28px);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.cs-nav .ttl em { font-style: italic; }
+.cs-nav .back .ttl {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  font-size: 16px;
+}
+.cs-nav .back a:hover .ttl { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.cs-cta {
+  padding: 120px 0 60px;
+  text-align: center;
+}
+.cs-cta .ey {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 24px;
+}
+.cs-cta h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  margin: 0 0 32px;
+  text-wrap: balance;
+}
+.cs-cta h3 em { font-style: italic; color: var(--accent); }
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cs-hero { padding-top: 32px; }
+  .cs-hero .eyebrow-row { margin-bottom: 48px; }
+  .cs-hero h1 { font-size: clamp(40px, 9vw, 64px); }
+  .cs-hero .tags { margin-bottom: 56px; }
+  .cs-hero-image { margin: 0 -2% -6%; }
+  .cs-details { grid-template-columns: repeat(2, 1fr); padding-top: 80px; }
+  .cs-section { grid-template-columns: 1fr; gap: 18px; padding: 48px 0; }
+  .cs-section .label { position: static; }
+  .cs-figure-row { grid-template-columns: 1fr; }
+  .cs-stats, .cs-stats.two { grid-template-columns: 1fr; }
+  .cs-stats .stat { border-right: 0; border-bottom: 1px solid var(--hairline); padding: 24px 0; }
+  .cs-stats .stat:last-child { border-bottom: 0; }
+  .cs-annotation, .cs-annotation.right { grid-template-columns: 1fr; gap: 16px; }
+  .cs-annotation.right .figure, .cs-annotation.right .note { order: 0; }
+  .cs-nav { grid-template-columns: 1fr; gap: 24px; }
+  .cs-nav .prev, .cs-nav .next, .cs-nav .back { align-items: flex-start; text-align: left; }
+}
+
+/* Cursor auto-inverts on any background (dark hero, dark figures, etc.) */
+.cursor-ring {
+  border-color: #fff;
+  mix-blend-mode: difference;
+}
+
+/* ─── Placeholder visuals (delete when real imagery lands) ────── */
+.ph {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.ph::before {
+  content: "";
+  position: absolute; inset: 12px;
+  border: 1px dashed color-mix(in srgb, var(--ink) 14%, transparent);
+  border-radius: 10px;
+}
+.ph span { position: relative; z-index: 1; padding: 6px 12px; background: var(--paper-2); }
+.ph.dark { color: color-mix(in srgb, #f3efe3 60%, transparent); }
+.ph.dark::before { border-color: color-mix(in srgb, #f3efe3 18%, transparent); }
+.ph.dark span { background: var(--ink); }
+</style>
+</head>
+<body data-screen-label="Case · Template">
+
+<header class="topbar">
+  <div class="brand">
+    <a href="../index.html" class="brand-name">Nina <em>Hayden</em></a>
+    <span class="avail"><span class="dot"></span>Available, Q3 2026</span>
+  </div>
+  <nav class="nav">
+    <a href="../index.html">Home</a>
+    <a href="/ru/index.html#work" class="is-active">Work</a>
+    <a href="/ru/index.html#about">About</a>
+    <a href="/ru/index.html#contact">Contact</a>
+  </nav>
+  <div class="meta-right">
+    <a href="/ru/index.html#contact" class="topbar-cta">Let's talk</a>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- ════════════════════════════════════════════════════════════
+       ① HERO — full-bleed brand color, then mockup that bleeds out
+       Edit `--cs-brand` to set this project's hero color.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-hero" style="--cs-brand: #0e2823; --cs-brand-ink: #f3efe3;">
+    <div class="inner">
+      <div class="eyebrow-row">
+        <span>CASE STUDY · 6 MIN READ</span>
+      </div>
+
+      <h1 style="font-size: 56px; width: 1080px; margin: 0px 0px 24px">Dialogue — a calmer inbox for <em>customer teams.</em></h1>
+
+      <p class="lead" style="font-size: 20px; margin: 0px 0px 32px">
+        The support inbox used by ten thousand customer-facing teammates every
+        day. Less noise, fewer modals, more confidence to hit reply.
+      </p>
+
+      <div class="tags">
+        <span class="tag">B2B SaaS</span>
+        <span class="tag">2025 — 26</span>
+        <span class="tag">Inbox redesign</span>
+        <span class="tag">Lead designer</span>
+      </div>
+
+      <!-- HERO MOCKUP — swap the inner content for a project screenshot.
+           Container provides 16:9 aspect, rounded corners, drop shadow. -->
+      <div class="cs-hero-image">
+        <div class="scene scene-dialogue">
+          <div class="panel">
+            <div class="sidebar">
+              <div class="head"><span class="av"></span><span class="nm">Inbox · 248</span></div>
+              <div class="row act"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
+              <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
+              <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
+              <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
+              <div class="row"><span class="av"></span><div class="t"><span class="ln"></span><span class="ln s"></span></div></div>
+            </div>
+            <div class="conv">
+              <div class="top">
+                <span class="name">Maya Okafor · Stripe</span>
+                <span class="pill">Resolved</span>
+              </div>
+              <div class="msg">Hey — can we reuse the segments from last week's launch for the new cohort?</div>
+              <div class="msg me">Yes. I pulled them into the shared workspace and added a filter for verified merchants.</div>
+              <div class="msg">Perfect, thanks. Shipping tomorrow.</div>
+              <div class="composer"><span>Reply to Maya</span><span class="send"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ① HERO — detail cards (3–4 small UI moments, no captions)
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-details" style="padding: 88px 0px 24px">
+    <div class="card"><div class="ph"><span>Detail · 01</span></div></div>
+    <div class="card"><div class="ph"><span>Detail · 02</span></div></div>
+    <div class="card"><div class="ph"><span>Detail · 03</span></div></div>
+    <div class="card"><div class="ph"><span>Detail · 04</span></div></div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ② CONTEXT
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-section">
+    <div class="label"><span class="num">02</span>Context</div>
+    <div class="body">
+      <p class="lead">A Series C SaaS company building support tooling for two-sided marketplaces.</p>
+      <p>
+        Dialogue is the conversation surface — the place where ten thousand
+        customer-facing teammates triage, reply, and hand off threads every
+        day. I joined as lead designer alongside one PM and four engineers.
+        Six months from kickoff to shipped, with a soft rollout over four
+        weeks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interstitial — big image between sections, no rails, no label column -->
+  <figure class="cs-interstitial">
+    <div class="ph"><span>Interstitial · context to problem</span></div>
+    <figcaption class="caption">A typical Monday morning · pre-redesign</figcaption>
+  </figure>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ③ PROBLEM
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-section">
+    <div class="label"><span class="num">03</span>Problem</div>
+    <div class="body">
+      <p class="lead">The product had grown by adding panels.</p>
+      <p>
+        Every new feature got its own pop-out, its own modal, its own
+        keyboard shortcut. Teammates spent the first ninety seconds of a
+        shift just laying out their workspace. Internal NPS had fallen
+        four years in a row.
+      </p>
+      <p>
+        Account reviews kept surfacing the same word — <em>chaotic.</em>
+        Leadership wanted "a quieter inbox" and didn't know how to ask
+        for it.
+      </p>
+
+      <!-- Highlight A: Pull-quote -->
+      <div class="cs-pull">
+        I love what your <em>product</em> does — I just don't love using it.
+        <span class="attr">Support lead · 2,000-seat customer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ④ PROCESS — 2–3 key decisions, not every step
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-section">
+    <div class="label"><span class="num">04</span>Process</div>
+    <div class="body">
+      <p>
+        Process documentation is intentionally light here. Three decisions
+        shaped the outcome — everything else followed from them.
+      </p>
+
+      <div class="cs-decisions">
+        <div class="item">
+          <div class="n">01</div>
+          <div>
+            <h4>Count everything before redesigning anything.</h4>
+            <p>
+              We audited every modal, popover, and surface in the
+              existing app. Fifty-three. The redesign became an exercise
+              in subtraction, not invention.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="n">02</div>
+          <div>
+            <h4>One canvas, three regions — <em>nothing</em> pops out.</h4>
+            <p>
+              List, conversation, context. Anything that used to open in
+              a modal now lives in the right rail, dismissible but always
+              there when you come back.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="n">03</div>
+          <div>
+            <h4>One keyboard model across every view.</h4>
+            <p>
+              Forty-two shortcuts cut to eleven. Power users complained
+              for a week, then stopped using their mice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ⑤ SOLUTION — main body, full-bleed images + highlights
+       Aim for 3–6 images. Mix in pull-quotes / stats / annotations.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-section solution">
+    <div class="label"><span class="num">05</span>Solution</div>
+    <div class="body">
+
+      <p class="lead">The new inbox is one resizable canvas.</p>
+      <p>
+        Three regions, three jobs. The list shows what's next. The
+        conversation shows what's happening. The context rail shows
+        why it matters. Nothing pops out, nothing competes for the
+        canvas.
+      </p>
+
+      <!-- Full-bleed figure 1 -->
+      <figure class="cs-figure">
+        <div class="ph"><span>Hero screen · one canvas</span></div>
+        <figcaption class="caption light">Inbox · home view</figcaption>
+      </figure>
+
+      <p>
+        The context rail collapses with a single keystroke and remembers
+        its state per teammate, not per conversation. Within two weeks
+        of rollout, 78% of teammates were running with it open by
+        default.
+      </p>
+
+      <!-- Highlight C: Annotation — image on the left, decision note right -->
+      <div class="cs-annotation">
+        <div class="figure"><div class="ph"><span>Context rail · expanded</span></div></div>
+        <div class="note">
+          <span class="tag">Design note</span>
+          <p>
+            We surfaced sentiment and CSM in the rail because frontline
+            teammates didn't have time to open a second tab. Putting the
+            relationship in arm's reach changed how replies were written
+            — softer, more specific.
+          </p>
+        </div>
+      </div>
+
+      <!-- Two-up figure row -->
+      <div class="cs-figure-row">
+        <figure class="cs-figure">
+          <div class="ph"><span>Composer · default</span></div>
+        </figure>
+        <figure class="cs-figure">
+          <div class="ph"><span>Composer · macros</span></div>
+        </figure>
+      </div>
+
+      <!-- Highlight A: Pull-quote (designer's voice, no attribution needed) -->
+      <div class="cs-pull">
+        The real problem wasn't the interface — it was that teammates couldn't
+        tell <em>what was theirs</em> to act on.
+      </div>
+
+      <p>
+        Triage state moved out of the conversation header and into the
+        list itself. The job a teammate is being asked to do is now
+        legible from forty rows away.
+      </p>
+
+      <!-- Dark full-bleed figure -->
+      <figure class="cs-figure dark wide">
+        <div class="ph dark"><span>Triage · eleven keyboard shortcuts</span></div>
+        <figcaption class="caption">Keyboard reference · ⌘?</figcaption>
+      </figure>
+
+      <!-- Highlight C: Annotation, flipped (note on left, figure on right) -->
+      <div class="cs-annotation right">
+        <div class="note">
+          <span class="tag">Why a stepper</span>
+          <p>
+            We replaced the assign-and-route modal with an inline
+            stepper because teammates were dropping off after scrolling.
+            Breaking the decision into three small steps increased
+            completion by <em>28%</em> in beta.
+          </p>
+        </div>
+        <div class="figure"><div class="ph"><span>Assign · stepper</span></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ⑥ OUTCOME — what changed, with a stat block or pull-quote
+       ════════════════════════════════════════════════════════════ -->
+  <section class="cs-section">
+    <div class="label"><span class="num">06</span>Outcome</div>
+    <div class="body">
+      <p class="lead">Ten weeks after rollout, internal NPS crossed forty for the first time.</p>
+      <p>
+        Time-to-first-reply on priority conversations fell almost in
+        half. Two of the company's largest customers renewed citing the
+        new inbox in their decision notes.
+      </p>
+
+      <!-- Highlight B: Stat block -->
+      <div class="cs-stats">
+        <div class="stat" style="padding: 40px 24px 36px">
+          <div class="num"><em>+38</em></div>
+          <div class="lbl">Internal NPS, six weeks post-launch</div>
+        </div>
+        <div class="stat" style="padding: 40px 24px 36px">
+          <div class="num">−44<em>%</em></div>
+          <div class="lbl">First-reply time on priority threads</div>
+        </div>
+        <div class="stat" style="padding: 40px 24px 36px">
+          <div class="num">−<em>77%</em></div>
+          <div class="lbl">Distinct surfaces in the inbox</div>
+        </div>
+      </div>
+
+      <p>
+        What I'm proud of more than the numbers: nobody on the team
+        made a single new modal in the six months after launch — there
+        wasn't a place to put one.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ⑦ NAV FOOTER — Prev / Back to Work / Next
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="cs-nav" aria-label="Project navigation">
+    <a class="prev" href="kindling.html">
+      <span class="ey">← Previous</span>
+      <span class="ttl">Kindling — a daily <em>design school</em></span>
+    </a>
+    <a class="back" href="/ru/index.html#work">
+      <span class="ey">Index</span>
+      <span class="ttl">All work</span>
+    </a>
+    <a class="next" href="anchor.html">
+      <span class="ey">Next →</span>
+      <span class="ttl">Anchor — banking that thinks like the <em>founder</em></span>
+    </a>
+  </nav>
+
+  <!-- CTA -->
+  <section class="cs-cta">
+    <span class="ey">Contact</span>
+    <h3>Like what you see? <em>Let's talk.</em></h3>
+    <a href="/ru/index.html#contact" class="btn">
+      Send a note
+    </a>
+  </section>
+
+  <!-- ─── Site footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div>
+      <div class="brand-name" style="font-size: 28px; letter-spacing: -0.02em;">Nina <em>Hayden</em></div>
+      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Product designer.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/ru/index.html#work">Work</a></li>
+        <li><a href="/ru/index.html#about">About</a></li>
+        <li><a href="/ru/index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Folio</h4>
+      <ul>
+        <li><a href="#">Download CV</a></li>
+      </ul>
+    </div>
+    <div class="footer-credits">
+      <span>© 2026 Nina Hayden</span>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>

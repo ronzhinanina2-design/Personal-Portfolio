@@ -159,33 +159,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .topbar-cta:hover .arrow { transform: translate(3px, -3px); }
 
 .lang-switch {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 14px;
 }
-.lang-switch a {
-  padding: 6px 10px;
-  min-width: 36px;
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.15s;
+.lang-switch strong {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
-.lang-switch a:hover {
-  background: rgba(0,0,0,0.06);
-}
-.lang-switch a.active {
-  font-weight: 600;
-  color: var(--accent);
-}
-.lang-switch .divider {
-  opacity: 0.3;
-}
+.lang-divider { margin: 0 1px; }
+.lang-ru { color: var(--muted); }
+.lang-ru:hover { color: var(--ink-2); }
 
 @media (max-width: 1024px) {
   .topbar { grid-template-columns: auto 1fr auto; gap: 16px; }
