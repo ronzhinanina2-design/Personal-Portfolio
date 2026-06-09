@@ -14,18 +14,25 @@
 
   const indexHref = isRu ? '/ru/index.html' : '/en/index.html';
 
+  const homeLabel    = isRu ? 'Главная'  : 'Home';
+  const workLabel    = isRu ? 'Работы'   : 'Work';
+  const aboutLabel   = isRu ? 'Обо мне'  : 'About';
+  const contactLabel = isRu ? 'Контакты' : 'Contact';
+  const ctaLabel     = isRu ? 'Написать' : "Let's talk";
+  const availLabel   = isRu ? 'ОТКРЫТА ДЛЯ СОТРУДНИЧЕСТВА' : 'AVAILABLE NOW';
+
   const links = isWork
     ? [
-        { href: indexHref,           label: 'Home' },
-        { href: indexHref + '#work', label: 'Work', active: true },
-        { href: indexHref + '#about',   label: 'About' },
-        { href: indexHref + '#contact', label: 'Contact' },
+        { href: indexHref,              label: homeLabel },
+        { href: indexHref + '#work',    label: workLabel, active: true },
+        { href: indexHref + '#about',   label: aboutLabel },
+        { href: indexHref + '#contact', label: contactLabel },
       ]
     : [
-        { href: '#top',     label: 'Home', active: true },
-        { href: '#work',    label: 'Work' },
-        { href: '#about',   label: 'About' },
-        { href: '#contact', label: 'Contact' },
+        { href: '#top',     label: homeLabel, active: true },
+        { href: '#work',    label: workLabel },
+        { href: '#about',   label: aboutLabel },
+        { href: '#contact', label: contactLabel },
       ];
 
   const navLinks = links
@@ -44,21 +51,21 @@
   const html = `<header class="topbar">
   <div class="brand">
     <a href="${indexHref}" class="brand-name">Nina <em>Hayden</em></a>
-    <span class="avail" title="Available for select projects"><span class="dot"></span>AVAILABLE NOW</span>
+    <span class="avail" title="Available for select projects"><span class="dot"></span>${availLabel}</span>
   </div>
   <nav class="nav">
     ${navLinks}
   </nav>
   <div class="meta-right">
     ${langSwitch}
-    <a href="javascript:void(0)" class="topbar-cta">Let's talk</a>
+    <a href="javascript:void(0)" class="topbar-cta">${ctaLabel}</a>
   </div>
 </header>`;
 
   const root = document.getElementById('site-nav');
   if (root) root.outerHTML = html;
 
-  // Wire "Let's talk" to open contact modal
+  // Wire CTA to open contact modal
   document.querySelector('.topbar-cta')?.addEventListener('click', e => {
     e.preventDefault();
     const modal = document.getElementById('modal-contact');
