@@ -41,7 +41,7 @@
           <img src="/fitfleet-thumb.png" alt="FitFleet project thumbnail" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div class="card-meta">
-          <div class="title">FIT FLEET: Сервис бронирования станций техобслуживания</div>
+          <div class="title">Сервис записи на СТО</div>
           <div class="sub">Редизайн бронирования для 2 000+ корпоративных клиентов автопарка</div>
           <div class="tags">
             <span class="tag">Mobile</span>
@@ -105,7 +105,7 @@
           <img src="fleet-service-quality-thumb.png" alt="Fleet Service Quality" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
         </div>
         <div class="card-meta">
-          <div class="title">FIT FLEET: <em>Обратная связь по качеству сервиса</em></div>
+          <div class="title"> <em>Обратная связь по качеству сервиса</em></div>
           <div class="sub">Обратная связь после сервиса для десктопа и мобильной версии</div>
           <div class="tags">
             <span class="tag">Research</span>
@@ -121,7 +121,7 @@
           <img src="fitfleet-maintenance-thumb.png" alt="FitFleet Maintenance project thumbnail" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div class="card-meta">
-          <div class="title">FIT FLEET: Автоматизация обслуживания автопарка</div>
+          <div class="title">Автоматизация обслуживания автопарка</div>
           <div class="sub">Дашборд, который следит за тем, чтобы сотни автомобилей проходили ТО вовремя.</div>
           <div class="tags">
             <span class="tag">Web</span>
@@ -160,6 +160,7 @@
     <div class="channels-wrap">
       <span class="section-label channels-label">Или напрямую</span>
       <div class="channels">
+        <!-- IMPORTANT: never change the href values of these contact links unless explicitly instructed -->
         <a class="row" href="mailto:ronzhina.ni@gmail.com" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
             <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 L12 13 L20.5 6.5"/></svg>
@@ -215,6 +216,7 @@
         </div>
         <div class="label-row">
           <label for="email">Email</label>
+          <!-- IMPORTANT: email placeholder must always stay as "you@company.com" in English, never translate it -->
           <input type="email" id="email" name="email" placeholder="you@company.com" required>
         </div>
         <div class="label-row">
@@ -271,7 +273,8 @@
       </ul>
     </div>
     <div class="footer-credits">
-      <span>© 2026 Нина Хейден</span>
+      <!-- IMPORTANT: "NINA HAYDEN" must never be translated or transliterated — always keep in Latin script -->
+      <span>© 2026 NINA HAYDEN</span>
       <span>
 </span>
     </div>
@@ -285,6 +288,7 @@
 .cv-toggle:hover { text-decoration: underline; }
 .cv-chevron { font-style: normal; transition: transform 0.2s; display: inline-block; }
 .cv-toggle[aria-expanded="true"] .cv-chevron { transform: rotate(180deg); }
+/* IMPORTANT: dropdown must always open downward (top: 100%), never upward (bottom: 100%) */
 .cv-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--color-paper, #f6f3ec); border: none; border-radius: 8px; padding: 6px; margin-top: 6px; min-width: 120px; list-style: none; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
 .cv-menu.open { display: block; }
 .cv-menu li { border: none; outline: none; list-style: none; }
