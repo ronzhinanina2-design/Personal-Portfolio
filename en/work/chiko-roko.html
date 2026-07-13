@@ -46,13 +46,12 @@
   </dl>
 
   <!-- Overview image -->
-  <div style="padding: 0 var(--page-pad, 40px); margin-bottom: 48px;">
+  <div style="margin-bottom: 48px;">
     <img src="chiko-roko-overview.png" alt="Chiko & Roko — overview" style="width:100%; border-radius:12px; display:block;">
   </div>
 
   <!-- Sections -->
   <section class="proj-section">
-    <h2>The project</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Smeshariki is one of Russia's biggest cartoon franchises. We turned its characters into NFT collectibles fans could collect, trade, and view in AR — starting at Expo 2020 Dubai and building it out over the next 14 months.
@@ -61,47 +60,87 @@
   </section>
 
   <section class="proj-section">
-    <h2>The work</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Collecting, trading, auctions, KYC, AR — over 500 screens, each one making complex logic feel effortless.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="chiko-roko-approach.png" alt="Chiko & Roko approach" style="width: 100%; border-radius: 12px; display: block;">
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px)); margin-top: 16px;">
+    <div style="margin-top: 16px;">
       <img src="chiko-roko-work.png" alt="The work" style="width: 100%; border-radius: 12px; display: block;">
     </div>
   </section>
 
   <section class="proj-section">
-    <h2>Design decisions</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         The product kept growing. Our job was to keep it feeling like one system — flexible enough that screen 500 belonged next to screen 1.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="chiko-roko-decisions.png" alt="Design decisions" style="width: 100%; border-radius: 12px; display: block;">
     </div>
   </section>
 
   <section class="proj-section">
-    <h2>Outcome</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         From 800 copies per drop to 50,000. Half a million collectors, 100+ contributing artists.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="chiko-roko-outcome.png" alt="Outcome" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
+  </section>
+
+  <!-- More work: prev/next -->
+  <section class="more-work" style="padding: 64px 0;">
+    <div style="margin-bottom: 32px;">
+      <span class="section-label">More work</span>
+    </div>
+    <div class="more-work-row" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="more-work-item">
+        <a href="/en/work/fleet-booking.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/fitfleet-thumb.png" alt="Service Station Booking Service" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Service Station Booking Service</div>
+            <div class="more-work-sub">Booking redesign that simplified service for 2,000+ corporate fleet clients</div>
+            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">CJM</span><span class="more-work-tag">User testing</span></div>
+          </div>
+        </a>
+        <button class="more-work-arrow more-work-arrow--prev" aria-label="Previous case study">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="more-work-item">
+        <a href="/en/work/acro-rnr.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/acro-rnr-thumb.png" alt="Sports Competition Management System" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Sports Competition Management System</div>
+            <div class="more-work-sub">15,000 athletes are managed in this system</div>
+            <div class="more-work-tags"><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">Research</span><span class="more-work-tag">CJM</span></div>
+          </div>
+        </a>
+        <button class="more-work-arrow more-work-arrow--next" aria-label="Next case study">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Contact section -->
   <section class="contact-section" id="contact">
-    <span class="eyebrow">Contact</span>
     <h2 class="reveal">Let's <em style="color: rgb(31, 122, 77)">talk.</em></h2>
     <p class="sub reveal">Reach out if you're building something and want a senior pair of eyes on it. I read everything that comes in.</p>
     <button type="button" class="btn" data-open-modal="contact">
@@ -109,7 +148,6 @@
     </button>
 
     <div class="channels-wrap">
-      <span class="section-label channels-label">Or, directly</span>
       <div class="channels">
         <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">

@@ -46,13 +46,12 @@
   </dl>
 
   <!-- Overview image -->
-  <div style="padding: 0 var(--page-pad, 40px); margin-bottom: 48px;">
+  <div style="margin-bottom: 48px;">
     <img src="acro-rnr-overview.png" alt="Platform overview" style="width:100%; border-radius:12px; display:block;">
   </div>
 
   <!-- Sections -->
   <section class="proj-section">
-    <h2>The challenge</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         National competitions involve thousands of athletes, coaches, judges, and delegates — all moving through the same process, needing completely different things from it. There was no existing system, so we mapped the full competition lifecycle from scratch: registration, approvals, scheduling, results, every role tracked through it.
@@ -61,47 +60,87 @@
   </section>
 
   <section class="proj-section">
-    <h2>Role separation</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         A coach registering two athletes has nothing in common with a country manager processing hundreds of entries at once, so each role needed its own interface logic. We built role-based access so everyone sees only what's relevant to them, with exactly the level of control they need.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="acro-rnr-research.png" alt="Journey mapping across roles" style="width: 100%; border-radius: 12px; display: block;">
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px)); margin-top: 16px;">
+    <div style="margin-top: 16px;">
       <img src="acro-rnr-roles.png" alt="Role separation system" style="width: 100%; border-radius: 12px; display: block;">
     </div>
   </section>
 
   <section class="proj-section">
-    <h2>250+ screens</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Each role has its own flows — registration, dashboards, results, schedules. Add edge cases across every user type, plus two languages for local and international use, and the project came to 250+ screens.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="acro-rnr-screens.png" alt="Screen overview" style="width: 100%; border-radius: 12px; display: block;">
     </div>
   </section>
 
   <section class="proj-section">
-    <h2>Outcome</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         The platform runs national competitions. 15,000 athletes are managed in it today.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="acro-rnr-outcome.png" alt="Outcome" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
+  </section>
+
+  <!-- More work: prev/next -->
+  <section class="more-work" style="padding: 64px 0;">
+    <div style="margin-bottom: 32px;">
+      <span class="section-label">More work</span>
+    </div>
+    <div class="more-work-row" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="more-work-item">
+        <a href="/en/work/chiko-roko.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/chiko&roko-thumb.png" alt="Chiko &amp; Roko: NFT collectibles built from scratch" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Chiko &amp; Roko: NFT collectibles built from scratch</div>
+            <div class="more-work-sub">NFT collectibles platform with AR built from zero to launch</div>
+            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">App</span><span class="more-work-tag">UX/UI</span></div>
+          </div>
+        </a>
+        <button class="more-work-arrow more-work-arrow--prev" aria-label="Previous case study">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="more-work-item">
+        <a href="/en/work/dc.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/dc-thumb.png" alt="Digital Collectibles: NFT marketplace with a social layer" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Digital Collectibles: NFT marketplace with a social layer</div>
+            <div class="more-work-sub">NFT marketplace grown from concept to 500+ screens</div>
+            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">App</span><span class="more-work-tag">UX/UI</span></div>
+          </div>
+        </a>
+        <button class="more-work-arrow more-work-arrow--next" aria-label="Next case study">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Contact section -->
   <section class="contact-section" id="contact">
-    <span class="eyebrow">Contact</span>
     <h2 class="reveal">Let's <em style="color: rgb(31, 122, 77)">talk.</em></h2>
     <p class="sub reveal">Reach out if you're building something and want a senior pair of eyes on it. I read everything that comes in.</p>
     <button type="button" class="btn" data-open-modal="contact">
@@ -109,7 +148,6 @@
     </button>
 
     <div class="channels-wrap">
-      <span class="section-label channels-label">Or, directly</span>
       <div class="channels">
         <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">

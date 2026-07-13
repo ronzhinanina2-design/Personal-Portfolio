@@ -46,13 +46,12 @@
   </dl>
 
   <!-- Overview image -->
-  <div style="padding: 0 var(--page-pad, 40px); margin-bottom: 48px;">
+  <div style="margin-bottom: 48px;">
     <img src="chiko-roko-overview.png" alt="Chiko & Roko — обзор" style="width:100%; border-radius:12px; display:block;">
   </div>
 
   <!-- Sections -->
   <section class="proj-section">
-    <h2>Проект</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Смешарики — одна из самых узнаваемых российских анимационных франшиз. Мы превратили персонажей в NFT — их можно собирать, обменивать, разглядывать в AR. Первый дроп был на Expo 2020 в Дубае. Дальше — ещё 14 месяцев работы.
@@ -61,47 +60,87 @@
   </section>
 
   <section class="proj-section">
-    <h2>Работа</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Коллекционирование, обмен, аукционы, KYC, AR. Больше 500 экранов — и за каждым простым действием пряталась логика, которую пользователь даже не должен был замечать.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="chiko-roko-approach.png" alt="Подход к проекту Chiko & Roko" style="width: 100%; border-radius: 12px; display: block;">
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px)); margin-top: 16px;">
+    <div style="margin-top: 16px;">
       <img src="chiko-roko-work.png" alt="Работа" style="width: 100%; border-radius: 12px; display: block;">
     </div>
   </section>
 
   <section class="proj-section">
-    <h2>Дизайн-решения</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Продукт рос быстро. Наша задача была в том, чтобы этого не было заметно — система оставалась гибкой настолько, что экран 500 смотрелся так же органично, как экран 1.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="chiko-roko-decisions.png" alt="Дизайн-решения" style="width: 100%; border-radius: 12px; display: block;">
     </div>
   </section>
 
   <section class="proj-section">
-    <h2>Результат</h2>
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         От 800 копий за дроп до 50 000. Полмиллиона коллекционеров, 100+ художников-участников.
       </p>
     </div>
-    <div style="grid-column: 2; margin-right: calc(-1 * var(--page-pad, 40px));">
+    <div>
       <img src="chiko-roko-outcome.png" alt="Результат" style="width: 100%; border-radius: 12px; display: block;">
+    </div>
+  </section>
+
+  <!-- More work: prev/next -->
+  <section class="more-work" style="padding: 64px 0;">
+    <div style="margin-bottom: 32px;">
+      <span class="section-label">Другие работы</span>
+    </div>
+    <div class="more-work-row" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="more-work-item">
+        <a href="/ru/work/fleet-booking.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/fitfleet-thumb.png" alt="Сервис записи на СТО" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Сервис записи на СТО</div>
+            <div class="more-work-sub">Редизайн бронирования для 2 000+ корпоративных клиентов автопарка</div>
+            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">CJM</span><span class="more-work-tag">User testing</span></div>
+          </div>
+        </a>
+        <button class="more-work-arrow more-work-arrow--prev" aria-label="Предыдущий кейс">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="more-work-item">
+        <a href="/ru/work/acro-rnr.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/acro-rnr-thumb.png" alt="Система управления спортивными соревнованиями" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Система управления спортивными соревнованиями</div>
+            <div class="more-work-sub">15 000 спортсменов управляются в этой системе</div>
+            <div class="more-work-tags"><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">Research</span><span class="more-work-tag">CJM</span></div>
+          </div>
+        </a>
+        <button class="more-work-arrow more-work-arrow--next" aria-label="Следующий кейс">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Contact section -->
   <section class="contact-section" id="contact">
-    <span class="eyebrow">Контакты</span>
     <h2 class="reveal">Давайте <em style="color: rgb(31, 122, 77)">поговорим.</em></h2>
     <p class="sub reveal">Напишите, если вы создаёте что-то интересное и хотите взгляд опытного дизайнера. Я читаю всё, что приходит.</p>
     <button type="button" class="btn" data-open-modal="contact">
@@ -109,7 +148,6 @@
     </button>
 
     <div class="channels-wrap">
-      <span class="section-label channels-label">Или напрямую</span>
       <div class="channels">
         <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
