@@ -133,8 +133,7 @@
 
   <!-- More work: prev/next -->
   <section class="more-work" style="padding: 64px 0;">
-    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 32px;">
-      <span style="display: inline-block; width: 22px; height: 1px; background: var(--muted);"></span>
+    <div style="margin-bottom: 32px;">
       <span class="section-label">More work</span>
     </div>
     <div class="more-work-row" style="display: flex; align-items: center; justify-content: space-between;">
@@ -159,7 +158,7 @@
       <div class="more-work-item">
         <a href="/en/work/fleet-service-quality.html" class="more-work-card">
           <div class="more-work-thumb">
-            <img src="fleet-service-quality-thumb.png" alt="Service quality feedback" style="width:100%; height:100%; object-fit:cover;">
+            <img src="/fleet-service-quality-thumb.png" alt="Service quality feedback" style="width:100%; height:100%; object-fit:cover;">
           </div>
           <div class="more-work-text">
             <div class="more-work-title">Service quality feedback</div>
@@ -178,7 +177,6 @@
 
   <!-- Contact section -->
   <section class="contact-section" id="contact">
-    <span class="eyebrow">Contact</span>
     <h2 class="reveal">Let's <em style="color: rgb(31, 122, 77)">talk.</em></h2>
     <p class="sub reveal">Reach out if you're building something and want a senior pair of eyes on it. I read everything that comes in.</p>
     <button type="button" class="btn" data-open-modal="contact">
@@ -186,7 +184,6 @@
     </button>
 
     <div class="channels-wrap">
-      <span class="section-label channels-label">Or, directly</span>
       <div class="channels">
         <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
           <span class="ico">
@@ -432,8 +429,8 @@
 .dc-arrow:active {
   transform: translateY(-50%) scale(0.97);
 }
-.dc-arrow--prev { left: 16px; }
-.dc-arrow--next { right: 16px; }
+.dc-arrow--prev { left: -25px; }
+.dc-arrow--next { right: -25px; }
 
 /* Dots */
 .dc-dots {
