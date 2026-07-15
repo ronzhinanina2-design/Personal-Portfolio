@@ -386,6 +386,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
 }
 .work-card:hover { transform: translateY(-4px); }
+.work-card.is-hidden { display: none; }
 .work-card .visual {
   aspect-ratio: 1 / 1;
   display: block;
