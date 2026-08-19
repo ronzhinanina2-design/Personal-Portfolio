@@ -429,6 +429,77 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
+/* ─── Pet projects ─────────────────────────────────────────────── */
+/* Same card size as .work-card — the divider + heading above are enough
+   to signal this is a separate, secondary section. */
+.petprojects {
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--hairline);
+}
+.petprojects-head {
+  margin-bottom: 28px;
+}
+.petprojects-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 24px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0;
+}
+.petprojects-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 700px) {
+  .petprojects-list { grid-template-columns: 1fr; }
+}
+.petproject-card {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+}
+.petproject-card:hover { transform: translateY(-4px); }
+.petproject-card .visual {
+  aspect-ratio: 1 / 1;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--paper-2);
+}
+.petproject-card .card-meta { margin-top: 16px; }
+.petproject-card .card-meta .title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.petproject-card .card-meta .sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.petproject-card .card-meta .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.petproject-card .card-meta .tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
 /* ─── Project page ─────────────────────────────────────────────── */
 .proj-hero {
   padding: 48px 0 80px;

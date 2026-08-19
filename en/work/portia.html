@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portia — Nina Hayden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/scenes.css">
+<link rel="stylesheet" href="/phase-bar.css">
+</head>
+<body data-screen-label="Case · Portia">
+
+<div id="site-nav"></div>
+<div class="back-nav">
+  <a href="/en/index.html" class="back-link" aria-label="Back to home">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M5 12L12 19M5 12L12 5"/>
+    </svg>
+  </a>
+</div>
+
+<main class="page">
+
+  <!-- Hero image first -->
+  <div class="proj-hero-image" style="padding-top: 12px; overflow: visible;">
+    <img src="portia-hero.png" alt="Portia — Today tab with a day's meals logged" style="display: block; width: 100%; height: auto; border-radius: 12px;">
+  </div>
+
+  <!-- Hero text below image -->
+  <section class="proj-hero" style="padding-top: 48px;">
+    <div>
+      <h1 style="font-size: 64px; line-height: 1.05;">Portia: a food diary built <em>(almost) without Figma</em></h1>
+    </div>
+    <p class="sub" style="font-size: 18px; margin-top: 16px;">
+      A solo nutrition-tracking web app, designed in Miro and Claude Design, built end to end with Claude Code.
+    </p>
+  </section>
+
+  <dl class="meta-grid">
+    <div><dt>Year</dt><dd>2026</dd></div>
+    <div><dt>Team</dt><dd>Solo</dd></div>
+    <div><dt>Surfaces</dt><dd>Web (desktop + mobile browser)</dd></div>
+    <div><dt>Tools</dt><dd>Miro · Claude Design · Claude Code · Github · Supabase</dd></div>
+  </dl>
+
+  <!-- Sections -->
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        Meet Nina. 35, product designer, spends her days juggling client work, pet projects, two enormous dogs, and the general chaos of adult life.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        (That's me, hi.)
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        A while back I decided to eat a bit more intentionally — lose some weight before the wedding, and keep an eye on protein while I was at it.
+      </p>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        Old habits kicked in first: a paper food diary. Got bored of writing the same meals and numbers every day within a week. Tried copy-pasting into a text file on my computer instead — also boring. Downloaded one of the well-known calorie-tracking apps — and that's where the real problems started:
+      </p>
+      <ul style="padding-left: 20px; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);">half the features I actually needed were subscription-only;</li>
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);">the app was cluttered with ads and features I personally didn't need;</li>
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);">the built-in food database was convenient in theory, but confusing in practice — 23 entries for "Tomato," 144 for "Rye bread."</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        That's when I remembered I'm a designer, and I happen to have a Claude Code subscription. So the idea for a simple online food diary was born.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        The first sketch started in Figma, out of habit. But partway through, I realized I could fit "all the things I actually need" into this one pet project — and Figma stayed a draft. Research, the CJM, and structure came together in Miro, the look came out of a few sessions with Claude Design, and the app itself came to life with Github, Claude Code, and Visual Studio. That's how Portia happened.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── 4-tab breakdown ───────────────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        Portia has 4 pages:
+      </p>
+      <ul style="padding-left: 20px; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);"><strong style="color: var(--ink);">Today</strong> — log what you ate, see how many calories and protein you have left to hit;</li>
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);"><strong style="color: var(--ink);">Week</strong> — check in and give yourself credit for a week without slipping;</li>
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);"><strong style="color: var(--ink);">Recipes</strong> — every product and recipe in one place;</li>
+        <li style="font-size: 18px; line-height: 1.6; color: var(--ink-2);"><strong style="color: var(--ink);">Progress</strong> — the results of all that hard work.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Today</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Empty in the morning, filling up meal by meal, and a clear nudge — not a guilt trip — when you go over.
+      </p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="portia-today-empty.png" alt="Today tab, empty state">
+          <img src="portia-today-filled.png" alt="Today tab, meals logged">
+          <img src="portia-today-overlimit.png" alt="Today tab, over limit with a Keep going nudge">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Previous image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Next image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-dots"></div>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Week</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        A month view so a bad Tuesday doesn't erase a good week.
+      </p>
+    </div>
+    <div>
+      <img src="portia-week.png" alt="Week tab, month calendar view" style="width:100%; border-radius:12px; display:block;">
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Recipes</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Products and recipes live side by side, so logging a home-cooked meal is as fast as scanning a barcode.
+      </p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="portia-recipes.png" alt="Recipes grid">
+          <img src="portia-items.png" alt="Items grid">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Previous image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Next image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-dots"></div>
+    </div>
+  </section>
+
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Progress</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Goals, metrics, and the small wins along the way.
+      </p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="portia-progress-goals.png" alt="Progress tab, goals and metrics">
+          <img src="portia-progress-achievements.png" alt="Progress tab, achievements">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Previous image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Next image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-dots"></div>
+    </div>
+  </section>
+
+  <!-- ─── Interaction / flow callout ────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Add a meal</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Add meal → edit it (search, tags, recents) → confirm the portion (whole, half, or a custom amount). Three taps, no dead ends.
+      </p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="portia-flow-add.png" alt="Add meal step">
+          <img src="portia-flow-edit.png" alt="Edit meal step — search, tags, recents">
+          <img src="portia-flow-confirm.png" alt="Confirm portions step — whole, half, or custom">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Previous image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Next image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-dots"></div>
+    </div>
+  </section>
+
+  <!-- ─── Barcode scanner callout ───────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Barcode scanner</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Scan a product and it's added with the right numbers already filled in — or it tells you it doesn't recognize the code yet, no dead-end error screen.
+      </p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+      <video autoplay loop muted playsinline style="width: 390px; max-width: 100%; height: auto; border-radius: 12px; display: block;">
+        <source src="portia_barcode_scan_loop.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline style="width: 390px; max-width: 100%; height: auto; border-radius: 12px; display: block;">
+        <source src="portia_scan_not_found_loop.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- ─── Modals worth a mention ────────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label" style="margin-bottom: 4px;">Modals</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Add an item, create a recipe (with a notes field for the little tweaks — "used oat milk instead"), or set a weight goal — all handled in quick modals, no separate pages to lose your place on.
+      </p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="portia-modal-additem.png" alt="Add item modal">
+          <img src="portia-modal-recipe.png" alt="Create recipe modal with notes field">
+          <img src="portia-modal-weightgoal.png" alt="Weight goal modal">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Previous image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Next image">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carousel-dots"></div>
+    </div>
+  </section>
+
+  <!-- ─── Mobile MVP scope ──────────────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        The mobile MVP is stripped down to three functions: see today's calorie limit, log a meal, add a new product.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Timeline ──────────────────────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        From idea to MVP to the first logged day in a working app took 4 weeks.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Phase roadmap ─────────────────────────────────────────── -->
+  <section class="proj-section" style="padding-bottom: 0;">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        Future plans are split into phases — I'll keep updating this page as the app evolves.
+      </p>
+    </div>
+  </section>
+
+  <!-- Phase bar: change ONLY the is-done/is-current/is-upcoming class per <li> to update progress -->
+  <section class="phasebar-block">
+    <div class="phasebar-head">
+      <h2>Build <em>phases</em></h2>
+      <p class="phasebar-note"><span class="on-desktop">Hover a phase</span><span class="on-mobile">Tap a phase</span></p>
+    </div>
+    <ul class="phasebar">
+
+      <li class="ph-step is-done">
+        <button class="ph-trigger" type="button">
+          <span class="ph-node">
+            <svg class="ph-check" viewBox="0 0 12 12"><path d="M2 6.4 4.6 9 10 3.2"/></svg>
+            <span class="ph-pip"></span><span class="ph-num">01</span>
+          </span>
+          <span class="ph-copy">
+            <span class="ph-label">Phase 01</span>
+            <span class="ph-name">MVP</span>
+            <span class="ph-state">Done</span>
+          </span>
+        </button>
+        <div class="ph-tip" role="dialog" aria-label="MVP">
+          <div class="ph-tip-inner">
+            <button class="ph-tip-close" type="button" aria-label="Close"><svg viewBox="0 0 16 16"><path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6"/></svg></button>
+            <div class="ph-tip-meta"><span class="ph-tip-label">Phase 01</span><span class="ph-tip-state">Done</span></div>
+            <h4 class="ph-tip-name">MVP</h4>
+            <ul>
+              <li>Today tab, meal logging</li>
+              <li>Recipes and macros</li>
+              <li>Weekly planning</li>
+              <li>Progress tracking</li>
+              <li>Cloud sync</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="ph-step is-done">
+        <button class="ph-trigger" type="button">
+          <span class="ph-node">
+            <svg class="ph-check" viewBox="0 0 12 12"><path d="M2 6.4 4.6 9 10 3.2"/></svg>
+            <span class="ph-pip"></span><span class="ph-num">02</span>
+          </span>
+          <span class="ph-copy">
+            <span class="ph-label">Phase 02</span>
+            <span class="ph-name">Capture & habits</span>
+            <span class="ph-state">Done</span>
+          </span>
+        </button>
+        <div class="ph-tip" role="dialog" aria-label="Capture and habits">
+          <div class="ph-tip-inner">
+            <button class="ph-tip-close" type="button" aria-label="Close"><svg viewBox="0 0 16 16"><path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6"/></svg></button>
+            <div class="ph-tip-meta"><span class="ph-tip-label">Phase 02</span><span class="ph-tip-state">Done</span></div>
+            <h4 class="ph-tip-name">Capture & habits</h4>
+            <ul>
+              <li>Barcode scanner</li>
+              <li>Water tracker</li>
+              <li>Item and recipe photos</li>
+              <li>Recipe notes</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="ph-step is-current">
+        <button class="ph-trigger" type="button">
+          <span class="ph-node">
+            <svg class="ph-check" viewBox="0 0 12 12"><path d="M2 6.4 4.6 9 10 3.2"/></svg>
+            <span class="ph-pip"></span><span class="ph-num">03</span>
+          </span>
+          <span class="ph-copy">
+            <span class="ph-label">Phase 03</span>
+            <span class="ph-name">Planning & insight</span>
+            <span class="ph-state">In progress</span>
+          </span>
+        </button>
+        <div class="ph-tip" role="dialog" aria-label="Planning and insight">
+          <div class="ph-tip-inner">
+            <button class="ph-tip-close" type="button" aria-label="Close"><svg viewBox="0 0 16 16"><path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6"/></svg></button>
+            <div class="ph-tip-meta"><span class="ph-tip-label">Phase 03</span><span class="ph-tip-state">In progress</span></div>
+            <h4 class="ph-tip-name">Planning & insight</h4>
+            <ul>
+              <li>Package size field on scan results</li>
+              <li>Shopping list from recipes</li>
+              <li>Progress graphs for goals</li>
+              <li>Photo crop and reposition</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="ph-step is-upcoming">
+        <button class="ph-trigger" type="button">
+          <span class="ph-node">
+            <svg class="ph-check" viewBox="0 0 12 12"><path d="M2 6.4 4.6 9 10 3.2"/></svg>
+            <span class="ph-pip"></span><span class="ph-num">04</span>
+          </span>
+          <span class="ph-copy">
+            <span class="ph-label">Phase 04</span>
+            <span class="ph-name">Intelligence</span>
+            <span class="ph-state">Upcoming</span>
+          </span>
+        </button>
+        <div class="ph-tip" role="dialog" aria-label="Intelligence">
+          <div class="ph-tip-inner">
+            <button class="ph-tip-close" type="button" aria-label="Close"><svg viewBox="0 0 16 16"><path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6"/></svg></button>
+            <div class="ph-tip-meta"><span class="ph-tip-label">Phase 04</span><span class="ph-tip-state">Upcoming</span></div>
+            <h4 class="ph-tip-name">Intelligence</h4>
+            <ul>
+              <li>Photo-to-macros via AI</li>
+              <li>Daily calorie history log</li>
+              <li>Training and exercise logging</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="ph-step is-upcoming">
+        <button class="ph-trigger" type="button">
+          <span class="ph-node">
+            <svg class="ph-check" viewBox="0 0 12 12"><path d="M2 6.4 4.6 9 10 3.2"/></svg>
+            <span class="ph-pip"></span><span class="ph-num">05</span>
+          </span>
+          <span class="ph-copy">
+            <span class="ph-label">Phase 05</span>
+            <span class="ph-name">Mobile parity</span>
+            <span class="ph-state">Upcoming</span>
+          </span>
+        </button>
+        <div class="ph-tip" role="dialog" aria-label="Mobile parity">
+          <div class="ph-tip-inner">
+            <button class="ph-tip-close" type="button" aria-label="Close"><svg viewBox="0 0 16 16"><path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6"/></svg></button>
+            <div class="ph-tip-meta"><span class="ph-tip-label">Phase 05</span><span class="ph-tip-state">Upcoming</span></div>
+            <h4 class="ph-tip-name">Mobile parity</h4>
+            <ul>
+              <li>Major mobile update for full feature parity with desktop</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ─── Demo CTA ──────────────────────────────────────────────── -->
+  <section class="proj-section">
+    <div class="body">
+      <p style="font-size: 18px; line-height: 1.6;">
+        I built a separate demo version just for the portfolio — feel free to click around without saving any of your own data.
+      </p>
+    </div>
+    <div>
+      <a href="https://portia.ninahayden.design/demo/" target="_blank" rel="noopener" class="btn">View demo</a>
+    </div>
+  </section>
+
+  <!-- More work: prev/next -->
+  <section class="more-work" style="padding: 64px 0;">
+    <div style="margin-bottom: 32px;">
+      <span class="section-label">More work</span>
+    </div>
+    <div class="more-work-row" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="more-work-item">
+        <a href="/en/work/fleet-dashboard.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/fitfleet-maintenance-thumb.png" alt="Fleet Maintenance Automation" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Fleet Maintenance Automation</div>
+            <div class="more-work-sub">A dashboard that keeps hundreds of vehicles serviced on time</div>
+            <div class="more-work-tags"><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">UX/UI</span><span class="more-work-tag">Research</span></div>
+          </div>
+        </a>
+        <a href="/en/work/fleet-dashboard.html" class="more-work-arrow more-work-arrow--prev" aria-label="Previous case study">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="more-work-item">
+        <a href="/en/work/fleet-booking.html" class="more-work-card">
+          <div class="more-work-thumb">
+            <img src="/fitfleet-thumb.png" alt="Service Station Booking Service" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="more-work-text">
+            <div class="more-work-title">Service Station Booking Service</div>
+            <div class="more-work-sub">Booking redesign that simplified service for 2,000+ corporate fleet clients</div>
+            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">CJM</span></div>
+          </div>
+        </a>
+        <a href="/en/work/fleet-booking.html" class="more-work-arrow more-work-arrow--next" aria-label="Next case study">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section copied exactly from index.html — do not modify -->
+  <section class="contact-section" id="contact">
+    <h2 class="reveal">Let's <em style="color: rgb(31, 122, 77)">talk.</em></h2>
+    <p class="sub reveal">Reach out if you're building something and want a senior pair of eyes on it. I read everything that comes in.</p>
+    <button type="button" class="btn" data-open-modal="contact">
+      Send a note
+    </button>
+
+    <div class="channels-wrap">
+      <div class="channels">
+        <a class="row" href="mailto:ronzhina.ni@gmail.com" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 L12 13 L20.5 6.5"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the careful</span>
+            <span class="ttl">Email</span>
+          </div>
+        </a>
+        <a class="row" href="https://t.me/NinaRonzhina" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M21 4 L2 11 L9 14 L12 21 L15 14 Z"/><path d="M9 14 L17 7"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the quick</span>
+            <span class="ttl">Telegram</span>
+          </div>
+        </a>
+        <a class="row" href="https://wa.me/79531724433" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><path d="M4 20 L5.5 15.5 A8 8 0 1 1 8.5 18.5 Z"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the everywhere</span>
+            <span class="ttl">WhatsApp</span>
+          </div>
+        </a>
+        <a class="row" href="https://www.linkedin.com/in/nina-ronzhina" target="_blank" rel="noopener" style="background-color: rgb(251, 250, 247)">
+          <span class="ico">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10 V17 M8 7 V7.01 M12 17 V13 a2 2 0 0 1 4 0 V17 M12 10 V17"/></svg>
+          </span>
+          <div class="meta">
+            <span class="lbl">For the formal</span>
+            <span class="ttl">LinkedIn</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Send a note modal -->
+  <div class="modal" id="modal-contact" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <span class="section-label" id="modal-title">Send a note</span>
+        <button class="modal-close" type="button" data-close-modal aria-label="Close">✕</button>
+      </div>
+      <form class="form" id="contact-form">
+        <div class="label-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+        </div>
+        <div class="label-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="label-row">
+          <label>What are you reaching out about?</label>
+          <div class="pillpick">
+            <input type="radio" id="t1" name="topic" value="freelance" checked>
+            <label for="t1">Freelance project</label>
+            <input type="radio" id="t2" name="topic" value="full-time">
+            <label for="t2">Full-time role</label>
+            <input type="radio" id="t3" name="topic" value="advice">
+            <label for="t3">Advice / chat</label>
+            <input type="radio" id="t4" name="topic" value="other">
+            <label for="t4">Something else</label>
+          </div>
+        </div>
+        <div class="label-row">
+          <label for="msg">A few sentences</label>
+          <textarea id="msg" name="msg" placeholder="What you're working on, your timeline, and anything else I should know." rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn submit">
+          Send note
+        </button>
+        <div class="success" id="success">
+          Thanks — your note is in. I'll reply within two business days, usually faster.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>
+      <!-- NINA HAYDEN stays Latin in footer, never Cyrillic, even on RU page -->
+      <div class="brand-name" style="font-size: 28px; letter-spacing: -0.02em;">Nina <em>Hayden</em></div>
+      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Product designer.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/en/index.html">Work</a></li>
+        <li><a href="/en/index.html#about">About</a></li>
+        <li><a href="/en/index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Folio</h4>
+      <ul>
+        <li class="cv-dropdown">
+          <button class="cv-toggle" aria-expanded="false">Download CV <span class="cv-chevron"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <ul class="cv-menu">
+            <li><a href="../assets/nina-hayden-cv-en.pdf" download>English</a></li>
+            <li><a href="../assets/nina-hayden-cv-ru.pdf" download>Russian</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-credits">
+      <span>© 2026 Nina Hayden</span>
+    </div>
+  </footer>
+
+</main>
+
+<script src="/nav.js"></script>
+<script src="/phase-bar.js"></script>
+<script>
+  function openModal(id) {
+    const m = document.getElementById('modal-' + id);
+    if (!m) return;
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => m.querySelector('input, textarea')?.focus(), 200);
+  }
+  function closeAllModals() {
+    document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m => m.setAttribute('aria-hidden', 'true'));
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-open-modal]').forEach(b => {
+    b.addEventListener('click', e => { e.preventDefault(); openModal(b.dataset.openModal); });
+  });
+  document.querySelectorAll('[data-close-modal]').forEach(b => {
+    b.addEventListener('click', closeAllModals);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAllModals(); });
+  document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/xqejwlyj', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        document.getElementById('success').classList.add('show');
+        setTimeout(() => { this.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(el => el.value = ''); }, 100);
+        setTimeout(closeAllModals, 2200);
+      }
+    } catch(err) { console.error('Form error', err); }
+  });
+  const cvToggle = document.querySelector('.cv-toggle');
+  const cvMenu = document.querySelector('.cv-menu');
+  if (cvToggle && cvMenu) {
+    cvToggle.addEventListener('click', e => { e.stopPropagation(); const open = cvMenu.classList.toggle('open'); cvToggle.setAttribute('aria-expanded', open); });
+    document.addEventListener('click', () => { cvMenu.classList.remove('open'); cvToggle.setAttribute('aria-expanded', false); });
+  }
+
+  // Carousels (multi-image sections) — same pattern as the DC case study carousel,
+  // generalized so each .carousel-wrap on the page runs independently.
+  document.querySelectorAll('.carousel-wrap').forEach(wrap => {
+    const track = wrap.querySelector('.carousel-track');
+    const prevBtn = wrap.querySelector('.carousel-arrow--prev');
+    const nextBtn = wrap.querySelector('.carousel-arrow--next');
+    const dotsWrap = wrap.querySelector('.carousel-dots');
+    const slides = track ? Array.from(track.children) : [];
+    const total = slides.length;
+    let current = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot' + (i === 0 ? ' carousel-dot--active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('carousel-dot--active', i === current);
+      });
+      if (prevBtn) prevBtn.style.opacity = total <= 1 ? '0' : '1';
+      if (nextBtn) nextBtn.style.opacity = total <= 1 ? '0' : '1';
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+
+    goTo(0);
+  });
+</script>
+<style>
+.cv-dropdown { position: relative; }
+.cv-toggle { background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+.cv-toggle:hover { text-decoration: underline; }
+.cv-chevron { font-style: normal; transition: transform 0.2s; display: inline-block; }
+.cv-toggle[aria-expanded="true"] .cv-chevron { transform: rotate(180deg); }
+.cv-menu { display: none; position: absolute; bottom: 100%; left: 0; background: var(--color-paper, #f6f3ec); border: none; border-radius: 8px; padding: 6px; margin-bottom: 6px; min-width: 120px; list-style: none; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.cv-menu.open { display: block; }
+.cv-menu li { border: none; outline: none; list-style: none; }
+.cv-menu li a { display: block; padding: 6px 10px; border-radius: 5px; text-decoration: none; color: inherit; font-size: 0.9em; border: none; outline: none; -webkit-appearance: none; appearance: none; }
+.cv-menu li a:hover { background: rgba(0,0,0,0.06); }
+.cv-menu li a:focus,
+.cv-menu li a:focus-visible,
+.cv-menu li a:active { outline: none; box-shadow: none; border: none; }
+.cv-menu li + li { border-top: none; }
+
+/* Carousel (multi-image sections) — reused from the DC case study carousel */
+.carousel-wrap { position: relative; margin-top: 8px; }
+.carousel { overflow: hidden; border-radius: 12px; }
+.carousel-track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.carousel-track img { width: 100%; flex-shrink: 0; border-radius: 12px; display: block; }
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #14110d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.carousel-arrow:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.08);
+  transform: translateY(-50%) scale(1.05);
+}
+.carousel-arrow:active { transform: translateY(-50%) scale(0.97); }
+.carousel-arrow--prev { left: -25px; }
+.carousel-arrow--next { right: -25px; }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20,17,13,0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot--active {
+  background: rgba(20,17,13,0.75);
+  transform: scale(1.25);
+}
+</style>
+</body>
+</html>

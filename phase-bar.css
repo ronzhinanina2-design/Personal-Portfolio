@@ -1,0 +1,360 @@
+/* ─── Phase progress bar — Option A, "Ring & pulse" ───────────────
+   Built on the site's own tokens (styles.css). No new colors,
+   fonts, or motion introduced — everything below reuses:
+     --ink / --paper / --accent / --accent-soft / --accent-ink
+     --hairline / --hairline-strong / --muted
+     --serif (Plus Jakarta Sans) / --mono (JetBrains Mono)
+     @keyframes pulse (already defined for .avail .dot)
+   To advance a phase: change one word — is-upcoming → is-current,
+   is-current → is-done. Nothing else needs to change.
+─────────────────────────────────────────────────────────────────── */
+
+.phasebar-block {
+  padding: 64px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.phasebar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+.phasebar-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 2.6vw, 34px);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0;
+}
+.phasebar-head h2 em { color: var(--accent); }
+.phasebar-note {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin: 0;
+  white-space: nowrap;
+}
+.phasebar-note .on-mobile { display: none; }
+@media (max-width: 743px) {
+  .phasebar-note .on-desktop { display: none; }
+  .phasebar-note .on-mobile { display: inline; }
+}
+
+/* ─── Rail ──────────────────────────────────────────────────────── */
+.phasebar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ph-step {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ph-trigger {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Connector — solid green where the phase to the LEFT is done,
+   dashed hairline otherwise. Pure CSS, no JS, driven entirely by
+   the state classes already on the markup. */
+.ph-step:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: calc(-100% + 18px);
+  width: 100%;
+  height: 0;
+  border-top: 2px dashed var(--hairline-strong);
+  z-index: 0;
+}
+.ph-step.is-done + .ph-step::before {
+  border-top-style: solid;
+  border-top-color: var(--accent);
+}
+
+/* ─── Node ──────────────────────────────────────────────────────── */
+.ph-node {
+  position: relative;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.ph-check, .ph-pip, .ph-num { display: none; }
+
+.ph-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Done */
+.is-done .ph-node { background: var(--accent); }
+.is-done .ph-check {
+  display: block;
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Current — ring + breathing pip, reusing the site's existing
+   .avail .dot pulse animation and accent-soft halo color */
+.is-current .ph-node {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+.is-current .ph-pip {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2.4s ease-out infinite;
+}
+
+/* Upcoming */
+.is-upcoming .ph-node { border: 1.5px dashed var(--hairline-strong); }
+.is-upcoming .ph-num { display: block; }
+
+/* ─── Copy ──────────────────────────────────────────────────────── */
+.ph-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 16px;
+  padding-right: 20px;
+}
+.ph-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.ph-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.ph-state {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+  width: fit-content;
+}
+.is-done .ph-state { color: var(--accent-ink); }
+.is-upcoming .ph-state { color: var(--muted-2); }
+.is-current .ph-state {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 4px 12px 4px 10px;
+}
+.is-current .ph-state::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+
+/* ─── Tooltip (desktop hover) ───────────────────────────────────── */
+.ph-tip {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  width: min(280px, 86vw);
+  z-index: 30;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 20px 50px -20px rgba(20, 17, 13, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.3s cubic-bezier(.2,.8,.2,1);
+}
+.ph-step:hover .ph-tip,
+.ph-step:focus-within .ph-tip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.ph-tip-close { display: none; }
+.ph-tip-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.ph-tip-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-right: 10px;
+}
+.ph-tip-state {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-ink);
+}
+.ph-tip-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.ph-tip-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.ph-tip-inner li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.ph-tip-inner li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Last few steps: keep tooltip from overflowing the right edge */
+.ph-step:nth-last-child(1) .ph-tip,
+.ph-step:nth-last-child(2) .ph-tip {
+  left: auto;
+  right: 0;
+}
+
+/* ─── Mobile (≤743px) — vertical rail, tap opens fullscreen modal ─ */
+@media (max-width: 743px) {
+  .phasebar-head { margin-bottom: 36px; }
+
+  .phasebar { flex-direction: column; }
+
+  .ph-step {
+    flex: none;
+    display: flex;
+    padding-bottom: 30px;
+  }
+  .ph-step:last-child { padding-bottom: 0; }
+
+  .ph-trigger {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .ph-copy { margin-top: 2px; padding-right: 0; }
+
+  /* Vertical connector, owned by the node it leaves */
+  .ph-step:not(:first-child)::before { content: none; }
+  .ph-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 36px;
+    bottom: -2px;
+    width: 0;
+    border-left: 2px dashed var(--hairline-strong);
+  }
+  .ph-step.is-done:not(:last-child)::after {
+    border-left-style: solid;
+    border-left-color: var(--accent);
+  }
+
+  /* Tap target: whole trigger opens the modal */
+  .ph-tip {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    z-index: 300;
+    display: none;
+    border-radius: 0;
+    border: 0;
+    padding: 24px;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    overflow-y: auto;
+  }
+  .ph-step.is-open .ph-tip { display: block; }
+  .ph-tip-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--muted);
+    transition: background 0.2s, color 0.2s;
+  }
+  .ph-tip-close:hover { background: var(--ink); color: var(--paper); }
+  .ph-tip-close svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+  }
+  .ph-tip-inner { padding-top: 56px; max-width: 480px; }
+  .ph-tip-name { font-size: 24px; margin-bottom: 20px; }
+  .ph-tip-inner li { font-size: 16px; }
+
+  body.ph-lock { overflow: hidden; }
+}
