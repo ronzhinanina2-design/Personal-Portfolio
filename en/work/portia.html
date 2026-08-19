@@ -256,27 +256,15 @@
     </div>
   </section>
 
-  <!-- ─── Mobile MVP scope ──────────────────────────────────────── -->
-  <section class="proj-section">
+  <!-- ─── Mobile MVP scope / timeline / phase intro ──────────────── -->
+  <section class="proj-section" style="padding-bottom: 0;">
     <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         The mobile MVP is stripped down to three functions: see today's calorie limit, log a meal, add a new product.
       </p>
-    </div>
-  </section>
-
-  <!-- ─── Timeline ──────────────────────────────────────────────── -->
-  <section class="proj-section">
-    <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         From idea to MVP to the first logged day in a working app took 4 weeks.
       </p>
-    </div>
-  </section>
-
-  <!-- ─── Phase roadmap ─────────────────────────────────────────── -->
-  <section class="proj-section" style="padding-bottom: 0;">
-    <div class="body">
       <p style="font-size: 18px; line-height: 1.6;">
         Future plans are split into phases — I'll keep updating this page as the app evolves.
       </p>
@@ -455,11 +443,6 @@
             <div class="more-work-tags"><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">UX/UI</span><span class="more-work-tag">Research</span></div>
           </div>
         </a>
-        <a href="/en/work/fleet-dashboard.html" class="more-work-arrow more-work-arrow--prev" aria-label="Previous case study">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
       <div class="more-work-item">
@@ -472,11 +455,6 @@
             <div class="more-work-sub">Booking redesign that simplified service for 2,000+ corporate fleet clients</div>
             <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">CJM</span></div>
           </div>
-        </a>
-        <a href="/en/work/fleet-booking.html" class="more-work-arrow more-work-arrow--next" aria-label="Next case study">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
       </div>
     </div>
@@ -704,9 +682,9 @@
 
 /* Carousel (multi-image sections) — reused from the DC case study carousel */
 .carousel-wrap { position: relative; margin-top: 8px; }
-.carousel { overflow: hidden; border-radius: 12px; }
-.carousel-track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
-.carousel-track img { width: 100%; flex-shrink: 0; border-radius: 12px; display: block; }
+.carousel { overflow: hidden; border-radius: 12px; aspect-ratio: 16 / 9; background: var(--paper-2); }
+.carousel-track { display: flex; height: 100%; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.carousel-track img { width: 100%; height: 100%; object-fit: contain; flex-shrink: 0; border-radius: 12px; display: block; }
 .carousel-arrow {
   position: absolute;
   top: 50%;
