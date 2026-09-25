@@ -1,6 +1,7 @@
 (function () {
   const path = window.location.pathname;
   const isWork = /\/work\//.test(path);
+  const isPrivacy = /\/privacy\.html$/.test(path);
   const isRu = path.startsWith('/ru/');
   const isEn = path.startsWith('/en/');
   const lang = isRu ? 'ru' : 'en';
@@ -21,7 +22,7 @@
   const ctaLabel     = isRu ? 'Написать' : "Let's talk";
   const availLabel   = isRu ? 'ОТКРЫТА ДЛЯ СОТРУДНИЧЕСТВА' : 'AVAILABLE NOW';
 
-  const links = isWork
+  const links = (isWork || isPrivacy)
     ? [
         { href: indexHref,              label: homeLabel },
         { href: indexHref + '#work',    label: workLabel, active: true },
