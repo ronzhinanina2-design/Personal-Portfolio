@@ -25,14 +25,14 @@
   const links = (isWork || isPrivacy)
     ? [
         { href: indexHref,              label: homeLabel },
-        { href: indexHref + '#work',    label: workLabel, active: true },
         { href: indexHref + '#about',   label: aboutLabel },
+        { href: indexHref + '#work',    label: workLabel, active: true },
         { href: indexHref + '#contact', label: contactLabel },
       ]
     : [
         { href: '#top',     label: homeLabel, active: true },
-        { href: '#work',    label: workLabel },
         { href: '#about',   label: aboutLabel },
+        { href: '#work',    label: workLabel },
         { href: '#contact', label: contactLabel },
       ];
 
