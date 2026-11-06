@@ -44,81 +44,205 @@
       <h1 style="font-size: 64px; line-height: 1.05;">Fleet Maintenance Automation.</h1>
     </div>
     <p class="sub" style="font-size: 18px; margin-top: 16px;">
-      Fleet managers were tracking hundreds of service intervals across spreadsheets and gut feel. We built a system that does it for them.
+      Fleet managers planned maintenance in spreadsheets and third-party tools. I designed a schedule inside FIT FLEET that shows every vehicle's service dates at a glance and prepares the booking for them. It is available to all clients.
     </p>
   </section>
 
   <dl class="meta-grid">
     <div><dt>Year</dt><dd>2024</dd></div>
     <div><dt>Team</dt><dd>2 designers · 1 PM · 3 engineers</dd></div>
-    <div><dt>Surfaces</dt><dd>Desktop Web</dd></div>
+    <div><dt>Surfaces</dt><dd>Desktop Web · Mobile (urgent tasks only)</dd></div>
     <div><dt>Tools</dt><dd>Figma · Miro</dd></div>
   </dl>
 
-  <!-- Overview image -->
-  <div style="margin-bottom: 48px;">
-    <img src="fitfleet-maintenance-overview.png" alt="Maintenance dashboard overview" style="width:100%; border-radius:12px; display:block;">
+  <div class="role-line">
+    <span class="role-label">Role</span>
+    <p>I designed the schedule and the design system, built all interactive prototypes and took part in user interviews with the design lead and PM. I designed the main screen together with the design lead. After each iteration I updated the layouts. After development, I reviewed the built design with the engineers.</p>
   </div>
 
-  <!-- Sections -->
+  <div class="result-block">
+    <div class="result-row"><span class="result-label">Status</span><span class="result-value">Live for all FIT FLEET users, 20,000+ companies.</span></div>
+    <div class="result-row"><span class="result-label">Scale</span><span class="result-value">100+ screens designed over six months.</span></div>
+    <div class="result-row"><span class="result-label">Interviews</span><span class="result-value">Time to read the schedule fell from about a minute to 10–20 seconds.</span></div>
+    <div class="result-row"><span class="result-label">Feedback</span><span class="result-value">Written reviews did not reach the studio, but the client's product owner passed on positive feedback after launch.</span></div>
+    <div class="result-row"><span class="result-label">Measurement</span><span class="result-value">No usage metrics were collected.</span></div>
+  </div>
+
+  <!-- The task -->
   <section class="proj-section">
     <div class="body">
+      <span class="section-label case-subhead">The task</span>
       <p style="font-size: 18px; line-height: 1.6;">
-        Fleet managers handle dozens of vehicles across multiple legal entities — each with its own service intervals, inspections, and insurance renewals. There was no single place to see any of it, so things got missed and every morning started with catching up. We built the fix over six months, testing with real fleet managers along the way, and shipped 100+ screens.
+        Before the schedule, FIT FLEET clients tracked maintenance in Excel files and filled them in by hand. Others used third-party services that had no link to FIT FLEET. Their fleets were already in the platform, because loading a fleet from Excel is simple, even all vehicles at once.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        The goal was a maintenance schedule inside FIT FLEET, so managers stop switching between tools. Fleets range from 10 to 1,000 vehicles, so one screen had to work for both.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        The schedule was a new tool in the platform, so success meant clients using it.
       </p>
     </div>
   </section>
 
+  <!-- Decision 1: icon carousel -->
   <section class="proj-section">
     <div class="body">
+      <span class="section-label case-subhead">Small dots on a line replaced large icons. Reading time fell from about a minute to 10–20 seconds.</span>
       <p style="font-size: 18px; line-height: 1.6;">
-        The main view surfaces what matters right now — expenses by legal entity, vehicles due for service, FIT FLEET privilege savings, approvals waiting on someone. Notifications sit right on the main page, not buried in a menu, and mirror to mobile for managers away from their desk.
+        The first version used large colourful icons. One icon meant one service visit or tyre fitting.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        In the first interview round it became clear that some clients would have around 50 icons on one screen. With a large fleet and extra events, the icons merged into one coloured mass. Testers needed about a minute to understand what they were looking at.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        I replaced the icons with small, subtle dots on a timeline. After that, testers needed 10–20 seconds to see which vehicle goes where and when.
       </p>
     </div>
     <div>
-      <img src="fitfleet-maintenance-dashboard.png" alt="Main dashboard" style="width: 100%; border-radius: 12px; display: block;">
+      <div class="carousel-wrap">
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="fitfleet-maintenance-icons-01.png" alt="Schedule variant with large wrench icons and solid red booking buttons">
+            <img src="fitfleet-maintenance-icons-02.png" alt="Schedule variant with large wrench icons in a light style" loading="lazy">
+            <img src="fitfleet-maintenance-icons-03.png" alt="Schedule variant with round car icons marked with check and cross" loading="lazy">
+            <img src="fitfleet-maintenance-icons-04.png" alt="Schedule variant with outlined wrench icons and time pills" loading="lazy">
+            <img src="fitfleet-maintenance-icons-05.png" alt="Schedule variant with green diamonds and red triangles" loading="lazy">
+            <img src="fitfleet-maintenance-schedule-year.png" alt="Final schedule with small dots on a timeline and a light background fill" loading="lazy">
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Previous image">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Next image">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="carousel-dots"></div>
+      </div>
+      <p class="case-caption">Six approaches to the schedule. Some were dropped before testing, others after the interviews. Subtle, neat dots stayed.</p>
     </div>
   </section>
 
+  <!-- Decision 2 -->
   <section class="proj-section">
     <div class="body">
+      <span class="section-label case-subhead">One schedule holds every date a fleet manager tracks</span>
       <p style="font-size: 18px; line-height: 1.6;">
-        The maintenance schedule doubles as a planning tool and a log. The yearly view maps every vehicle across 12 months, each dot a service event color-coded by status; switch to the monthly calendar for finer detail, or add a custom event to any car on any day without losing the bigger picture.
+        Clients asked for one universal tool. Besides maintenance, the schedule holds custom events such as insurance and driver power of attorney expiry.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        A manager who opens the schedule in the morning sees which vehicles need documents renewed. The same screen shows which vehicles have an annual inspection in two weeks.
       </p>
     </div>
     <div>
-      <img src="fitfleet-maintenance-schedule-year.png" alt="Yearly maintenance schedule" style="width: 100%; border-radius: 12px; display: block; margin-bottom: 16px;">
+      <img src="fitfleet-maintenance-schedule-year.png" alt="Yearly maintenance schedule" style="width: 100%; border-radius: 12px; display: block;">
+      <p class="case-caption">The yearly schedule.</p>
+    </div>
+  </section>
+
+  <!-- Decision 3: auto-scheduling -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label case-subhead">Auto-scheduling pre-fills the booking, so the manager only confirms</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        The platform suggests a service visit for a vehicle with every field already filled in. The fleet manager checks that the data is right and picks the service station, date and time.
+      </p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      <div>
+        <img src="fitfleet-maintenance-dashboard.png" alt="Main dashboard with fleet status and entry points to the schedule and auto-scheduling" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">The main screen with the state of the fleet. The schedule and auto-scheduling open from here.</p>
+      </div>
+      <div>
+        <img src="fitfleet-maintenance-autoschedule.png" alt="Auto-scheduling modal" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">A suggested booking with pre-filled fields.</p>
+      </div>
+      <div>
+        <img src="fitfleet-maintenance-booking-flow.png" alt="Booking steps: date and time, confirmation and list of automatic visits" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">Booking steps: date and time, confirmation, and the list of visits created automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decision 4: maintenance rules -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label case-subhead">Manufacturer maintenance rules load automatically, and managers adjust them for their region</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Every vehicle has manufacturer recommendations: which diagnostics at which mileage and which work to carry out. We load these recommendations into the system, and the scheduler adds the services to the list when a manager books a visit.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        A manager can edit the list for a make and model. They add or remove services their region needs, for example because of cold winters or poor roads. The edited list is saved for all vehicles of the same make and model.
+      </p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      <div>
+        <img src="fitfleet-maintenance-services-table.png" alt="Service configuration matrix" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">Service lists per make and model.</p>
+      </div>
+      <div>
+        <img src="fitfleet-maintenance-add-service.png" alt="Add service modal" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">Adding a service for a region.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label case-subhead">Four interview rounds, and a design system that kept up</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        The lead and I collected references separately, then ran a joint brainstorm and chose a hypothesis. After that came the prototype and the interviews. Each round followed the same loop: prototype, interview, changes, next interview. Two to three people took part in every round, and some came back to discuss the changes between rounds. The participants were fleet managers from different legal entities, with fleets from 10 to 1,000 vehicles. I joined the interviews together with the design lead and PM.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        To keep 100+ screens consistent, I built the design system on Material Design and adapted the components to the client's needs. After every round I updated the layouts.
+      </p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      <div>
+        <img src="fitfleet-maintenance-figma-flow.png" alt="Part of the Figma prototype with screens and connections" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">Part of the prototype used in the interviews: screens and the connections between them.</p>
+      </div>
+      <div>
+        <img src="fitfleet-maintenance-figma-canvas.png" alt="Figma file with schedule flows and dashboard variants" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">The Figma file with the schedule flows and the dashboard variants.</p>
+      </div>
+      <div>
+        <img src="fitfleet-maintenance-ui-kit.png" alt="UI kit built on Material Design" style="width: 100%; border-radius: 12px; display: block;">
+        <p class="case-caption">UI kit built on Material Design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What was postponed -->
+  <section class="proj-section">
+    <div class="body">
+      <span class="section-label case-subhead">What was postponed</span>
+      <p style="font-size: 18px; line-height: 1.6;">
+        The monthly calendar view was part of the prototype and was tested in one of the interview rounds. At the last moment, the client's PM decided not to take it into development. Building it alongside the schedule was technically hard for the engineers, and their plan was already full of other priorities. The first release shipped with the timeline.
+      </p>
+    </div>
+    <div>
       <img src="fitfleet-maintenance-schedule-month.png" alt="Monthly calendar view" style="width: 100%; border-radius: 12px; display: block;">
+      <p class="case-caption">Monthly calendar view. Not released.</p>
     </div>
   </section>
 
+  <!-- What I took from this project -->
   <section class="proj-section">
     <div class="body">
+      <span class="section-label case-subhead">What I took from this project</span>
       <p style="font-size: 18px; line-height: 1.6;">
-        The system calculates each vehicle's next service date from mileage and average distance — set it once per vehicle, or apply it across a whole model in one step. Custom events sit on top for anything outside the standard plan.
+        A complex utility tool should not be decorated. Decoration makes it slower to scan and use when there is a lot of data.
       </p>
     </div>
-    <div>
-      <img src="fitfleet-maintenance-autoschedule.png" alt="Auto-scheduling modal" style="width: 100%; border-radius: 12px; display: block;">
-    </div>
   </section>
 
+  <!-- What I would add next -->
   <section class="proj-section">
     <div class="body">
+      <span class="section-label case-subhead">What I would add next</span>
       <p style="font-size: 18px; line-height: 1.6;">
-        Managers define which operations belong to each service appointment at every mileage checkpoint. The service matrix keeps the full picture readable and easy to adjust, and new services come from a searchable, categorized list.
-      </p>
-    </div>
-    <div>
-      <img src="fitfleet-maintenance-services-table.png" alt="Service configuration matrix" style="width: 100%; border-radius: 12px; display: block; margin-bottom: 16px;">
-      <img src="fitfleet-maintenance-add-service.png" alt="Add service modal" style="width: 100%; border-radius: 12px; display: block;">
-    </div>
-  </section>
-
-  <section class="proj-section">
-    <div class="body">
-      <p style="font-size: 18px; line-height: 1.6;">
-        I owned all the interactive prototypes used in testing across the project, from early concept checks to late-stage flow validation — catching structural problems before they got expensive.
+        With today's AI tools, I would add a daily summary for fleet managers. It would analyse the state of the fleet and list urgent tasks and overdue items each morning.
       </p>
     </div>
   </section>
@@ -140,11 +264,6 @@
             <div class="more-work-tags"><span class="more-work-tag">Research</span><span class="more-work-tag">User testing</span><span class="more-work-tag">UX/UI</span><span class="more-work-tag">B2B</span></div>
           </div>
         </a>
-        <a href="/en/work/fleet-service-quality.html" class="more-work-arrow more-work-arrow--prev" aria-label="Previous case study">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
       <div class="more-work-item">
@@ -157,11 +276,6 @@
             <div class="more-work-sub">Booking redesign that simplified service for 2,000+ corporate fleet clients</div>
             <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">B2B</span><span class="more-work-tag">CJM</span><span class="more-work-tag">User testing</span></div>
           </div>
-        </a>
-        <a href="/en/work/fleet-booking.html" class="more-work-arrow more-work-arrow--next" aria-label="Next case study">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
       </div>
     </div>
@@ -333,6 +447,60 @@
     cvToggle.addEventListener('click', e => { e.stopPropagation(); const open = cvMenu.classList.toggle('open'); cvToggle.setAttribute('aria-expanded', open); });
     document.addEventListener('click', () => { cvMenu.classList.remove('open'); cvToggle.setAttribute('aria-expanded', false); });
   }
+
+  // Carousels (multi-image sections) — same pattern as the DC/Portia case study carousel,
+  // generalized so each .carousel-wrap on the page runs independently.
+  document.querySelectorAll('.carousel-wrap').forEach(wrap => {
+    const track = wrap.querySelector('.carousel-track');
+    const prevBtn = wrap.querySelector('.carousel-arrow--prev');
+    const nextBtn = wrap.querySelector('.carousel-arrow--next');
+    const dotsWrap = wrap.querySelector('.carousel-dots');
+    const slides = track ? Array.from(track.children) : [];
+    const total = slides.length;
+    let current = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot' + (i === 0 ? ' carousel-dot--active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('carousel-dot--active', i === current);
+      });
+      if (prevBtn) prevBtn.style.opacity = total <= 1 ? '0' : '1';
+      if (nextBtn) nextBtn.style.opacity = total <= 1 ? '0' : '1';
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+
+    // Swipe support on mobile
+    if (window.innerWidth <= 743) {
+      let touchStartX = 0;
+      let touchDeltaX = 0;
+      track.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+        touchDeltaX = 0;
+      }, { passive: true });
+      track.addEventListener('touchmove', e => {
+        touchDeltaX = e.touches[0].clientX - touchStartX;
+      }, { passive: true });
+      track.addEventListener('touchend', () => {
+        if (Math.abs(touchDeltaX) > 40) {
+          goTo(touchDeltaX < 0 ? current + 1 : current - 1);
+        }
+      });
+    }
+
+    goTo(0);
+  });
 </script>
 <style>
 .cv-dropdown { position: relative; }
@@ -349,6 +517,77 @@
 .cv-menu li a:focus-visible,
 .cv-menu li a:active { outline: none; box-shadow: none; border: none; }
 .cv-menu li + li { border-top: none; }
+
+/* Role line — directly under the meta grid */
+.role-line { max-width: 70ch; padding-top: 32px; display: flex; flex-direction: column; gap: 10px; }
+.role-label { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+.role-line p { font-size: 18px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+
+/* Result block */
+.result-block { margin-top: 8px; padding: 40px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 18px; }
+.result-row { display: flex; gap: 20px; align-items: baseline; }
+.result-label { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); min-width: 120px; flex-shrink: 0; }
+.result-value { font-size: 16px; line-height: 1.5; color: var(--ink); }
+
+/* Subheadings reused from .section-label, caption under case images */
+.case-subhead { display: block; margin-bottom: 4px; }
+.case-caption { font-size: 13px; line-height: 1.5; color: var(--muted); margin-top: 10px; }
+
+@media (max-width: 743px) {
+  .result-row { flex-direction: column; gap: 4px; }
+  .result-label { min-width: 0; }
+}
+
+/* Carousel (multi-image sections) — reused from the DC/Portia case study carousel */
+.carousel-wrap { position: relative; margin-top: 8px; }
+.carousel { overflow: hidden; border-radius: 12px; aspect-ratio: 1800 / 992; background: var(--paper-2); }
+.carousel-track { display: flex; height: 100%; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.carousel-track img { width: 100%; height: 100%; object-fit: contain; flex-shrink: 0; border-radius: 12px; display: block; }
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #14110d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.carousel-arrow:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.08);
+  transform: translateY(-50%) scale(1.05);
+}
+.carousel-arrow:active { transform: translateY(-50%) scale(0.97); }
+.carousel-arrow--prev { left: -25px; }
+.carousel-arrow--next { right: -25px; }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20,17,13,0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot--active {
+  background: rgba(20,17,13,0.75);
+  transform: scale(1.25);
+}
 </style>
 </body>
 </html>
