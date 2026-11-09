@@ -15,25 +15,25 @@
 
   const indexHref = isRu ? '/ru/index.html' : '/en/index.html';
 
-  const homeLabel    = isRu ? 'Главная'  : 'Home';
-  const workLabel    = isRu ? 'Работы'   : 'Work';
-  const aboutLabel   = isRu ? 'Обо мне'  : 'About';
-  const contactLabel = isRu ? 'Контакты' : 'Contact';
+  const homeLabel    = isRu ? 'Главная'      : 'Home';
+  const workLabel    = isRu ? 'Кейсы'        : 'Work';
+  const helpLabel    = isRu ? 'Чем я помогу' : 'How I can help';
+  const contactLabel = isRu ? 'Контакты'     : 'Contact';
   const ctaLabel     = isRu ? 'Написать' : "Let's talk";
   const availLabel   = isRu ? 'ОТКРЫТА ДЛЯ СОТРУДНИЧЕСТВА' : 'AVAILABLE NOW';
 
   const links = (isWork || isPrivacy)
     ? [
-        { href: indexHref,              label: homeLabel },
-        { href: indexHref + '#about',   label: aboutLabel },
-        { href: indexHref + '#work',    label: workLabel, active: true },
-        { href: indexHref + '#contact', label: contactLabel },
+        { href: indexHref,                          label: homeLabel },
+        { href: indexHref + '#how-i-can-help',       label: helpLabel },
+        { href: indexHref + '#work',                 label: workLabel, active: true },
+        { href: indexHref + '#contact',              label: contactLabel },
       ]
     : [
-        { href: '#top',     label: homeLabel, active: true },
-        { href: '#about',   label: aboutLabel },
-        { href: '#work',    label: workLabel },
-        { href: '#contact', label: contactLabel },
+        { href: '#top',             label: homeLabel, active: true },
+        { href: '#how-i-can-help',  label: helpLabel },
+        { href: '#work',            label: workLabel },
+        { href: '#contact',         label: contactLabel },
       ];
 
   const navLinks = links

@@ -50,7 +50,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin: 0 auto;
 }
 
-.divider { height: 1px; background: var(--hairline); border: 0; margin: 0; }
+/* No divider lines on this site. Spacing is the separator. */
 
 /* ─── Top bar ───────────────────────────────────────────────────── */
 .topbar {
@@ -202,42 +202,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ─── Type primitives ───────────────────────────────────────────── */
 .display {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(28px, 3.6vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 .display em { font-style: italic; font-family: var(--serif); }
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-}
 .lead {
   font-size: clamp(20px, 1.9vw, 26px);
   line-height: 1.45;
   color: var(--ink-2);
   max-width: 32ch;
   text-wrap: pretty;
-}
-.section-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.section-label::before {
-  content: "";
-  display: inline-block;
-  width: 22px; height: 1px;
-  background: currentColor;
 }
 
 /* ─── Buttons ───────────────────────────────────────────────────── */
@@ -266,9 +243,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ─── Footer ────────────────────────────────────────────────────── */
 .footer {
-  margin-top: 48px;
+  margin-top: 96px;
   padding: 72px 0 32px;
-  border-top: 1px solid var(--hairline);
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
   gap: 48px;
@@ -296,9 +272,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  padding-top: 28px;
-  border-top: 1px solid var(--hairline);
-  margin-top: 24px;
+  padding-top: 32px;
+  margin-top: 32px;
 }
 @media (max-width: 800px) {
   .footer { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
@@ -327,7 +302,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ─── Hero ─────────────────────────────────────────────────────── */
 .hero {
-  padding: clamp(60px, 12vh, 140px) 0 clamp(80px, 14vh, 160px);
+  padding: 72px 0 0;
   position: relative;
 }
 .hero-stack {
@@ -338,20 +313,51 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-align: center;
 }
 .display em { color: var(--accent); }
-.hero-grid {
+.intro {
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 20px 0 0;
+}
+
+/* ─── How I can help ──────────────────────────────────────────── */
+.how-i-can-help {
+  padding-top: 72px;
+  scroll-margin-top: 80px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.help-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.45fr);
-  gap: 80px;
-  align-items: end;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+  margin-top: 28px;
 }
-@media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-}
-.hero-side {
+.help-card {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding-bottom: 16px;
+  gap: 10px;
+}
+.help-card h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+.help-card p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* ─── Work gallery (stacked) ───────────────────────────────────── */
@@ -365,9 +371,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .work-head h2 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(22px, 2.4vw, 36px);
-  letter-spacing: -0.015em;
-  line-height: 1.05;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
   margin: 0;
 }
 .work-head h2 em { font-style: italic; }
@@ -433,9 +439,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Same card size as .work-card — the divider + heading above are enough
    to signal this is a separate, secondary section. */
 .petprojects {
-  margin-top: 56px;
-  padding-top: 56px;
-  border-top: 1px solid var(--hairline);
+  margin-top: 96px;
+  padding-top: 72px;
 }
 .petprojects-head {
   margin-bottom: 28px;
@@ -443,9 +448,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .petprojects-head h2 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(18px, 1.8vw, 24px);
-  letter-spacing: -0.01em;
-  line-height: 1.1;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
   margin: 0;
 }
 .petprojects-list {
@@ -526,9 +531,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 36px 24px;
-  padding: 32px 0;
-  border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
+  padding: 40px 0;
 }
 .meta-grid > div { display: flex; flex-direction: column; gap: 8px; }
 .meta-grid dt {
@@ -820,152 +823,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .about { grid-template-columns: 1fr; gap: 24px; margin-top: 64px; padding: 64px 0 20px; }
 }
 
-/* ─── About block (bio + services) ──────────────────────────────── */
-.about-block {
-  padding: 72px 0 64px;
-}
-.about-block > .section-label {
-  display: block;
-  margin-bottom: 40px;
-}
-.bio-card {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 56px;
-  align-items: center;
-  margin-bottom: 72px;
-}
-.bio-photo {
-  aspect-ratio: 4 / 5;
-  border-radius: 24px;
-  overflow: hidden;
-}
-.bio-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.bio-text p {
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.2vw, 30px);
-  line-height: 1.42;
-  letter-spacing: -0.012em;
-  color: var(--ink);
-  max-width: 62ch;
-  margin: 0;
-  text-wrap: pretty;
-}
-.about-subhead {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(20px, 2vw, 26px);
-  letter-spacing: -0.01em;
-  line-height: 1.15;
-  margin: 0 0 32px;
-}
-.service-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.service-card {
-  padding: 32px;
-  border: 1px solid var(--hairline);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.service-card .service-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-.service-card h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0;
-}
-.service-tag {
-  flex-shrink: 0;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  padding: 5px 10px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  color: var(--muted);
-  white-space: nowrap;
-}
-.service-card .desc {
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ink-2);
-  margin: 0;
-}
-.service-list-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  color: var(--muted);
-  margin-top: 4px;
-}
-.service-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.service-card li {
-  position: relative;
-  padding-left: 16px;
-  font-size: 14.5px;
-  line-height: 1.45;
-  color: var(--ink-2);
-}
-.service-card li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 6px;
-  height: 1px;
-  background: var(--muted-2);
-}
-.about-note {
-  margin: 40px 0 0;
-  font-size: 14px;
-  color: var(--muted);
-  max-width: 62ch;
-}
-@media (max-width: 743px) {
-  .bio-card {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-  .bio-photo {
-    width: 100%;
-    max-width: 220px;
-    aspect-ratio: 4 / 5;
-  }
-  .service-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
 /* ─── CTA band ────────────────────────────────────────────────── */
 .cta-band {
   margin-top: 80px;
@@ -999,11 +856,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-top: 80px;
   padding: 200px 0 160px;
   text-align: center;
-  border-top: 1px solid var(--hairline);
   position: relative;
   scroll-margin-top: 80px;
 }
-.contact-section .eyebrow { display: block; margin-bottom: 32px; }
 .contact-section h2 {
   font-family: var(--serif);
   font-weight: 400;
@@ -1031,7 +886,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 20px;
   align-items: center;
 }
-.channels-label { display: inline-flex; }
 .channels {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1239,34 +1093,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
   /* Hero H1 — override inline font-size and width */
   .hero h1, .display {
-    font-size: clamp(28px, 8vw, 44px) !important;
+    font-size: 34px !important;
     width: auto !important;
     max-width: 100% !important;
-    line-height: 1.1 !important;
+    line-height: 1.15 !important;
   }
 
   /* Section spacing */
   .hero {
     height: auto !important;
-    padding: 32px 0 !important;
-  }
-  .hero-grid {
-    height: auto !important;
-    gap: 16px !important;
+    padding: 40px 0 0 !important;
   }
   section {
-    padding-top: 40px !important;
+    padding-top: 56px !important;
     padding-bottom: 40px !important;
-  }
-  .divider, hr {
-    margin: 24px 0 !important;
   }
 
-  /* About + Contact gap */
-  .about, #about {
-    padding-bottom: 40px !important;
-    margin-top: 48px !important;
-    padding-top: 48px !important;
+  /* How I can help + Contact gap */
+  #how-i-can-help {
+    padding-top: 56px !important;
   }
   .contact-section, #contact {
     padding-top: 40px !important;
@@ -1373,6 +1218,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ─── Mobile-only: lightbox, contact modal, CV sheet, RU heading (≤743px) ─ */
 @media (max-width: 743px) {
+  .display { max-width: 100%; text-wrap: wrap; }
+  .hero-break { display: none; }
+  .intro { font-size: 18px; margin-top: 16px; }
+  .section-title { font-size: 26px; }
+  .help-grid { grid-template-columns: 1fr; gap: 36px; margin-top: 24px; }
+  #work { padding-top: 64px !important; }
+
   .proj-section img { cursor: zoom-in; }
 
   .mobile-lightbox {
