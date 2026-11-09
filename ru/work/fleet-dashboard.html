@@ -263,6 +263,13 @@
         <div class="case-more-title">Редизайн записи на автосервис</div>
         <div class="case-more-sub">Редизайн бронирования для 2 000+ корпоративных клиентов автопарка</div>
       </a>
+      <a href="/ru/work/acro-rnr.html" class="case-more-card">
+        <div class="case-more-preview">
+          <img src="/acro-rnr-thumb.png" alt="Acrobatic Rock'n'Roll competition management system" loading="lazy">
+        </div>
+        <div class="case-more-title">Система управления соревнованиями</div>
+        <div class="case-more-sub">15 000 спортсменов управляются в этой системе</div>
+      </a>
     </div>
   </section>
 
@@ -540,7 +547,7 @@
 
 .case-content-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 96px; }
 .case-role { grid-column: 1 / 9; grid-row: 1; }
-.case-facts { grid-column: 9 / 13; grid-row: 1; display: flex; flex-direction: column; gap: 18px; }
+.case-facts { grid-column: 9 / 13; grid-row: 1 / 3; align-self: start; display: flex; flex-direction: column; gap: 18px; }
 .case-task { grid-column: 1 / 9; grid-row: 2; }
 .case-role .case-data-label { margin-bottom: 8px; }
 .case-role-text { font-size: 16px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 680px; }
@@ -559,7 +566,7 @@
 }
 
 /* Default image container */
-.case-img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #DAD8D2; }
+.case-img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #E6E4DE; }
 @media (max-width: 743px) {
   .case-img { border-radius: 12px; }
 }
@@ -568,14 +575,14 @@
 /* Carousel */
 .case-carousel-wrap { margin-top: 16px; }
 .case-carousel-stage { position: relative; }
-.case-carousel-frame { border-radius: 16px; border: 1px solid #DAD8D2; overflow: hidden; aspect-ratio: 16 / 9; }
+.case-carousel-frame { border-radius: 16px; border: 1px solid #E6E4DE; overflow: hidden; aspect-ratio: 16 / 9; }
 .case-carousel-track { display: flex; height: 100%; transition: transform 0.45s cubic-bezier(.4,0,.2,1); }
 .case-carousel-slide { flex: 0 0 100%; height: 100%; background: var(--paper-sunk); display: flex; align-items: center; justify-content: center; }
 .case-carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .case-carousel-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; border-radius: 50%;
-  background: #FFFFFF; border: 1px solid #DAD8D2; box-shadow: none;
+  background: #FFFFFF; border: 1px solid #E6E4DE; box-shadow: none;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; z-index: 5; color: var(--ink);
 }
@@ -599,7 +606,7 @@
   .case-carousel-track::-webkit-scrollbar { display: none; }
   .case-carousel-slide {
     flex: 0 0 88%; aspect-ratio: 16 / 9; height: auto;
-    border-radius: 12px; border: 1px solid #DAD8D2; overflow: hidden;
+    border-radius: 12px; border: 1px solid #E6E4DE; overflow: hidden;
     scroll-snap-align: start;
   }
   .case-carousel-dots { margin-top: 8px; }
@@ -609,7 +616,7 @@
 .case-row-2 { display: flex; gap: 24px; margin-top: 16px; }
 .case-row-2-item { flex: 1 1 0; min-width: 0; }
 .case-square {
-  aspect-ratio: 1 / 1; background: #FFFFFF; border: 1px solid #DAD8D2;
+  aspect-ratio: 1 / 1; background: #FFFFFF; border: 1px solid #E6E4DE;
   border-radius: 16px; padding: 16px;
   display: flex; align-items: center; justify-content: center;
 }

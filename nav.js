@@ -50,16 +50,18 @@
     </span>`;
 
   const html = `<header class="topbar">
-  <div class="brand">
-    <a href="${indexHref}" class="brand-name">Nina <em>Hayden</em></a>
-    <span class="avail" title="Available for select projects"><span class="dot"></span>${availLabel}</span>
-  </div>
-  <nav class="nav">
-    ${navLinks}
-  </nav>
-  <div class="meta-right">
-    ${langSwitch}
-    <a href="javascript:void(0)" class="topbar-cta">${ctaLabel}</a>
+  <div class="topbar-inner">
+    <div class="brand">
+      <a href="${indexHref}" class="brand-name">Nina <em>Hayden</em></a>
+      <span class="avail" title="Available for select projects"><span class="dot"></span>${availLabel}</span>
+    </div>
+    <nav class="nav">
+      ${navLinks}
+    </nav>
+    <div class="meta-right">
+      ${langSwitch}
+      <a href="javascript:void(0)" class="topbar-cta">${ctaLabel}</a>
+    </div>
   </div>
 </header>`;
 
@@ -71,7 +73,7 @@
   if (header) {
     function updateScrollLine() {
       const t = Math.min(window.scrollY / 24, 1);
-      header.style.borderBottomColor = `color-mix(in srgb, #DAD8D2 ${Math.round(t * 100)}%, transparent)`;
+      header.style.borderBottomColor = `color-mix(in srgb, #E6E4DE ${Math.round(t * 100)}%, transparent)`;
     }
     updateScrollLine();
     window.addEventListener('scroll', updateScrollLine, { passive: true });
@@ -101,7 +103,7 @@
   }
 
   function initLightbox() {
-    const imgs = document.querySelectorAll('.proj-section img');
+    const imgs = document.querySelectorAll('.proj-section img, .case-img, .case-carousel-slide img, .case-square img');
     if (!imgs.length) return;
 
     const overlay = document.createElement('div');
