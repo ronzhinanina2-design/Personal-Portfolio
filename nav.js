@@ -66,6 +66,17 @@
   const root = document.getElementById('site-nav');
   if (root) root.outerHTML = html;
 
+  // Thin line fades in under the header over the first 24px of scroll
+  const header = document.querySelector('.topbar');
+  if (header) {
+    function updateScrollLine() {
+      const t = Math.min(window.scrollY / 24, 1);
+      header.style.borderBottomColor = `color-mix(in srgb, #DAD8D2 ${Math.round(t * 100)}%, transparent)`;
+    }
+    updateScrollLine();
+    window.addEventListener('scroll', updateScrollLine, { passive: true });
+  }
+
   // Wire CTA to open contact modal
   document.querySelector('.topbar-cta')?.addEventListener('click', e => {
     e.preventDefault();
