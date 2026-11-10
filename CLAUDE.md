@@ -10,6 +10,8 @@ No coloured panels, shadows or baked backgrounds behind images. Images get a 1px
 
 "Two in a row" images: never crop, zoom, or force a square. Each box sizes itself to its own image at full width, natural proportions (`width: 100%; height: auto;`, no `aspect-ratio` on the container) — the box just hugs the image, so there's never empty space inside it. The two boxes in a row can end up different heights; that's fine.
 
+Two images in a row are only for modal windows and narrow screens. Full desktop screens always go one per row at full width.
+
 Case template: see the "case-" classes on fleet-dashboard.html. New case pages reuse them.
 
 # Site rules

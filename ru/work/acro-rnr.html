@@ -13,7 +13,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Система управления соревнованиями — Nina Hayden</title>
+<title>Система регистрации и оплаты соревнований для 15 000 спортсменов — Nina Hayden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -38,127 +38,258 @@
   <a href="/ru/index.html" class="back-link">← Назад</a>
 </div>
 
-<main class="page">
+<main class="page case-page">
 
-  <!-- Hero image first -->
-  <div class="proj-hero-image" style="padding-top: 12px; overflow: visible;">
-    <img src="acro-rnr-hero.png" alt="Платформа для управления соревнованиями по акробатическому рок-н-роллу" style="display: block; width: 100%; height: auto; border-radius: 12px;">
+<div class="case-shell">
+
+  <!-- Top block -->
+  <div class="case-top-grid">
+    <div class="case-h1-col">
+      <h1 class="case-h1">Система регистрации и оплаты соревнований для 15 000 спортсменов</h1>
+    </div>
+    <div class="case-descriptor-col">
+      <p class="case-descriptor">Соревнования проходили в очень устаревшем интерфейсе, неудобном для всех. Я спроектировала новую систему для регистрации спортсменов, работы с заявками и оплаты. Она запустилась на российских соревнованиях, позже подключились международные.</p>
+    </div>
   </div>
 
-  <!-- Hero text below image -->
-  <section class="proj-hero" style="padding-top: 48px;">
-    <div>
-      <h1 style="font-size: 64px; line-height: 1.05;">Создано с нуля. <em>Масштабировано на всю страну</em></h1>
-    </div>
-    <p class="sub" style="font-size: 18px; margin-top: 16px;">
-      Платформа для управления соревнованиями по акробатическому рок-н-роллу Acrobatic Rock'n'Roll — созданная с нуля, чтобы обрабатывать всё: от тренера, регистрирующего двух спортсменов, до руководителя страны, утверждающего сотни заявок одним кликом.
-    </p>
-  </section>
-
-  <dl class="meta-grid">
-    <div><dt>Год</dt><dd>2025</dd></div>
-    <div><dt>Команда</dt><dd>2 дизайнера · 1 PM · 4 разработчика</dd></div>
-    <div><dt>Платформы</dt><dd>Десктоп · Мобильная версия</dd></div>
-    <div><dt>Инструменты</dt><dd>Figma · Miro</dd></div>
-  </dl>
-
-  <!-- Overview image -->
-  <div style="margin-bottom: 48px;">
-    <img src="acro-rnr-overview.png" alt="Обзор платформы" style="width:100%; border-radius:12px; display:block;">
+  <div class="case-hero">
+    <img class="case-img" src="acro-rnr-hero.png" alt="Events list of the competition management system">
   </div>
 
-  <!-- Sections -->
-  <section class="proj-section">
-    <div class="body">
-      <p style="font-size: 18px; line-height: 1.6;">
-        Национальные соревнования объединяют тысячи спортсменов, тренеров, судей и делегатов — все проходят один и тот же процесс, но каждому нужно от него своё. Готовой системы не было, так что мы картировали весь жизненный цикл соревнования с нуля: регистрацию, утверждения, расписание, результаты, путь каждой роли через процесс.
-      </p>
+  <div class="case-content-grid">
+    <div class="case-role">
+      <div class="case-data-label">Роль</div>
+      <p class="case-role-text">Я дорабатывала и актуализировала дизайн-библиотеку Prime One и сделала большую часть макетов. CJM мы делали вместе с дизайн-лидом. Лид проверял мои макеты, я вносила правки, и вместе мы показывали их PM со стороны клиента. Интерфейс проектировали сразу на английском. Я перевела его на русский и написала правила перевода для разработки. В команде также были шесть разработчиков и два тестировщика.</p>
     </div>
-  </section>
-
-  <section class="proj-section">
-    <div class="body">
-      <p style="font-size: 18px; line-height: 1.6;">
-        У тренера, регистрирующего двух спортсменов, и у руководителя страны, обрабатывающего сотни заявок за раз, нет ничего общего — каждой роли нужна была своя логика интерфейса. Мы построили доступ на основе ролей: каждый видит только то, что касается его, и получает ровно тот уровень контроля, который нужен.
-      </p>
-    </div>
-    <div>
-      <img src="acro-rnr-research.png" alt="Картирование пути пользователей по ролям" style="width: 100%; border-radius: 12px; display: block;">
-    </div>
-    <div style="margin-top: 16px;">
-      <img src="acro-rnr-roles.png" alt="Система разделения ролей" style="width: 100%; border-radius: 12px; display: block;">
-    </div>
-  </section>
-
-  <section class="proj-section">
-    <div class="body">
-      <p style="font-size: 18px; line-height: 1.6;">
-        У каждой роли свои сценарии — регистрация, дашборды, результаты, расписание. Добавьте крайние случаи для всех типов пользователей и два языка для локального и международного использования — и проект вышел на 250+ экранов.
-      </p>
-    </div>
-    <div>
-      <img src="acro-rnr-screens.png" alt="Обзор экранов" style="width: 100%; border-radius: 12px; display: block;">
-    </div>
-  </section>
-
-  <section class="proj-section">
-    <div class="body">
-      <p style="font-size: 18px; line-height: 1.6;">
-        Платформа управляет национальными соревнованиями. Сегодня в ней зарегистрировано 15 000 спортсменов.
-      </p>
-    </div>
-    <div>
-      <img src="acro-rnr-outcome.png" alt="Результат" style="width: 100%; border-radius: 12px; display: block;">
-    </div>
-  </section>
-
-  <!-- More work: prev/next -->
-  <section class="more-work" style="padding: 64px 0;">
-    <div class="more-work-row" style="display: flex; align-items: center; justify-content: space-between;">
-      <div class="more-work-item">
-        <a href="/ru/work/chiko-roko.html" class="more-work-card">
-          <div class="more-work-thumb">
-            <img src="/chiko&roko-thumb.png" alt="Chiko &amp; Roko: NFT-коллекционные персонажи с нуля" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div class="more-work-text">
-            <div class="more-work-title">NFT-платформа с AR</div>
-            <div class="more-work-sub">NFT-платформа с AR, созданная с нуля до запуска</div>
-            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">App</span><span class="more-work-tag">UX/UI</span></div>
-          </div>
-        </a>
-        <a href="/ru/work/chiko-roko.html" class="more-work-arrow more-work-arrow--prev" aria-label="Предыдущий кейс">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+    <div class="case-facts">
+      <div class="case-fact">
+        <div class="case-data-label">Год</div>
+        <div class="case-fact-value">2025</div>
       </div>
-
-      <div class="more-work-item">
-        <a href="/ru/work/dc.html" class="more-work-card">
-          <div class="more-work-thumb">
-            <img src="/dc-thumb.png" alt="Digital Collectibles: NFT-маркетплейс с социальным слоем" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div class="more-work-text">
-            <div class="more-work-title">NFT-маркетплейс с социальным слоем</div>
-            <div class="more-work-sub">NFT-маркетплейс: от концепции до 500+ экранов</div>
-            <div class="more-work-tags"><span class="more-work-tag">Mobile</span><span class="more-work-tag">Web</span><span class="more-work-tag">App</span><span class="more-work-tag">UX/UI</span></div>
-          </div>
-        </a>
-        <a href="/ru/work/dc.html" class="more-work-arrow more-work-arrow--next" aria-label="Следующий кейс">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+      <div class="case-fact">
+        <div class="case-data-label">Платформы</div>
+        <div class="case-fact-value">Desktop · Mobile</div>
+      </div>
+      <div class="case-fact">
+        <div class="case-data-label">Статус</div>
+        <div class="case-fact-value">Работает. Используется федерацией спорта.</div>
+      </div>
+      <div class="case-fact">
+        <div class="case-data-label">Масштаб</div>
+        <div class="case-fact-value">Около 15 000 спортсменов в системе, по словам PM клиента. 250+ экранов и состояний на одном языке, плюс перевод.</div>
+      </div>
+      <div class="case-fact">
+        <div class="case-data-label">Замеры</div>
+        <div class="case-fact-value">Студия не собирала данные об использовании и отзывы.</div>
       </div>
     </div>
+    <div class="case-task">
+      <h2 class="case-h2">Задача</h2>
+      <div class="case-body">
+        <p>Старая система была очень устаревшей и неудобной для всех. Её пересобрали с нуля и добавили много новых функций.</p>
+        <p>Тренеры регистрируют своих спортсменов. Менеджеры клубов проверяют заявки и оплачивают их. Менеджеры городских и региональных спортивных комитетов и сообществ подают заявки, оплачивают, проверяют и редактируют их. Администратор страны управляет всеми заявками от страны. Админ управляет базой данных и функциями «под капотом».</p>
+        <p>Набор ролей зависит от размера города. Если в городе нет комитета, его задачи берёт следующий по уровню менеджер. Один региональный комитет может отвечать за несколько городов.</p>
+        <p>Клиент дал бриф и карту продукта, которую собрал его PM. Интерфейс должен был плотно вместить большой объём данных, без украшательств, на двух языках. Успехом считался запуск и использование федерацией спорта.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Сворачиваемые статусы -->
+  <section class="case-section">
+    <h2 class="case-h2">Сворачиваемые статусы и формейшн делают главный экран администратора страны читаемым</h2>
+    <div class="case-body">
+      <p>Администратор страны видит всех подавшихся со всей страны: пары и формейшн, сгруппированные по статусу заявки. В сплошном списке, даже с заголовками, администратор теряется и не понимает, где что.</p>
+      <p>Я сделала сворачиваемыми группы по статусу. Каждая формейшн тоже раскрывается и показывает состав только тогда, когда он нужен. Это экономит место и снимает нагрузку с администратора.</p>
+      <p>Я объяснила решение дизайн-лиду. PM затем принял его и сразу согласовал.</p>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-approval-before.png" alt="Earlier version of the application screen: one continuous list of participants" loading="lazy">
+      <p class="case-caption">Ранняя версия: сплошной список.</p>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-approval-after.png" alt="Application screen with collapsible status groups and formations" loading="lazy">
+      <p class="case-caption">Финальная версия: статусы и формейшн сворачиваются.</p>
+    </div>
   </section>
+
+  <!-- Полгода дизайна -->
+  <section class="case-section">
+    <h2 class="case-h2">Полгода дизайна начались с правил проведения соревнований</h2>
+    <div class="case-body">
+      <p>Мы с дизайн-лидом начали с референсов и старого интерфейса. Изучили правила проведения соревнований, условия оплаты из других стран и допуски к редактированию. Интервью с PM и карта продукта дали нам контекст. Карту собрал PM без участия дизайнеров.</p>
+      <p>Затем мы с дизайн-лидом сделали CJM, и я взяла макеты в работу. Мы много раз обсуждали упрощение интерфейсов, поэтому экраны легко воспринимаются.</p>
+      <p>Дизайн и функциональность заняли около полугода. Потом разработка шла примерно ещё полгода.</p>
+    </div>
+  </section>
+
+  <!-- Пары, формейшн и оплата -->
+  <section class="case-section">
+    <h2 class="case-h2">Пары, формейшн и оплата собраны в одной заявке</h2>
+    <div class="case-body">
+      <p>Пара — это фиксированный дуэт мальчика и девочки для парных танцев. Формейшн — команда смешанного состава. Пользователи добавляют их в заявку и оплачивают взнос за участие.</p>
+    </div>
+    <div class="case-row-2">
+      <div class="case-row-2-item">
+        <div class="case-square">
+          <img src="acro-rnr-add-couple.png" alt="Add couple window with a list of couples and filters" loading="lazy">
+        </div>
+        <p class="case-caption">Добавление пары.</p>
+      </div>
+      <div class="case-row-2-item">
+        <div class="case-square">
+          <img src="acro-rnr-add-formation.png" alt="Add formation window with a list of formations" loading="lazy">
+        </div>
+        <p class="case-caption">Добавление формейшн.</p>
+      </div>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-payment.png" alt="Payment orders and the list of participants to pay for" loading="lazy">
+      <p class="case-caption">Заказы на оплату и список участников, за которых нужно заплатить.</p>
+    </div>
+    <div class="case-row-2">
+      <div class="case-row-2-item">
+        <div class="case-square">
+          <img src="acro-rnr-payment-new-order.png" alt="New payment order window with MIR Pay and Stripe" loading="lazy">
+        </div>
+        <p class="case-caption">Новый заказ на оплату: MIR Pay для России и Беларуси, Stripe для остального мира.</p>
+      </div>
+      <div class="case-row-2-item">
+        <div class="case-square">
+          <img src="acro-rnr-payment-order-details.png" alt="Payment order details with participants and total" loading="lazy">
+        </div>
+        <p class="case-caption">Заказ с участниками и итогом.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Акробатический калькулятор -->
+  <section class="case-section">
+    <h2 class="case-h2">Акробатический калькулятор вмещает всю программу на одном экране</h2>
+    <div class="case-body">
+      <p>Объявление программы — обязательный шаг перед запуском соревнования. Акробатический калькулятор — функция внутри него. Организатор или менеджер задаёт условия соревнования: какие трюки и фигуры входят в танец и сколько баллов получает каждый элемент. Данные вносятся и выбираются в калькуляторе и записываются программно, поэтому оценка единая и честная для всех спортсменов.</p>
+      <p>Это сложная «математическая» функция, и ТЗ было строгим. Моя задача была сделать её понятной и удобной для навигации. Я уместила всю программу в высоту одного экрана, чтобы менеджеру не нужно было скроллить страницу вверх и вниз для проверки.</p>
+    </div>
+    <div class="case-row-2">
+      <div class="case-row-2-item">
+        <div class="case-square">
+          <img src="acro-rnr-calculator-add-element-empty.png" alt="Add element window with entrance and group fields" loading="lazy">
+        </div>
+        <p class="case-caption">Добавление элемента: выбор входа и группы.</p>
+      </div>
+      <div class="case-row-2-item">
+        <div class="case-square">
+          <img src="acro-rnr-calculator-add-element-filled.png" alt="Add element window with a filled combination and total points" loading="lazy">
+        </div>
+        <p class="case-caption">То же окно с заполненной комбинацией и посчитанными баллами.</p>
+      </div>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-calculator-filled.png" alt="Program announcement with two rounds of elements, subtotals and total" loading="lazy">
+      <p class="case-caption">Программа с двумя заполненными раундами. Промежуточные суммы и итог помещаются на одном экране.</p>
+    </div>
+  </section>
+
+  <!-- Плотный и простой интерфейс -->
+  <section class="case-section">
+    <h2 class="case-h2">Интерфейс плотный и простой намеренно</h2>
+    <div class="case-body">
+      <p>Клиенту нужно было уместить на экране большой объём данных компактно и утилитарно. В продукте используется готовая библиотека Prime One, которую я дорабатывала и актуализировала.</p>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-matrix-disciplines.png" alt="Discipline matrix of simultaneous disciplines" loading="lazy">
+      <p class="case-caption">Матрица дисциплин: какие дисциплины можно проходить одновременно.</p>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-matrix-athlete-admin.png" alt="Matrix linking athletes to administrators" loading="lazy">
+      <p class="case-caption">Привязка спортсменов к администраторам. Администратор отвечает за подачу и оплату тех спортсменов, которых к нему привязали.</p>
+    </div>
+    <div class="case-carousel-wrap">
+      <div class="case-carousel-stage">
+        <div class="case-carousel-frame">
+          <div class="case-carousel-track">
+            <div class="case-carousel-slide"><img src="acro-rnr-list-01.png" alt="List of athletes"></div>
+            <div class="case-carousel-slide"><img src="acro-rnr-list-02.png" alt="List of couples" loading="lazy"></div>
+            <div class="case-carousel-slide"><img src="acro-rnr-list-03.png" alt="List of formations" loading="lazy"></div>
+            <div class="case-carousel-slide"><img src="acro-rnr-list-04.png" alt="List of coaches" loading="lazy"></div>
+            <div class="case-carousel-slide"><img src="acro-rnr-list-05.png" alt="List of judges" loading="lazy"></div>
+          </div>
+        </div>
+        <button class="case-carousel-arrow case-carousel-arrow--prev" type="button" aria-label="Предыдущее изображение">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="case-carousel-arrow case-carousel-arrow--next" type="button" aria-label="Следующее изображение">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="case-carousel-dots"></div>
+    </div>
+    <p class="case-caption">Списки спортсменов, пар, формейшн, а также тренеров и судей.</p>
+  </section>
+
+  <!-- Две роли -->
+  <section class="case-section">
+    <h2 class="case-h2">Человек с двумя ролями может переключаться между ними</h2>
+    <div class="case-body">
+      <p>Один человек может быть администратором страны и администратором города одновременно. Это бывает редко, но бывает. Интерфейс позволяет такому человеку переключать роли.</p>
+    </div>
+    <div class="case-media">
+      <img class="case-img" src="acro-rnr-role-switch.png" alt="Role menu and the window for choosing a role" loading="lazy">
+      <p class="case-caption">Меню роли и окно выбора роли.</p>
+    </div>
+  </section>
+
+  <!-- Что я вынесла из проекта -->
+  <section class="case-section">
+    <h2 class="case-h2">Что я вынесла из проекта</h2>
+    <div class="case-body">
+      <p>Иногда приходится жертвовать «воздухом» и лёгкостью, если клиенту важнее уместить на экране большой объём данных плотно.</p>
+    </div>
+  </section>
+
+  <!-- Что бы я сделала иначе -->
+  <section class="case-section">
+    <h2 class="case-h2">Что бы я сделала иначе</h2>
+    <div class="case-body">
+      <p>Если бы было больше времени на исследование и сбор референсов, я бы подобрала более подходящую дизайн-библиотеку или собрала бы её с нуля.</p>
+    </div>
+  </section>
+
+  <!-- Другие работы -->
+  <section class="case-section case-more-work">
+    <h2 class="case-h2">Другие работы</h2>
+    <div class="case-more-grid">
+      <a href="/ru/work/chiko-roko.html" class="case-more-card">
+        <div class="case-more-preview">
+          <img src="/chiko&roko-thumb.png" alt="Chiko &amp; Roko" loading="lazy">
+        </div>
+        <div class="case-more-title">NFT-платформа с AR</div>
+        <div class="case-more-sub">NFT-платформа с AR, созданная с нуля до запуска</div>
+      </a>
+      <a href="/ru/work/dc.html" class="case-more-card">
+        <div class="case-more-preview">
+          <img src="/dc-thumb.png" alt="Digital Collectibles" loading="lazy">
+        </div>
+        <div class="case-more-title">NFT-маркетплейс с социальным слоем</div>
+        <div class="case-more-sub">NFT-маркетплейс: от концепции до 500+ экранов</div>
+      </a>
+      <a href="/ru/work/fleet-dashboard.html" class="case-more-card">
+        <div class="case-more-preview">
+          <img src="/fitfleet-maintenance-thumb.png" alt="FitFleet Maintenance project thumbnail" loading="lazy">
+        </div>
+        <div class="case-more-title">Автоматизация ТО автопарка</div>
+        <div class="case-more-sub">Дашборд, который следит за тем, чтобы сотни автомобилей проходили ТО вовремя.</div>
+      </a>
+    </div>
+  </section>
+
+</div>
 
   <!-- Contact section -->
   <section class="contact-section" id="contact">
     <h2 class="reveal">Давайте <em style="color: var(--accent)">поговорим</em></h2>
     <p class="sub reveal">Напишите, если вы создаёте что-то интересное и хотите взгляд опытного дизайнера. Я читаю всё, что приходит.</p>
     <button type="button" class="btn" data-open-modal="contact">
-      Отправить сообщение
+      Написать
     </button>
 
     <div class="channels-wrap">
@@ -205,7 +336,7 @@
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-head">
         <span id="modal-title">Написать</span>
-        <button class="modal-close" type="button" data-close-modal aria-label="Close">✕</button>
+        <button class="modal-close" type="button" data-close-modal aria-label="Закрыть">✕</button>
       </div>
       <form class="form" id="contact-form">
         <div class="label-row">
@@ -217,12 +348,12 @@
           <input type="email" id="email" name="email" placeholder="you@company.com" required>
         </div>
         <div class="label-row">
-          <label>По какому вопросу?</label>
+          <label>По какому вопросу вы пишете?</label>
           <div class="pillpick">
             <input type="radio" id="t1" name="topic" value="freelance" checked>
             <label for="t1">Фриланс-проект</label>
             <input type="radio" id="t2" name="topic" value="full-time">
-            <label for="t2">Полная занятость</label>
+            <label for="t2">Постоянная роль</label>
             <input type="radio" id="t3" name="topic" value="advice">
             <label for="t3">Совет / общение</label>
             <input type="radio" id="t4" name="topic" value="other">
@@ -230,8 +361,8 @@
           </div>
         </div>
         <div class="label-row">
-          <label for="msg">Несколько слов</label>
-          <textarea id="msg" name="msg" placeholder="Над чем работаете, ваши сроки и что важно знать." rows="4" required></textarea>
+          <label for="msg">Несколько предложений</label>
+          <textarea id="msg" name="msg" placeholder="Над чем вы работаете, сроки и всё, что мне стоит знать." rows="4" required></textarea>
         </div>
         <button type="submit" class="btn submit">
           Отправить
@@ -247,12 +378,12 @@
   <footer class="footer">
     <div>
       <div class="brand-name" style="font-size: 28px; letter-spacing: -0.02em;">Nina <em>Hayden</em></div>
-      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Продуктовый дизайнер. Открыта для избранных проектов.</p>
+      <p class="text-muted" style="margin-top: 12px; max-width: 28ch;">Продуктовый дизайнер.</p>
     </div>
     <div>
       <ul>
-        <li><a href="/ru/index.html">Кейсы</a></li>
-        <li><a href="/ru/index.html#how-i-can-help">Чем я помогу</a></li>
+        <li><a href="/ru/index.html">Работы</a></li>
+        <li><a href="/ru/index.html#how-i-can-help">Чем могу помочь</a></li>
         <li><a href="/ru/index.html#contact">Контакты</a></li>
       </ul>
     </div>
@@ -269,7 +400,7 @@
     </div>
     <div class="footer-credits">
       <span>© 2026 Nina Hayden</span>
-      <span><a href="/ru/privacy.html">Обработка данных</a></span>
+      <span><a href="/ru/privacy.html">Конфиденциальность</a></span>
     </div>
   </footer>
 
@@ -313,6 +444,68 @@
     cvToggle.addEventListener('click', e => { e.stopPropagation(); const open = cvMenu.classList.toggle('open'); cvToggle.setAttribute('aria-expanded', open); });
     document.addEventListener('click', () => { cvMenu.classList.remove('open'); cvToggle.setAttribute('aria-expanded', false); });
   }
+
+  // Case carousel — new build, replaces the old shared carousel (side-frame bug).
+  // Desktop/tablet: one slide at a time, moved with a transform.
+  // Mobile (<=743px): native horizontal scroll-snap with peeking slides.
+  document.querySelectorAll('.case-carousel-wrap').forEach(wrap => {
+    const track = wrap.querySelector('.case-carousel-track');
+    const slides = Array.from(track.children);
+    const prevBtn = wrap.querySelector('.case-carousel-arrow--prev');
+    const nextBtn = wrap.querySelector('.case-carousel-arrow--next');
+    const dotsWrap = wrap.querySelector('.case-carousel-dots');
+    const total = slides.length;
+    let current = 0;
+    const isMobile = () => window.innerWidth <= 743;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'case-carousel-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function setActive(i) {
+      current = i;
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+    }
+
+    function goTo(i) {
+      const index = (i + total) % total;
+      if (isMobile()) {
+        slides[index].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      } else {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      }
+      setActive(index);
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+
+    wrap.setAttribute('tabindex', '0');
+    wrap.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    // Keep dots synced when the mobile strip is scrolled directly (swipe).
+    let scrollTimer;
+    track.addEventListener('scroll', () => {
+      if (!isMobile()) return;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const slideWidth = slides[0].getBoundingClientRect().width + 12;
+        const idx = Math.round(track.scrollLeft / slideWidth);
+        setActive(Math.max(0, Math.min(total - 1, idx)));
+      }, 100);
+    }, { passive: true });
+
+    setActive(0);
+  });
 </script>
 <style>
 .cv-dropdown { position: relative; }
@@ -331,6 +524,131 @@ html[data-theme="dark"] .cv-menu { background: var(--surface); }
 .cv-menu li a:focus-visible,
 .cv-menu li a:active { outline: none; box-shadow: none; border: none; }
 .cv-menu li + li { border-top: none; }
+
+/* ─── Case page template (fleet-dashboard.html build) ─────────────────── */
+.case-shell { width: 100%; }
+@media (max-width: 743px) {
+  .case-page { padding-left: 20px !important; padding-right: 20px !important; }
+}
+
+/* Typography */
+.case-h1 { font-family: var(--serif); font-weight: 600; font-size: 48px; line-height: 1.1; letter-spacing: -0.03em; margin: 0; }
+.case-descriptor { font-size: 16px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 680px; }
+.case-h2 { font-family: var(--serif); font-weight: 500; font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; max-width: 880px; margin: 0 0 24px; }
+.case-body p { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 680px; margin: 0; }
+.case-body p + p { margin-top: 20px; }
+.case-data-label { font-family: var(--mono); font-size: 11px; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.08em; color: #6B6963; }
+.case-fact-value { font-size: 14px; line-height: 1.5; color: var(--ink); margin-top: 4px; }
+.case-caption { font-size: 14px; line-height: 1.5; color: #6B6963; margin-top: 12px; }
+@media (max-width: 743px) {
+  .case-h1 { font-size: 32px; line-height: 1.12; letter-spacing: -0.025em; }
+  .case-h2 { font-size: 24px; line-height: 1.25; }
+}
+
+/* Top block grid */
+.case-top-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; align-items: start; }
+.case-h1-col { grid-column: 1 / 8; }
+.case-descriptor-col { grid-column: 9 / 13; }
+
+.case-hero { margin: 48px 0; }
+.case-hero .case-img { margin: 0; }
+@media (max-width: 743px) {
+  .case-hero { margin: 32px 0; }
+}
+
+.case-content-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 96px; }
+.case-role { grid-column: 1 / 9; grid-row: 1; }
+.case-facts { grid-column: 9 / 13; grid-row: 1 / 3; align-self: start; display: flex; flex-direction: column; gap: 18px; }
+.case-task { grid-column: 1 / 9; grid-row: 2; }
+.case-role .case-data-label { margin-bottom: 8px; }
+.case-role-text { font-size: 16px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 680px; }
+
+@media (max-width: 743px) {
+  .case-top-grid { grid-template-columns: 1fr; gap: 24px; }
+  .case-h1-col, .case-descriptor-col { grid-column: 1 / -1; }
+  .case-content-grid { grid-template-columns: 1fr; row-gap: 56px; }
+  .case-role, .case-facts, .case-task { grid-column: 1 / -1; grid-row: auto; }
+}
+
+/* Section rhythm */
+.case-section { margin-top: 120px; }
+@media (max-width: 743px) {
+  .case-section { margin-top: 72px; }
+}
+
+/* Default image container */
+.case-img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); }
+@media (max-width: 743px) {
+  .case-img { border-radius: 12px; }
+}
+.case-media { margin-top: 16px; }
+
+/* Carousel */
+.case-carousel-wrap { margin-top: 16px; }
+.case-carousel-stage { position: relative; }
+.case-carousel-frame { border-radius: 16px; border: 1px solid var(--line); overflow: hidden; aspect-ratio: 16 / 9; }
+.case-carousel-track { display: flex; height: 100%; transition: transform 0.45s cubic-bezier(.4,0,.2,1); }
+.case-carousel-slide { flex: 0 0 100%; height: 100%; background: var(--paper-sunk); display: flex; align-items: center; justify-content: center; }
+.case-carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.case-carousel-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--line); box-shadow: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 5; color: var(--ink);
+}
+.case-carousel-arrow--prev { left: -22px; }
+.case-carousel-arrow--next { right: -22px; }
+.case-carousel-dots { display: flex; justify-content: center; gap: 4px; margin-top: 16px; }
+.case-carousel-dot { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 0; }
+.case-carousel-dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: color-mix(in srgb, var(--ink) 18%, transparent); transition: background 0.2s, transform 0.2s; }
+.case-carousel-dot.is-active::before { background: color-mix(in srgb, var(--ink) 75%, transparent); transform: scale(1.25); }
+
+@media (max-width: 743px) {
+  .case-carousel-arrow { display: none; }
+  .case-carousel-frame {
+    border: none; border-radius: 0; overflow: visible; aspect-ratio: auto; background: none;
+    margin-right: calc(-50vw + 50%);
+  }
+  .case-carousel-track {
+    overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    gap: 12px; transform: none !important; height: auto; scrollbar-width: none;
+  }
+  .case-carousel-track::-webkit-scrollbar { display: none; }
+  .case-carousel-slide {
+    flex: 0 0 88%; aspect-ratio: 16 / 9; height: auto;
+    border-radius: 12px; border: 1px solid var(--line); overflow: hidden;
+    scroll-snap-align: start;
+  }
+  .case-carousel-dots { margin-top: 8px; }
+}
+
+/* Two in a row */
+.case-row-2 { display: flex; gap: 24px; margin-top: 16px; }
+.case-row-2-item { flex: 1 1 0; min-width: 0; }
+.case-square {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 16px; padding: 16px;
+}
+.case-square img { width: 100%; height: auto; display: block; }
+@media (max-width: 743px) {
+  .case-row-2 { flex-direction: column; gap: 16px; }
+  .case-square { border-radius: 12px; }
+}
+
+/* More work */
+.case-more-work .case-h2 { margin-bottom: 48px; }
+.case-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; row-gap: 32px; }
+.case-more-card { display: block; }
+.case-more-preview { aspect-ratio: 1 / 1; border-radius: 16px; background: var(--paper-sunk); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.case-more-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.case-more-title { margin-top: 16px; font-size: 20px; font-weight: 500; line-height: 1.3; color: var(--ink); }
+.case-more-sub { margin-top: 4px; font-size: 14px; line-height: 1.5; color: #6B6963; }
+html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption, html[data-theme="dark"] .case-more-sub { color: var(--muted); }
+@media (max-width: 743px) {
+  .case-more-work .case-h2 { margin-bottom: 32px; }
+  .case-more-grid { grid-template-columns: 1fr; row-gap: 32px; }
+}
 </style>
 </body>
 </html>
