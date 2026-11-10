@@ -8,6 +8,6 @@ Case pages: slides and images follow the carousel rule: 16:9 (or within 6%) fill
 
 No coloured panels, shadows or baked backgrounds behind images. Images get a 1px #E6E4DE border and radius 16px (mobile 12px).
 
-"Two in a row" squares: always fill the square completely with `object-fit: cover`, cropping as needed — never pin a non-square image to the top and leave empty space below it.
+"Two in a row" squares: never crop or zoom the image to fill the square. Show it at full width, natural proportions (`width: 100%; height: auto;`). A square-ish image centres; a non-square image pins to the top (`case-square--pin-top`), leaving empty space below rather than cropping.
 
 Case template: see the "case-" classes on fleet-dashboard.html. New case pages reuse them.
