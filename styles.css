@@ -53,6 +53,21 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
+/* Theme switch: a soft cross-fade of the whole page (via nav.js's
+   document.startViewTransition) instead of an instant cut. Browsers
+   without support just keep the instant switch — no fallback needed. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+  animation-timing-function: ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 /* No italics anywhere — keep <em> for semantics but render upright */
 em, i, [style*="italic"] { font-style: normal !important; }
 

@@ -101,11 +101,34 @@
     }
     syncToggle();
 
+    function prefersReducedMotion() {
+      try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; }
+    }
+
+    // Cross-fades the whole page between palettes instead of an instant cut,
+    // using the browser's built-in page-transition API. Where that API
+    // doesn't exist (or the visitor asked for reduced motion), the switch
+    // just stays instant, same as before. syncToggle runs inside `apply`,
+    // not after calling setTheme — startViewTransition's callback isn't
+    // guaranteed to run in the same tick, so calling it right after would
+    // sometimes sync the icon/label to the theme that's about to be
+    // replaced, not the one just switched to.
+    function setTheme(next) {
+      const apply = () => {
+        document.documentElement.setAttribute('data-theme', next);
+        syncToggle();
+      };
+      if (document.startViewTransition && !prefersReducedMotion()) {
+        document.startViewTransition(apply);
+      } else {
+        apply();
+      }
+    }
+
     toggle.addEventListener('click', () => {
       const next = currentTheme() === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('nh-theme', next); } catch (e) {}
-      syncToggle();
+      setTheme(next);
     });
 
     // Until the visitor picks a theme themselves, keep following the system setting live.
@@ -113,8 +136,7 @@
       if (!localStorage.getItem('nh-theme') && window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
           try { if (localStorage.getItem('nh-theme')) return; } catch (e2) {}
-          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-          syncToggle();
+          setTheme(e.matches ? 'dark' : 'light');
         });
       }
     } catch (e) {}
