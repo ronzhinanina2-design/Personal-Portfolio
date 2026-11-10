@@ -13,12 +13,44 @@
   --accent: #1f7a4d;
   --accent-soft: #d8e6dd;
   --accent-ink: #0e3a25;
+  --surface: #FFFFFF;
+  --line: #E6E4DE;
 
   --serif: 'Plus Jakarta Sans', sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --gutter: clamp(20px, 4vw, 56px);
   --page-max: 1480px;
+
+  color-scheme: light;
+}
+
+/* ─── Dark theme ────────────────────────────────────────────────── */
+/* The 8 values below (ink, paper, paper-sunk, muted, accent, accent-soft,
+   surface, line) are the approved dark palette. The ones after that
+   (ink-2, muted-2, paper-2, paper-3, hairline, hairline-strong, accent-ink)
+   have no approved dark value of their own — they're derived here by
+   keeping the same relationship to their base token that they have in
+   light mode, so flag it if any of these look off. */
+html[data-theme="dark"] {
+  --ink: #F2F0EA;
+  --paper: #151513;
+  --paper-sunk: #1C1C1A;
+  --muted: #A19E96;
+  --accent: #5DBB8A;
+  --accent-soft: #1F2C24;
+  --surface: #232321;
+  --line: #363531;
+
+  --ink-2: #C9C6BC;
+  --muted-2: #6B6963;
+  --paper-2: #1C1C1A;
+  --paper-3: #272722;
+  --hairline: rgba(242, 240, 234, 0.10);
+  --hairline-strong: rgba(242, 240, 234, 0.20);
+  --accent-ink: #5DBB8A;
+
+  color-scheme: dark;
 }
 
 /* No italics anywhere — keep <em> for semantics but render upright */
@@ -183,7 +215,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: background 0.15s;
 }
 .lang-switch a:hover {
-  background: rgba(0,0,0,0.06);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
 }
 .lang-switch a.active {
   font-weight: 600;
@@ -191,6 +223,69 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .lang-switch .divider {
   opacity: 0.3;
+}
+
+/* ─── Theme toggle ──────────────────────────────────────────────── */
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.theme-toggle-circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: border-color 0.2s, transform 0.15s ease-out;
+}
+.theme-toggle:hover .theme-toggle-circle {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.theme-toggle:active .theme-toggle-circle {
+  transform: scale(0.95);
+}
+.theme-toggle:focus-visible .theme-toggle-circle {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.theme-toggle:focus:not(:focus-visible) .theme-toggle-circle { outline: none; }
+.theme-toggle-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.25);
+  filter: blur(4px);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out, filter 0.15s ease-out;
+}
+.theme-toggle-icon.is-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-icon {
+    transition: opacity 0.15s ease-out;
+    transform: none;
+    filter: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -203,6 +298,41 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .topbar .nav { display: none; }
   .topbar-cta { height: auto; padding: 7px 14px; font-size: 14px; }
   .nav { font-size: 14px; gap: 14px; }
+}
+/* The brand column is `1fr`, which always claims the full leftover width
+   whether or not "Nina Hayden" actually needs it — past this point every
+   pixel is needed to fit the toggle. Switching to flex with flex-shrink:0
+   gives each side exactly its content width, with a fixed, explicit gap
+   between them rather than "whatever's left" — `auto`-sized grid tracks,
+   and `justify-content:space-between` generally, will compress a side
+   below its own content when space runs short, and did: it clipped the
+   brand name behind the toggle at 360px wide. Three narrowing tiers below
+   keep real breathing room at 743/420px down to a verified fit at 360px —
+   this is the one part of the toggle spec without a reference mockup to
+   match, since the approved mobile mockup wasn't built to the real site's
+   actual (wider) text metrics. */
+@media (max-width: 743px) {
+  .topbar-inner { display: flex; align-items: center; gap: 8px; }
+  .topbar-inner .brand,
+  .topbar-inner .meta-right { flex-shrink: 0; }
+  .brand { margin-right: auto; }
+  .meta-right { gap: 8px; }
+  .theme-toggle { width: 32px; height: 32px; }
+  .theme-toggle-circle { width: 32px; height: 32px; }
+}
+@media (max-width: 420px) {
+  .topbar-inner { gap: 4px; }
+  .meta-right { gap: 4px; }
+  .theme-toggle { width: 22px; height: 22px; }
+  .theme-toggle-circle { width: 22px; height: 22px; }
+  .theme-toggle-icon svg { width: 14px; height: 14px; }
+}
+@media (max-width: 368px) {
+  .topbar-inner { gap: 2px; }
+  .meta-right { gap: 2px; }
+  .theme-toggle { width: 16px; height: 16px; }
+  .theme-toggle-circle { width: 16px; height: 16px; border-width: 1px; }
+  .theme-toggle-icon svg { width: 11px; height: 11px; }
 }
 
 /* ─── Type primitives ───────────────────────────────────────────── */
@@ -905,7 +1035,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-align: left;
 }
 .channels .row:hover {
-  background: #fbfaf7;
+  background: var(--paper);
   border-color: var(--hairline-strong);
   transform: translateY(-2px);
 }
@@ -958,6 +1088,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   box-shadow: 0 30px 80px rgba(20, 17, 13, 0.18);
   animation: modalIn 0.4s cubic-bezier(.2,.8,.2,1);
   text-align: left;
+}
+/* In dark mode the modal is grouped with "surface" (cards/fields), so it
+   lifts visibly off the page instead of blending into the same near-black. */
+html[data-theme="dark"] .modal-card {
+  background: var(--surface);
 }
 @keyframes modalIn {
   from { transform: translateY(24px); opacity: 0; }
@@ -1229,7 +1364,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     position: fixed;
     inset: 0;
     z-index: 999;
-    background: #fff;
+    background: var(--surface);
     display: none;
     align-items: center;
     justify-content: center;
@@ -1341,7 +1476,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid var(--hairline);
   border-radius: 16px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface);
   height: 180px;
   width: 475px;
   transition: box-shadow 0.2s, transform 0.2s;
@@ -1386,8 +1521,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   height: 48px;
   border-radius: 50%;
   border: none;
-  background: #fff;
-  color: var(--ink, #14110d);
+  background: var(--surface);
+  color: var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;

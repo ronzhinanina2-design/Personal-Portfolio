@@ -11,3 +11,15 @@ No coloured panels, shadows or baked backgrounds behind images. Images get a 1px
 "Two in a row" images: never crop, zoom, or force a square. Each box sizes itself to its own image at full width, natural proportions (`width: 100%; height: auto;`, no `aspect-ratio` on the container) — the box just hugs the image, so there's never empty space inside it. The two boxes in a row can end up different heights; that's fine.
 
 Case template: see the "case-" classes on fleet-dashboard.html. New case pages reuse them.
+
+# Site rules
+
+Dark theme: the theme is the attribute data-theme="light|dark" on <html>; dark values live in one html[data-theme="dark"] block. No colour is hard-coded in components, only tokens.
+
+Every portfolio page has the inline theme script in its <head> before the stylesheet. New pages must include it.
+
+The saved theme choice is localStorage key nh-theme (light or dark). With no saved choice, follow prefers-color-scheme. Every storage access is in try/catch.
+
+Dark theme: coloured panels behind images and the images themselves are not recoloured. Only the page and the neutral containers around them change.
+
+The theme toggle is one icon button in the header before EN / RU. The icon shows the theme the click switches to.

@@ -49,6 +49,16 @@
       <a href="${ruHref}" class="${lang === 'ru' ? 'active' : ''}">RU</a>
     </span>`;
 
+  const SUN_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M4.22 4.22l1.77 1.77M17.99 17.99l1.77 1.77M2.5 12h2.5M19 12h2.5M4.22 19.78l1.77-1.77M17.99 6.01l1.77-1.77"/></svg>`;
+  const MOON_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a6.5 6.5 0 0 0 10 10Z"/></svg>`;
+
+  const themeToggle = `<button type="button" class="theme-toggle" aria-label="" title="">
+      <span class="theme-toggle-circle">
+        <span class="theme-toggle-icon theme-toggle-icon--sun">${SUN_ICON}</span>
+        <span class="theme-toggle-icon theme-toggle-icon--moon">${MOON_ICON}</span>
+      </span>
+    </button>`;
+
   const html = `<header class="topbar">
   <div class="topbar-inner">
     <div class="brand">
@@ -59,6 +69,7 @@
       ${navLinks}
     </nav>
     <div class="meta-right">
+      ${themeToggle}
       ${langSwitch}
       <a href="javascript:void(0)" class="topbar-cta">${ctaLabel}</a>
     </div>
@@ -68,12 +79,53 @@
   const root = document.getElementById('site-nav');
   if (root) root.outerHTML = html;
 
+  // ─── Theme toggle ────────────────────────────────────────────────
+  (function () {
+    const toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+    const sunLabel = { en: 'Switch to light theme', ru: 'Включить светлую тему' };
+    const moonLabel = { en: 'Switch to dark theme', ru: 'Включить тёмную тему' };
+
+    function currentTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    }
+
+    function syncToggle() {
+      const theme = currentTheme();
+      // The icon shown is the theme a click switches TO.
+      const label = theme === 'dark' ? sunLabel[lang] : moonLabel[lang];
+      toggle.setAttribute('aria-label', label);
+      toggle.setAttribute('title', label);
+      toggle.querySelector('.theme-toggle-icon--sun').classList.toggle('is-active', theme === 'dark');
+      toggle.querySelector('.theme-toggle-icon--moon').classList.toggle('is-active', theme === 'light');
+    }
+    syncToggle();
+
+    toggle.addEventListener('click', () => {
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('nh-theme', next); } catch (e) {}
+      syncToggle();
+    });
+
+    // Until the visitor picks a theme themselves, keep following the system setting live.
+    try {
+      if (!localStorage.getItem('nh-theme') && window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          try { if (localStorage.getItem('nh-theme')) return; } catch (e2) {}
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+          syncToggle();
+        });
+      }
+    } catch (e) {}
+  })();
+
   // Thin line fades in under the header over the first 24px of scroll
   const header = document.querySelector('.topbar');
   if (header) {
     function updateScrollLine() {
       const t = Math.min(window.scrollY / 24, 1);
-      header.style.borderBottomColor = `color-mix(in srgb, #E6E4DE ${Math.round(t * 100)}%, transparent)`;
+      header.style.borderBottomColor = `color-mix(in srgb, var(--line) ${Math.round(t * 100)}%, transparent)`;
     }
     updateScrollLine();
     window.addEventListener('scroll', updateScrollLine, { passive: true });
