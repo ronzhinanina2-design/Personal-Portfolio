@@ -16,7 +16,7 @@ Case template: see the "case-" classes on fleet-dashboard.html. New case pages r
 
 Case cards are one component (case-card): cover 16:9, quiet line "product type · year" above the title, title with the main number. No tags, description, arrows, shadows. The same component is used on the homepage Work grid, in "More work", and for the Pet projects card(s).
 
-A card cover within 6% of 16:9 fills the container. Any other format keeps its own proportions, inset 20px from the top/left/right and flush with the bottom of the container — it either leaves empty --paper-sunk space above that edge, or runs past it and gets cropped by the container's own border, whichever the image's shape gives.
+A card cover within 6% of 16:9 fills the container. A wider (landscape) cover that still fits once inset 20px on the sides is centred vertically instead, with side padding only. A cover too tall to fit is inset 20px from the top/left/right and flush with the bottom, so it runs past that edge and gets cropped by the container's own border.
 
 Titles and quiet lines of cards are changed together with the H1 of each case when the case is rewritten.
 
