@@ -258,26 +258,26 @@
   <section class="case-section case-more-work">
     <h2 class="case-h2">Другие работы</h2>
     <div class="case-more-grid">
-      <a href="/ru/work/chiko-roko.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/chiko&roko-thumb.png" alt="Chiko &amp; Roko" loading="lazy">
+      <a href="/ru/work/chiko-roko.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="chiko&roko-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">NFT-платформа с AR</div>
-        <div class="case-more-sub">NFT-платформа с AR, созданная с нуля до запуска</div>
+        <div class="case-card-sub">NFT-платформа · 2021–2022</div>
+        <div class="case-card-title">NFT-платформа с&nbsp;AR для&nbsp;почти 500&nbsp;000 пользователей</div>
       </a>
-      <a href="/ru/work/dc.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/dc-thumb.png" alt="Digital Collectibles" loading="lazy">
+      <a href="/ru/work/dc.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="dc-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">NFT-маркетплейс с социальным слоем</div>
-        <div class="case-more-sub">NFT-маркетплейс: от концепции до 500+ экранов</div>
+        <div class="case-card-sub">NFT-маркетплейс · 2022</div>
+        <div class="case-card-title">NFT-маркетплейс с&nbsp;социальным слоем</div>
       </a>
-      <a href="/ru/work/fleet-dashboard.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/fitfleet-maintenance-thumb.png" alt="FitFleet Maintenance project thumbnail" loading="lazy">
+      <a href="/ru/work/fleet-dashboard.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="fitfleet-maintenance-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">Автоматизация ТО автопарка</div>
-        <div class="case-more-sub">Дашборд, который следит за тем, чтобы сотни автомобилей проходили ТО вовремя.</div>
+        <div class="case-card-sub">B2B SaaS · 2024</div>
+        <div class="case-card-title">Автоматизация ТО автопарка для&nbsp;20&nbsp;000+ компаний</div>
       </a>
     </div>
   </section>
@@ -636,18 +636,11 @@ html[data-theme="dark"] .cv-menu { background: var(--surface); }
   .case-square { border-radius: 12px; }
 }
 
-/* More work */
+/* More work — the case-card grid itself is shared in the root styles.css */
 .case-more-work .case-h2 { margin-bottom: 48px; }
-.case-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; row-gap: 32px; }
-.case-more-card { display: block; }
-.case-more-preview { aspect-ratio: 1 / 1; border-radius: 16px; background: var(--paper-sunk); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.case-more-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.case-more-title { margin-top: 16px; font-size: 20px; font-weight: 500; line-height: 1.3; color: var(--ink); }
-.case-more-sub { margin-top: 4px; font-size: 14px; line-height: 1.5; color: #6B6963; }
-html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption, html[data-theme="dark"] .case-more-sub { color: var(--muted); }
+html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption { color: var(--muted); }
 @media (max-width: 743px) {
   .case-more-work .case-h2 { margin-bottom: 32px; }
-  .case-more-grid { grid-template-columns: 1fr; row-gap: 32px; }
 }
 </style>
 </body>

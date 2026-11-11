@@ -385,13 +385,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn:hover { transform: translateY(-2px); background: var(--accent-ink); border-color: var(--accent-ink); }
 .btn .arrow { transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
 .btn:hover .arrow { transform: translate(4px, -4px); }
-.btn.ghost {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--hairline-strong);
-}
-.btn.ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
 /* ─── Footer ────────────────────────────────────────────────────── */
 .footer {
   margin-top: 96px;
@@ -522,61 +515,52 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .work-head h2 em { font-style: italic; }
 
-.work-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-@media (max-width: 700px) {
-  .work-list { grid-template-columns: 1fr; }
-}
-.work-card {
-  display: block;
-  text-decoration: none;
-  transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
-}
-.work-card:hover { transform: translateY(-4px); }
-.work-card.is-hidden { display: none; }
-.work-card .visual {
-  aspect-ratio: 1 / 1;
-  display: block;
-  position: relative;
+/* Case cards — shared component used by the homepage Work grid and by
+   every case- page's "More work" grid. Cover is 16:9; a cover within 6%
+   of that ratio fills it (.is-fill), anything else is centred at 88%
+   on --paper-sunk. Quiet line sits above the title on purpose, so every
+   quiet line in a row lands on one baseline regardless of title length. */
+.case-card { display: block; text-decoration: none; }
+.case-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
+.case-card-cover {
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--paper-sunk);
   overflow: hidden;
-  border-radius: 24px;
-  background: var(--paper-2);
-}
-.work-card .visual > * { transition: transform 1s cubic-bezier(.2,.8,.2,1); }
-.work-card:hover .visual > .scene { transform: scale(1.03); }
-.work-card .card-meta {
-  margin-top: 16px;
-}
-.work-card .card-meta .title {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--ink);
-}
-.work-card .card-meta .sub {
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 4px;
-  line-height: 1.4;
-}
-.work-card .card-meta .tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
 }
-.work-card .card-meta .tag {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 5px 10px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  color: var(--muted);
+.case-card:hover .case-card-cover { border-color: var(--accent); }
+.case-card-cover img { display: block; max-width: 88%; max-height: 88%; object-fit: contain; }
+.case-card-cover.is-fill img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: cover; object-position: top center; }
+.case-card-sub { margin-top: 16px; font-size: 14px; line-height: 1.5; font-weight: 400; color: #6B6963; }
+html[data-theme="dark"] .case-card-sub { color: var(--muted); }
+.case-card-title { margin-top: 4px; font-family: var(--serif); font-size: 20px; line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); }
+@media (max-width: 743px) {
+  .case-card-cover { border-radius: 12px; }
+}
+
+/* Homepage Work grid: 2 columns, all cards visible, sizes itself off
+   the page's own gutter so it lines up with "How I can help" above. */
+.work-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; row-gap: 48px; align-items: start; }
+@media (max-width: 743px) {
+  .work-grid { grid-template-columns: 1fr; row-gap: 40px; }
+}
+
+/* Case page "More work" grid: 3 columns, 2 with the 3rd hidden on
+   tablet, 1 on mobile. Shared here so every future case page inherits it. */
+.case-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; row-gap: 48px; align-items: start; }
+@media (max-width: 1172px) {
+  .case-more-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 744px) and (max-width: 1172px) {
+  .case-more-grid .case-card:nth-child(3) { display: none; }
+}
+@media (max-width: 743px) {
+  .case-more-grid { grid-template-columns: 1fr; row-gap: 40px; }
 }
 
 /* ─── Pet projects ─────────────────────────────────────────────── */

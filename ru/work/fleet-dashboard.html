@@ -256,26 +256,26 @@
   <section class="case-section case-more-work">
     <h2 class="case-h2">Другие работы</h2>
     <div class="case-more-grid">
-      <a href="/ru/work/fleet-service-quality.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/fleet-service-quality-thumb.png" alt="Обратная связь по качеству сервиса" loading="lazy">
+      <a href="/ru/work/fleet-service-quality.html" class="case-card">
+        <div class="case-card-cover">
+          <img src="fleet-service-quality-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">Обратная связь по качеству сервиса</div>
-        <div class="case-more-sub">Обратная связь после сервиса для десктопа и мобильной версии</div>
+        <div class="case-card-sub">B2B SaaS · 2025</div>
+        <div class="case-card-title">Обратная связь по&nbsp;качеству сервиса для&nbsp;нескольких тысяч клиентов автопарков</div>
       </a>
-      <a href="/ru/work/fleet-booking.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/fitfleet-thumb.png" alt="Сервис записи на СТО" loading="lazy">
+      <a href="/ru/work/fleet-booking.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="fitfleet-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">Редизайн записи на автосервис</div>
-        <div class="case-more-sub">Редизайн бронирования для 2 000+ корпоративных клиентов автопарка</div>
+        <div class="case-card-sub">B2B SaaS · 2025</div>
+        <div class="case-card-title">Редизайн записи на&nbsp;СТО для&nbsp;2&nbsp;000+ клиентов автопарков</div>
       </a>
-      <a href="/ru/work/acro-rnr.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/acro-rnr-thumb.png" alt="Acrobatic Rock'n'Roll competition management system" loading="lazy">
+      <a href="/ru/work/acro-rnr.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="acro-rnr-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">Система управления соревнованиями</div>
-        <div class="case-more-sub">15 000 спортсменов управляются в этой системе</div>
+        <div class="case-card-sub">B2B-платформа · 2025</div>
+        <div class="case-card-title">Система регистрации и оплаты соревнований для&nbsp;15&nbsp;000 спортсменов</div>
       </a>
     </div>
   </section>
@@ -634,18 +634,11 @@ html[data-theme="dark"] .cv-menu { background: var(--surface); }
   .case-square { border-radius: 12px; }
 }
 
-/* More work */
+/* More work — the case-card grid itself is shared in the root styles.css */
 .case-more-work .case-h2 { margin-bottom: 48px; }
-.case-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; row-gap: 32px; }
-.case-more-card { display: block; }
-.case-more-preview { aspect-ratio: 1 / 1; border-radius: 16px; background: var(--paper-sunk); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.case-more-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.case-more-title { margin-top: 16px; font-size: 20px; font-weight: 500; line-height: 1.3; color: var(--ink); }
-.case-more-sub { margin-top: 4px; font-size: 14px; line-height: 1.5; color: #6B6963; }
-html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption, html[data-theme="dark"] .case-more-sub { color: var(--muted); }
+html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption { color: var(--muted); }
 @media (max-width: 743px) {
   .case-more-work .case-h2 { margin-bottom: 32px; }
-  .case-more-grid { grid-template-columns: 1fr; row-gap: 32px; }
 }
 </style>
 </body>
