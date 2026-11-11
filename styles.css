@@ -515,11 +515,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .work-head h2 em { font-style: italic; }
 
-/* Case cards — shared component used by the homepage Work grid and by
-   every case- page's "More work" grid. Cover is 16:9; a cover within 6%
-   of that ratio fills it (.is-fill), anything else is centred at 88%
-   on --paper-sunk. Quiet line sits above the title on purpose, so every
-   quiet line in a row lands on one baseline regardless of title length. */
+/* Case cards — shared component used by the homepage Work grid, every
+   case- page's "More work" grid, and the Pet projects card. Cover is
+   16:9; a cover within 6% of that ratio fills it (.is-fill). Anything
+   else keeps its own proportions, inset 40px from the top/left/right
+   and flush with the bottom — it either leaves empty --paper-sunk space
+   above that bottom edge, or runs past it and gets cropped by the
+   container's own border/radius, whichever the image's shape gives.
+   Quiet line sits above the title on purpose, so every quiet line in a
+   row lands on one baseline regardless of title length. */
 .case-card { display: block; text-decoration: none; }
 .case-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
 .case-card-cover {
@@ -528,14 +532,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid var(--line);
   background: var(--paper-sunk);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   transition: border-color 0.15s;
 }
 .case-card:hover .case-card-cover { border-color: var(--accent); }
-.case-card-cover img { display: block; max-width: 88%; max-height: 88%; object-fit: contain; }
-.case-card-cover.is-fill img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: cover; object-position: top center; }
+.case-card-cover img { display: block; width: calc(100% - 80px); height: auto; margin: 40px 40px 0 40px; }
+.case-card-cover.is-fill img { width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: top center; }
 .case-card-sub { margin-top: 16px; font-size: 14px; line-height: 1.5; font-weight: 400; color: #6B6963; }
 html[data-theme="dark"] .case-card-sub { color: var(--muted); }
 .case-card-title { margin-top: 4px; font-family: var(--serif); font-size: 20px; line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); }
@@ -564,8 +566,8 @@ html[data-theme="dark"] .case-card-sub { color: var(--muted); }
 }
 
 /* ─── Pet projects ─────────────────────────────────────────────── */
-/* Same card size as .work-card — the divider + heading above are enough
-   to signal this is a separate, secondary section. */
+/* The cards themselves are .case-card (shared above) — this block is
+   just the section heading and grid wrapper. */
 .petprojects {
   margin-top: 96px;
   padding-top: 72px;
@@ -588,49 +590,6 @@ html[data-theme="dark"] .case-card-sub { color: var(--muted); }
 }
 @media (max-width: 700px) {
   .petprojects-list { grid-template-columns: 1fr; }
-}
-.petproject-card {
-  display: block;
-  text-decoration: none;
-  transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
-}
-.petproject-card:hover { transform: translateY(-4px); }
-.petproject-card .visual {
-  aspect-ratio: 1 / 1;
-  display: block;
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  background: var(--paper-2);
-}
-.petproject-card .card-meta { margin-top: 16px; }
-.petproject-card .card-meta .title {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--ink);
-}
-.petproject-card .card-meta .sub {
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 4px;
-  line-height: 1.4;
-}
-.petproject-card .card-meta .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-.petproject-card .card-meta .tag {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 5px 10px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  color: var(--muted);
 }
 
 /* ─── Project page ─────────────────────────────────────────────── */
