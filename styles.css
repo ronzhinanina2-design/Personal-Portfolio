@@ -518,7 +518,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Case cards — shared component used by the homepage Work grid, every
    case- page's "More work" grid, and the Pet projects card. Cover is
    16:9; a cover within 6% of that ratio fills it (.is-fill). Anything
-   else keeps its own proportions, inset 40px from the top/left/right
+   else keeps its own proportions, inset 20px from the top/left/right
    and flush with the bottom — it either leaves empty --paper-sunk space
    above that bottom edge, or runs past it and gets cropped by the
    container's own border/radius, whichever the image's shape gives.
@@ -536,7 +536,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: border-color 0.15s;
 }
 .case-card:hover .case-card-cover { border-color: var(--accent); }
-.case-card-cover img { display: block; width: calc(100% - 80px); height: auto; margin: 40px 40px 0 40px; }
+.case-card-cover img { display: block; width: calc(100% - 40px); height: auto; margin: 20px 20px 0 20px; }
 .case-card-cover.is-fill img { width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: top center; }
 .case-card-sub { margin-top: 16px; font-size: 14px; line-height: 1.5; font-weight: 400; color: #6B6963; }
 html[data-theme="dark"] .case-card-sub { color: var(--muted); }
