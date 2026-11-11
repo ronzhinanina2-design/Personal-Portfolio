@@ -14,6 +14,12 @@ Two images in a row are only for modal windows and narrow screens. Full desktop 
 
 Case template: see the "case-" classes on fleet-dashboard.html. New case pages reuse them.
 
+Case cards are one component (case-card): cover 16:9, quiet line "product type · year" above the title, title with the main number. No tags, description, arrows, shadows. The same component is used on the homepage and in "More work".
+
+A card cover within 6% of 16:9 fills the container; any other format is centred at 88% on --paper-sunk.
+
+Titles and quiet lines of cards are changed together with the H1 of each case when the case is rewritten.
+
 # Site rules
 
 Dark theme: the theme is the attribute data-theme="light|dark" on <html>; dark values live in one html[data-theme="dark"] block. No colour is hard-coded in components, only tokens.

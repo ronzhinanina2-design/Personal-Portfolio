@@ -258,26 +258,26 @@
   <section class="case-section case-more-work">
     <h2 class="case-h2">More work</h2>
     <div class="case-more-grid">
-      <a href="/en/work/chiko-roko.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/chiko&roko-thumb.png" alt="Chiko &amp; Roko" loading="lazy">
+      <a href="/en/work/chiko-roko.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="chiko&roko-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">NFT Collectibles Platform with AR</div>
-        <div class="case-more-sub">NFT collectibles platform with AR built from zero to launch</div>
+        <div class="case-card-sub">NFT platform · 2021–2022</div>
+        <div class="case-card-title">NFT collectibles platform with AR for nearly 500,000 users</div>
       </a>
-      <a href="/en/work/dc.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/dc-thumb.png" alt="Digital Collectibles" loading="lazy">
+      <a href="/en/work/dc.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="dc-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">NFT Marketplace with a Social Layer</div>
-        <div class="case-more-sub">NFT marketplace grown from concept to 500+ screens</div>
+        <div class="case-card-sub">NFT marketplace · 2022</div>
+        <div class="case-card-title">NFT marketplace with a social layer</div>
       </a>
-      <a href="/en/work/fleet-dashboard.html" class="case-more-card">
-        <div class="case-more-preview">
-          <img src="/fitfleet-maintenance-thumb.png" alt="FitFleet Maintenance project thumbnail" loading="lazy">
+      <a href="/en/work/fleet-dashboard.html" class="case-card">
+        <div class="case-card-cover is-fill">
+          <img src="fitfleet-maintenance-thumb.png" alt="" loading="lazy">
         </div>
-        <div class="case-more-title">Fleet Maintenance Automation</div>
-        <div class="case-more-sub">A dashboard that keeps hundreds of vehicles serviced on time.</div>
+        <div class="case-card-sub">B2B SaaS · 2024</div>
+        <div class="case-card-title">Fleet maintenance automation for 20,000+ companies</div>
       </a>
     </div>
   </section>
@@ -636,18 +636,11 @@ html[data-theme="dark"] .cv-menu { background: var(--surface); }
   .case-square { border-radius: 12px; }
 }
 
-/* More work */
+/* More work — the case-card grid itself is shared in the root styles.css */
 .case-more-work .case-h2 { margin-bottom: 48px; }
-.case-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; row-gap: 32px; }
-.case-more-card { display: block; }
-.case-more-preview { aspect-ratio: 1 / 1; border-radius: 16px; background: var(--paper-sunk); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.case-more-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.case-more-title { margin-top: 16px; font-size: 20px; font-weight: 500; line-height: 1.3; color: var(--ink); }
-.case-more-sub { margin-top: 4px; font-size: 14px; line-height: 1.5; color: #6B6963; }
-html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption, html[data-theme="dark"] .case-more-sub { color: var(--muted); }
+html[data-theme="dark"] .case-data-label, html[data-theme="dark"] .case-caption { color: var(--muted); }
 @media (max-width: 743px) {
   .case-more-work .case-h2 { margin-bottom: 32px; }
-  .case-more-grid { grid-template-columns: 1fr; row-gap: 32px; }
 }
 </style>
 </body>
